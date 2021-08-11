@@ -7,4 +7,9 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!--    Start Page-->
+    <color name="gradient_purple_dark">#5357FA</color>
+    <color name="gradient_purple_middle">#9883EE</color>
+    <color name="gradient_purple_light">#A887E7</color>
 </resources>
