@@ -9,16 +9,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Envelope">
-        <activity android:name=".ui.payment.PaymentsActivity"></activity>
-        <activity android:name=".ui.onboarding.OnBoardingActivity" />
-        <activity android:name=".ui.start.StartActivity" />
-        <activity android:name=".ui.home.MainActivity">
+        <activity android:name=".ui.payment.PaymentsActivity" />
+        <activity android:name=".ui.onboarding.OnBoardingActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ui.start.StartActivity" />
+        <activity android:name=".ui.home.MainActivity" />
     </application>
 
 </manifest>
