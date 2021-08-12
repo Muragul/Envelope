@@ -5,4 +5,9 @@
     <string name="bottom_nav_history">История</string>
     <string name="bottom_nav_budget">Мой бюджет</string>
     <string name="bottom_nav_profile">Профиль</string>
+
+    <!--    On Boarding-->
+    <string name="on_boarding_skip">Пропустить</string>
+    <string name="on_boarding_next">Далее</string>
+    <string name="on_boarding_start">Начать</string>
 </resources>
