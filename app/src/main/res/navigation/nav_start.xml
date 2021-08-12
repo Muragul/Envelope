@@ -1,5 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/nav_start">
+
+    <fragment
+        android:id="@+id/first_step"
+        android:name="com.example.envelope.ui.start.fragments.AmountFragment">
+
+        <action
+            android:id="@+id/action_to_distribution"
+            app:destination="@id/second_step" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/second_step"
+        android:name="com.example.envelope.ui.start.fragments.DistributionFragment">
+
+        <action
+            android:id="@+id/action_to_card"
+            app:destination="@id/third_step" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/third_step"
+        android:name="com.example.envelope.ui.start.fragments.CardFragment">
+
+        <action
+            android:id="@+id/action_to_finish"
+            app:destination="@id/finish" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/finish"
+        android:name="com.example.envelope.ui.start.fragments.CompleteFragment" />
+
+    <action
+        android:id="@+id/to_start"
+        app:destination="@id/first_step" />
 
 </navigation>
