@@ -49,6 +49,7 @@
                 android:layout_gravity="start"
                 android:layout_marginStart="28dp"
                 android:text="@string/on_boarding_skip"
+                android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -59,6 +60,7 @@
                 android:layout_height="56dp"
                 android:layout_marginEnd="28dp"
                 android:text="@string/on_boarding_next"
+                android:textSize="18sp"
                 app:icon="@drawable/ic_on_boarding_next"
                 app:iconGravity="end"
                 app:iconTint="@color/black"

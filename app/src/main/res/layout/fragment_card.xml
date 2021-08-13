@@ -5,4 +5,18 @@
     android:layout_height="match_parent"
     tools:context=".ui.start.fragments.CardFragment">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:text="@string/set_card_info" />
+
+    <include
+        android:id="@+id/include_nav"
+        layout="@layout/start_activity_bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom" />
+
 </FrameLayout>

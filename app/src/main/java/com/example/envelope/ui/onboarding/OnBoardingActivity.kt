@@ -1,5 +1,6 @@
 package com.example.envelope.ui.onboarding
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.transition.ChangeBounds
 import androidx.transition.Fade
@@ -7,6 +8,7 @@ import androidx.transition.TransitionManager
 import androidx.transition.TransitionSet
 import androidx.viewpager2.widget.ViewPager2
 import com.example.envelope.databinding.ActivityOnBoardingBinding
+import com.example.envelope.ui.start.StartActivity
 import com.example.envelope.utils.binding.BindingActivity
 import com.example.envelope.utils.extensions.hide
 import com.example.envelope.utils.extensions.show
@@ -49,20 +51,23 @@ class OnBoardingActivity :
             })
 
             btnSkip.setOnClickListener {
-                //todo implement
+                startActivity(Intent(this@OnBoardingActivity, StartActivity::class.java))
+                finish()
             }
 
             btnStart.setOnClickListener {
-                //todo implement
+                startActivity(Intent(this@OnBoardingActivity, StartActivity::class.java))
+                finish()
             }
 
             btnNext.setOnClickListener {
                 if (vpOnBoarding.currentItem < onBoardingList.size - 1) {
                     vpOnBoarding.currentItem++
                 } else {
-                    //todo implement
+                    startActivity(Intent(this@OnBoardingActivity, StartActivity::class.java))
                 }
             }
+
         }
     }
 }

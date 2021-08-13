@@ -1,19 +1,41 @@
 package com.example.envelope.ui.start.fragments
 
+import android.content.Intent
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import androidx.fragment.app.Fragment
-import com.example.envelope.R
+import androidx.core.widget.doAfterTextChanged
+import androidx.navigation.fragment.findNavController
+import com.example.envelope.databinding.FragmentAmountBinding
+import com.example.envelope.ui.start.StartActivity
+import com.example.envelope.utils.binding.BindingFragment
+import com.example.envelope.utils.extensions.disable
+import com.example.envelope.utils.extensions.hide
 
-class AmountFragment : Fragment() {
+class AmountFragment : BindingFragment<FragmentAmountBinding>(FragmentAmountBinding::inflate) {
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_amount, container, false)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.run {
+
+            includeNav.apply {
+                btnBack.hide()
+                btnNext.disable()
+
+                btnNext.setOnClickListener {
+                    findNavController().navigate(AmountFragmentDirections.actionToDistribution())
+                }
+
+                btnReturn.setOnClickListener {
+                    startActivity(Intent(context, StartActivity::class.java))
+                    activity?.finish()
+                }
+            }
+
+            etAmount.doAfterTextChanged {
+                includeNav.btnNext.isEnabled = !it.isNullOrBlank()
+            }
+
+        }
     }
 
 }

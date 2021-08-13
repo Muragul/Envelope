@@ -19,3 +19,5 @@ val onBoardingList = listOf(
         text = "Hac ipsum posuere nulla nunc mattis id purus non egestas. "
     )
 )
+
+const val totalSum = 134600

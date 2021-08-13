@@ -5,4 +5,16 @@
     android:layout_height="match_parent"
     tools:context=".ui.start.fragments.DistributionFragment">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Обязательные расходы" />
+
+    <include
+        android:id="@+id/include_nav"
+        layout="@layout/start_activity_bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom" />
+
 </FrameLayout>
