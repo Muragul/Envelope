@@ -10,4 +10,17 @@
     <string name="on_boarding_skip">Пропустить</string>
     <string name="on_boarding_next">Далее</string>
     <string name="on_boarding_start">Начать</string>
+
+    <string name="back">Назад</string>
+    <string name="return_to_start">Вернуться в начало</string>
+
+    <!--    Start Page-->
+    <string name="set_amount">Укажите сумму, которую хотите распределить</string>
+    <string name="set_card_info">Укажите данные вашей карты</string>
+    <string name="all_steps_completed">Все этапы пройдены!</string>
+    <string name="attention">Внимание!</string>
+    <string name="finish_set_up_caution">При нажатии на кнопку “Далее” с вашей карты снимутся %s тг. </string>
+    <string name="start_progress_first_step">Сумма</string>
+    <string name="start_progress_second_step">Распределение</string>
+    <string name="start_progress_third_step">Карта</string>
 </resources>
