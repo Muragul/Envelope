@@ -1,10 +1,10 @@
 package com.example.envelope.ui.start.fragments
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import com.example.envelope.databinding.FragmentCardBinding
 import com.example.envelope.ui.start.StartActivity
+import com.example.envelope.utils.COMPLETE_TAG
 import com.example.envelope.utils.binding.BindingFragment
 
 class CardFragment : BindingFragment<FragmentCardBinding>(FragmentCardBinding::inflate) {
@@ -14,12 +14,16 @@ class CardFragment : BindingFragment<FragmentCardBinding>(FragmentCardBinding::i
         binding.run {
             includeNav.apply {
                 btnBack.setOnClickListener {
+                    activity?.onBackPressed()
                 }
                 btnReturn.setOnClickListener {
-                    startActivity(Intent(context, StartActivity::class.java))
-                    activity?.finish()
+                    (activity as StartActivity).restart()
                 }
                 btnNext.setOnClickListener {
+                    (activity as StartActivity).changeFragment(
+                        CompleteFragment(),
+                        COMPLETE_TAG
+                    )
                 }
             }
         }

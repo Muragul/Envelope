@@ -1,6 +1,5 @@
 package com.example.envelope.ui.start.fragments
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
@@ -23,13 +22,14 @@ class CompleteFragment :
 
             includeNav.apply {
                 btnBack.setOnClickListener {
+                    activity?.onBackPressed()
                 }
                 btnNext.setOnClickListener {
+                    //todo implement
                     Toast.makeText(context, "Ok", Toast.LENGTH_SHORT).show()
                 }
                 btnReturn.setOnClickListener {
-                    startActivity(Intent(context, StartActivity::class.java))
-                    activity?.finish()
+                    (activity as StartActivity).restart()
                 }
             }
         }
