@@ -4,7 +4,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.core.widget.doAfterTextChanged
-import androidx.navigation.fragment.findNavController
 import com.example.envelope.databinding.FragmentAmountBinding
 import com.example.envelope.ui.start.StartActivity
 import com.example.envelope.utils.binding.BindingFragment
@@ -22,7 +21,6 @@ class AmountFragment : BindingFragment<FragmentAmountBinding>(FragmentAmountBind
                 btnNext.disable()
 
                 btnNext.setOnClickListener {
-                    findNavController().navigate(AmountFragmentDirections.actionToDistribution())
                 }
 
                 btnReturn.setOnClickListener {

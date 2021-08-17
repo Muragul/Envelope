@@ -4,7 +4,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
-import androidx.navigation.fragment.findNavController
 import com.example.envelope.R
 import com.example.envelope.databinding.FragmentCompleteBinding
 import com.example.envelope.ui.start.StartActivity
@@ -24,7 +23,6 @@ class CompleteFragment :
 
             includeNav.apply {
                 btnBack.setOnClickListener {
-                    findNavController().navigateUp()
                 }
                 btnNext.setOnClickListener {
                     Toast.makeText(context, "Ok", Toast.LENGTH_SHORT).show()
