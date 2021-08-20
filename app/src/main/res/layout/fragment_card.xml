@@ -5,12 +5,63 @@
     android:layout_height="match_parent"
     tools:context=".ui.start.fragments.CardFragment">
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:text="@string/set_card_info" />
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/set_card_info" />
+
+        <EditText
+            android:id="@+id/et_card_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:digits="0123456789 "
+            android:hint="Номер карты"
+            android:imeOptions="actionNext"
+            android:inputType="number"
+            android:maxLength="19" />
+
+        <EditText
+            android:id="@+id/et_card_owner_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Имя владельца"
+            android:imeOptions="actionNext"
+            android:inputType="textPersonName"
+            android:maxLength="50" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/et_card_expire_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:digits="0123456789/"
+                android:hint="ММ/ГГ"
+                android:imeOptions="actionNext"
+                android:inputType="number"
+                android:maxLength="6" />
+
+            <EditText
+                android:id="@+id/et_card_cvv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="CVV"
+                android:imeOptions="actionDone"
+                android:inputType="numberPassword"
+                android:maxLength="3" />
+        </LinearLayout>
+    </LinearLayout>
 
     <include
         android:id="@+id/include_nav"
