@@ -23,4 +23,8 @@
     <string name="start_progress_first_step">Сумма</string>
     <string name="start_progress_second_step">Распределение</string>
     <string name="start_progress_third_step">Карта</string>
+
+    <!--Card Page-->
+    <string name="fill_empty_fields">Заполните все поля</string>
+
 </resources>
