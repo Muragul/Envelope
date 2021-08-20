@@ -23,4 +23,14 @@
     <string name="start_progress_first_step">Сумма</string>
     <string name="start_progress_second_step">Распределение</string>
     <string name="start_progress_third_step">Карта</string>
+
+
+    <!--    Distribution Page-->
+    <string name="obligatory_expenses">1. Обязательные расходы</string>
+    <string name="savings">2. Сбережения</string>
+    <string name="unforeseen_expenses">3. Непредвиденные расходы</string>
+    <string name="obligatory_expenses_text_hint">Добавьте ваши обязательные расходы на месяц</string>
+    <string name="savings_text_hint">Сколько процентов вы хотите сберегать?</string>
+    <string name="unforeseen_hint">Сколько процентов оставите на непредвиденные расходы?</string>
+    <string name="btn_add_text">Добавить</string>
 </resources>
