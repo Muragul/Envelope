@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
-        android:text="@string/add_extra_title_text"
+        android:text="@string/add_service_header"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="16sp" />
@@ -22,7 +22,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:background="@drawable/edit_text_bg_white"
-        android:hint="@string/add_extra_service_title_hint"
+        android:hint="@string/add_service_title"
         android:padding="10dp"
         android:textSize="13sp" />
 
@@ -32,7 +32,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:background="@drawable/edit_text_bg_white"
-        android:hint="@string/add_extra_service_total_price_hint"
+        android:hint="@string/add_service_total_sum"
         android:padding="10dp"
         android:textSize="13sp" />
 
@@ -43,7 +43,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
         android:background="@drawable/edit_text_bg_white"
-        android:hint="@string/add_extra_service_date_hint"
+        android:hint="@string/add_service_date"
         android:padding="10dp"
         android:textSize="13sp" />
 
@@ -51,7 +51,7 @@
         android:id="@+id/btn_add"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/add_text"
+        android:text="@string/add"
         android:textAllCaps="false"
         android:textSize="13sp" />
 
@@ -59,7 +59,7 @@
         android:id="@+id/btn_cancel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/cancel_text"
+        android:text="@string/cancel"
         android:textAllCaps="false"
         android:textSize="13sp" />
 

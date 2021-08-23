@@ -10,7 +10,7 @@ class ExpensesAdapter : BindingAdapter<Expense, ExpensesItemBinding>(ExpensesIte
         binding.run {
             cvServiceTitle.text = item.title
             cvServicePrice.text = String.format(
-                cvServicePrice.context.getString(R.string.price_format),
+                cvServicePrice.context.getString(R.string.total_price),
                 item.totalSum.toString()
             )
         }
