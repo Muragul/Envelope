@@ -29,8 +29,8 @@
     <string name="obligatory_expenses">1. Обязательные расходы</string>
     <string name="savings">2. Сбережения</string>
     <string name="unforeseen_expenses">3. Непредвиденные расходы</string>
-    <string name="obligatory_expenses_desc">Добавьте ваши обязательные расходы на месяц</string>
-    <string name="savings_desc">Сколько процентов вы хотите сберегать?</string>
+    <string name="obligatory_expenses_description">Добавьте ваши обязательные расходы на месяц</string>
+    <string name="savings_description">Сколько процентов вы хотите сберегать?</string>
     <string name="unforeseen">Сколько процентов оставите на непредвиденные расходы?</string>
     <string name="add">Добавить</string>
     <string name="total_price">%s ₸</string>

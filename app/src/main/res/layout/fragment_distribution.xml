@@ -42,7 +42,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="@string/obligatory_expenses_desc"
+                    android:text="@string/obligatory_expenses_description"
                     android:textColor="@color/black"
                     android:textSize="14sp"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -87,7 +87,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="16dp"
-                    android:text="@string/expenses_hint_total"
                     android:textAlignment="textEnd"
                     android:textColor="@color/black"
                     android:textSize="16sp"
@@ -142,7 +141,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/savings_desc"
+                    android:text="@string/savings_description"
                     android:textColor="@color/black"
                     android:textSize="14sp" />
 
