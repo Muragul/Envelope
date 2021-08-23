@@ -13,10 +13,9 @@ import com.example.envelope.utils.REQUEST_CODE
 import com.example.envelope.utils.SCREEN
 import com.example.envelope.utils.binding.BindingFragment
 import com.example.envelope.utils.expensesList
-import com.example.envelope.utils.extensions.disable
+import com.example.envelope.utils.extensions.check
 import com.example.envelope.utils.extensions.enable
 import com.example.envelope.utils.extensions.hide
-import com.example.envelope.utils.extensions.showCheckMark
 import com.example.envelope.utils.navigation.Screen
 
 class DistributionFragment :
@@ -37,7 +36,8 @@ class DistributionFragment :
             adapter.submitList(expensesList)
             rvServices.adapter = adapter
             includeNav.apply {
-                btnNext.disable()
+                //todo disable "Next" button when logic is ready
+//                btnNext.disable()
                 btnBack.setOnClickListener {
                     activity?.onBackPressed()
                 }
@@ -53,16 +53,16 @@ class DistributionFragment :
 
                 btnSaveExpenses.setOnClickListener {
                     ltExpensesContent.hide()
-                    tvTitleExpenses.showCheckMark()
+                    tvTitleExpenses.check()
                 }
 
                 btnSaveSavings.setOnClickListener {
                     ltSavingsContent.hide()
-                    tvSavings.showCheckMark()
+                    tvSavings.check()
                 }
                 btnSaveUnexpected.setOnClickListener {
                     ltUnexpectedContent.hide()
-                    tvTitleUnexpected.showCheckMark()
+                    tvTitleUnexpected.check()
                     btnNext.enable()
                 }
 

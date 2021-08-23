@@ -17,27 +17,28 @@ class MainActivity : BindingActivity<ActivityMainBinding>(ActivityMainBinding::i
         private const val PROFILE = "profile"
     }
 
-    private var fragmentList = arrayListOf(
-        HomeFragment(),
-        HistoryFragment(),
-        ProfileFragment()
-    )
+    private val homeFragment = HomeFragment()
+    private val historyFragment = HistoryFragment()
+    private val profileFragment = ProfileFragment()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding.run {
+            if (savedInstanceState == null) {
+                toggleFragment(homeFragment, MAIN)
+            }
             bottomNavigation.setOnItemSelectedListener { item ->
                 when (item.itemId) {
                     R.id.main_page -> {
-                        toggleFragment(fragmentList[0], MAIN)
+                        toggleFragment(homeFragment, MAIN)
                         return@setOnItemSelectedListener true
                     }
                     R.id.history_page -> {
-                        toggleFragment(fragmentList[1], HISTORY)
+                        toggleFragment(historyFragment, HISTORY)
                         return@setOnItemSelectedListener true
                     }
                     R.id.profile_page -> {
-                        toggleFragment(fragmentList[2], PROFILE)
+                        toggleFragment(profileFragment, PROFILE)
                         return@setOnItemSelectedListener true
                     }
                 }
@@ -59,6 +60,11 @@ class MainActivity : BindingActivity<ActivityMainBinding>(ActivityMainBinding::i
             fragmentTransaction.add(binding.viewPager.id, fragmentTemp, tagFragmentName)
         } else {
             fragmentTransaction.show(fragmentTemp)
+        }
+        if (!isFinishing) {
+            fragmentTransaction.setPrimaryNavigationFragment(fragmentTemp)
+            fragmentTransaction.setReorderingAllowed(true)
+            fragmentTransaction.commitAllowingStateLoss()
         }
     }
 }

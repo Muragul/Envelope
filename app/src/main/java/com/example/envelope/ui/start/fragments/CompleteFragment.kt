@@ -2,7 +2,6 @@ package com.example.envelope.ui.start.fragments
 
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import com.example.envelope.R
 import com.example.envelope.databinding.FragmentCompleteBinding
 import com.example.envelope.ui.start.StartActivity
@@ -24,8 +23,7 @@ class CompleteFragment :
                     activity?.onBackPressed()
                 }
                 btnNext.setOnClickListener {
-                    //todo implement
-                    Toast.makeText(context, "Ok", Toast.LENGTH_SHORT).show()
+                    (activity as StartActivity).completeSetup()
                 }
                 btnReturn.setOnClickListener {
                     (activity as StartActivity).restart()

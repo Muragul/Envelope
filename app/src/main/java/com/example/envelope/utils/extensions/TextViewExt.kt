@@ -2,10 +2,10 @@ package com.example.envelope.utils.extensions
 
 import android.widget.CheckedTextView
 
-fun CheckedTextView.showCheckMark() {
+fun CheckedTextView.check() {
     isChecked = true
 }
 
-fun CheckedTextView.hideCheckMark() {
+fun CheckedTextView.uncheck() {
     isChecked = false
 }
