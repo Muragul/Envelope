@@ -1,7 +1,8 @@
 package com.example.envelope.utils
 
+import com.example.envelope.data.Expense
 import com.example.envelope.data.OnBoarding
-import com.example.envelope.data.Service
+import com.example.envelope.data.Services
 
 val onBoardingList = listOf(
     OnBoarding(
@@ -21,10 +22,16 @@ val onBoardingList = listOf(
     )
 )
 
+val expensesList = listOf(
+    Expense(1, "Onay", "", 3000),
+    Expense(2, "Beeline", "", 2500),
+    Expense(3, "Kaspi", "", 9500),
+)
+
 val servicesList = listOf(
-    Service(1, "Onay", "", 3000),
-    Service(2, "Beeline", "", 2500),
-    Service(3, "Kaspi", "", 9500),
+    Services(1, "Onay", ""),
+    Services(2, "Beeline", ""),
+    Services(3, "Kaspi", ""),
 )
 
 const val totalSum = 134600
