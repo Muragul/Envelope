@@ -16,10 +16,6 @@ object FragmentNavigator {
         requestCode: Int? = null
     ) {
         val fragment = when (screen) {
-            Screen.DEFAULT_SCREEN -> {
-                //todo remove
-                ServicesFragment.newInstance(bundle = data)
-            }
             Screen.EXPENSES -> {
                 //todo remove
                 ServicesFragment.newInstance(bundle = data)
