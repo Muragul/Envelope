@@ -3,9 +3,8 @@ package com.example.envelope.ui.services
 import android.app.Dialog
 import android.os.Bundle
 import android.view.Window
-import android.widget.Button
-import com.example.envelope.R
 import com.example.envelope.databinding.ActivityServicesBinding
+import com.example.envelope.databinding.AddExtraServiceDialogBinding
 import com.example.envelope.utils.binding.BindingActivity
 import com.example.envelope.utils.servicesList
 
@@ -27,13 +26,13 @@ class ServicesActivity :
 
     private fun showAddServiceDialog() {
         val dialog = Dialog(binding.rvServices.context)
+        val dialogBinding = AddExtraServiceDialogBinding.inflate(layoutInflater)
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
-        dialog.setCancelable(false)
-        dialog.setContentView(R.layout.add_extra_service_dialog)
-        dialog.findViewById<Button>(R.id.btn_cancel).setOnClickListener {
+        dialog.setContentView(dialogBinding.root)
+        dialogBinding.btnCancel.setOnClickListener {
             dialog.dismiss()
         }
-        dialog.findViewById<Button>(R.id.btn_add).setOnClickListener {
+        dialogBinding.btnAdd.setOnClickListener {
             dialog.dismiss()
         }
         dialog.show()

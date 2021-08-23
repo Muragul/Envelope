@@ -24,6 +24,7 @@
         android:textColor="@color/black"
         android:textSize="16sp"
         tools:text="ONAY" />
+
     <TextView
         android:id="@+id/cv_service_price"
         android:layout_width="0dp"
@@ -31,9 +32,9 @@
         android:layout_gravity="center"
         android:layout_marginStart="8dp"
         android:layout_weight="1"
+        android:gravity="end"
         android:textColor="@color/black"
         android:textSize="16sp"
-        android:gravity="end"
         tools:text="ONAY" />
 
 </LinearLayout>

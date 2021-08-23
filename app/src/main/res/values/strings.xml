@@ -32,5 +32,17 @@
     <string name="obligatory_expenses_text_hint">Добавьте ваши обязательные расходы на месяц</string>
     <string name="savings_text_hint">Сколько процентов вы хотите сберегать?</string>
     <string name="unforeseen_hint">Сколько процентов оставите на непредвиденные расходы?</string>
-    <string name="btn_add_text">Добавить</string>
+    <string name="add_text">Добавить</string>
+
+    <string name="price_format">%s ₸</string>
+    <string name="search_hint">Поиск</string>
+    <string name="add_extra_title_text">Добавление платежа</string>
+    <string name="add_extra_service_title_hint">Название</string>
+    <string name="add_extra_service_total_price_hint">Сумма</string>
+    <string name="add_extra_service_date_hint">Дата</string>
+    <string name="cancel_text">Отмена</string>
+    <string name="save_text">Сохранить</string>
+    <string name="expenses_hint_total">65 400</string>
+    <string name="total_title_text">Общая сумма:</string>
+
 </resources>

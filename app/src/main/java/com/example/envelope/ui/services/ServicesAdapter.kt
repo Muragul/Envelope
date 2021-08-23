@@ -8,7 +8,7 @@ class ServicesAdapter :
     BindingAdapter<Services, ServiceItemLayoutBinding>(ServiceItemLayoutBinding::inflate) {
     override fun bind(service: Services, binding: ServiceItemLayoutBinding) {
         binding.run {
-            cvServiceTitle.text = service.name
+            cvServiceTitle.text = service.title
         }
     }
 }
