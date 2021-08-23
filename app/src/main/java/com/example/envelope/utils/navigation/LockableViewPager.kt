@@ -1,4 +1,4 @@
-package com.example.envelope.utils
+package com.example.envelope.utils.navigation
 
 import android.content.Context
 import android.util.AttributeSet

@@ -33,7 +33,7 @@ class CardFragment : BindingFragment<FragmentCardBinding>(FragmentCardBinding::i
 
     private fun goToCompletion() {
         if (validateFields())
-            (activity as StartActivity).changeFragment(
+            (activity as StartActivity).showFragment(
                 CompleteFragment(),
                 COMPLETE_TAG
             ) else

@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.ViewDataBinding
+import androidx.fragment.app.Fragment
 import androidx.viewbinding.ViewBinding
 
 open class BindingActivity<B : ViewBinding> constructor(
@@ -24,4 +25,19 @@ open class BindingActivity<B : ViewBinding> constructor(
         super.onDestroy()
         _binding = null
     }
+
+    fun changeFragment(
+        fragment: Fragment,
+        tag: String? = null,
+        container: Int
+    ) {
+        val transaction = supportFragmentManager.beginTransaction()
+        if (tag.isNullOrEmpty())
+            transaction.replace(container, fragment, tag)
+        else
+            transaction.replace(container, fragment, tag)
+                .addToBackStack(tag)
+        transaction.commit()
+    }
+
 }

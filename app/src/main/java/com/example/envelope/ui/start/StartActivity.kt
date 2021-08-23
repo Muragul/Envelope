@@ -24,24 +24,15 @@ class StartActivity : BindingActivity<ActivityStartBinding>(ActivityStartBinding
                 tvStepTitle.text = getString(R.string.start_progress_third_step)
                 tvStepNumber.text = "3"
             }
-            changeFragment(AmountFragment())
+            showFragment(fragment = AmountFragment())
         }
     }
 
     fun updateProgressBar(finishedStep: Int) {
     }
 
-    fun changeFragment(
-        fragment: Fragment,
-        tag: String? = null
-    ) {
-        val transaction = supportFragmentManager.beginTransaction()
-        if (tag.isNullOrEmpty())
-            transaction.replace(R.id.container, fragment, tag)
-        else
-            transaction.replace(R.id.container, fragment, tag)
-                .addToBackStack(tag)
-        transaction.commit()
+    fun showFragment(fragment: Fragment, tag: String? = null) {
+        changeFragment(fragment = fragment, tag = tag, container = binding.container.id)
     }
 
     fun restart() {

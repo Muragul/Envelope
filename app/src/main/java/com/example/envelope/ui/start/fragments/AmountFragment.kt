@@ -21,7 +21,7 @@ class AmountFragment : BindingFragment<FragmentAmountBinding>(FragmentAmountBind
                 btnNext.disable()
 
                 btnNext.setOnClickListener {
-                    (activity as StartActivity).changeFragment(
+                    (activity as StartActivity).showFragment(
                         DistributionFragment(),
                         DISTRIBUTION_TAG
                     )

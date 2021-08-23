@@ -6,9 +6,9 @@ import com.example.envelope.utils.binding.BindingAdapter
 
 class ServicesAdapter :
     BindingAdapter<Services, ServiceItemLayoutBinding>(ServiceItemLayoutBinding::inflate) {
-    override fun bind(service: Services, binding: ServiceItemLayoutBinding) {
+    override fun bind(item: Services, binding: ServiceItemLayoutBinding) {
         binding.run {
-            cvServiceTitle.text = service.title
+            cvServiceTitle.text = item.title
         }
     }
 }

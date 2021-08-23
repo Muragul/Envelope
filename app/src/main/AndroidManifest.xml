@@ -9,8 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Envelope">
-        <activity android:name=".ui.services.ServicesActivity"/>
-        <activity android:name=".ui.payment.PaymentsActivity" />
+        <activity android:name=".ui.ContainerActivity" />
         <activity android:name=".ui.onboarding.OnBoardingActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -1,12 +1,15 @@
 package com.example.envelope.ui.home
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
-import com.example.envelope.R
+import com.example.envelope.databinding.ActivityMainBinding
+import com.example.envelope.utils.binding.BindingActivity
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BindingActivity<ActivityMainBinding>(ActivityMainBinding::inflate) {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding.run {
+
+        }
     }
 }

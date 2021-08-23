@@ -1,32 +1,34 @@
 package com.example.envelope.ui.start.fragments
 
 import android.app.Activity
-import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import com.example.envelope.databinding.FragmentDistributionBinding
-import com.example.envelope.ui.services.ServicesActivity
+import com.example.envelope.ui.ContainerActivity
 import com.example.envelope.ui.start.StartActivity
 import com.example.envelope.utils.CARD_TAG
+import com.example.envelope.utils.REQUEST_CODE
+import com.example.envelope.utils.SCREEN
 import com.example.envelope.utils.binding.BindingFragment
 import com.example.envelope.utils.expensesList
 import com.example.envelope.utils.extensions.disable
 import com.example.envelope.utils.extensions.enable
 import com.example.envelope.utils.extensions.hide
 import com.example.envelope.utils.extensions.showCheckMark
+import com.example.envelope.utils.navigation.Screen
 
 class DistributionFragment :
     BindingFragment<FragmentDistributionBinding>(FragmentDistributionBinding::inflate) {
 
-    private val startForResult =
-        this.registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result: ActivityResult ->
-            if (result.resultCode == Activity.RESULT_OK) {
-                val intent = result.data
-            }
+    private val startForResult = this.registerForActivityResult(
+        ActivityResultContracts.StartActivityForResult()
+    ) { result: ActivityResult ->
+        if (result.resultCode == Activity.RESULT_OK) {
+            val intent = result.data
         }
-
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -41,7 +43,7 @@ class DistributionFragment :
                     activity?.onBackPressed()
                 }
                 btnNext.setOnClickListener {
-                    (activity as StartActivity).changeFragment(
+                    (activity as StartActivity).showFragment(
                         CardFragment(),
                         CARD_TAG
                     )
@@ -66,14 +68,15 @@ class DistributionFragment :
                 }
 
                 btnAddService.setOnClickListener {
-                    startForResult.launch(
-                        Intent(
-                            context,
-                            ServicesActivity::class.java
-                        )
-                    )
+                    openServices()
                 }
             }
         }
+    }
+
+    private fun openServices() {
+        val bundle = Bundle()
+        bundle.putSerializable(SCREEN, Screen.SERVICES)
+        ContainerActivity.start(fragment = this, bundle = bundle, requestCode = REQUEST_CODE)
     }
 }

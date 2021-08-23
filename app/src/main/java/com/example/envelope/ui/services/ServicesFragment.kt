@@ -2,16 +2,26 @@ package com.example.envelope.ui.services
 
 import android.app.Dialog
 import android.os.Bundle
+import android.view.View
 import android.view.Window
-import com.example.envelope.databinding.ActivityServicesBinding
 import com.example.envelope.databinding.AddExtraServiceDialogBinding
-import com.example.envelope.utils.binding.BindingActivity
+import com.example.envelope.databinding.FragmentServicesBinding
+import com.example.envelope.utils.binding.BindingFragment
 import com.example.envelope.utils.servicesList
 
-class ServicesActivity :
-    BindingActivity<ActivityServicesBinding>(ActivityServicesBinding::inflate) {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+class ServicesFragment :
+    BindingFragment<FragmentServicesBinding>(FragmentServicesBinding::inflate) {
+
+    companion object {
+        fun newInstance(bundle: Bundle?): ServicesFragment {
+            val fragment = ServicesFragment()
+            fragment.arguments = bundle
+            return fragment
+        }
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         binding.run {
             val adapter = ServicesAdapter()
             val servicesList = servicesList
@@ -37,4 +47,5 @@ class ServicesActivity :
         }
         dialog.show()
     }
+
 }
