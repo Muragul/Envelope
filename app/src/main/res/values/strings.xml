@@ -24,7 +24,25 @@
     <string name="start_progress_second_step">Распределение</string>
     <string name="start_progress_third_step">Карта</string>
 
+
+    <!--    Distribution Page-->
+    <string name="obligatory_expenses">1. Обязательные расходы</string>
+    <string name="savings">2. Сбережения</string>
+    <string name="unforeseen_expenses">3. Непредвиденные расходы</string>
+    <string name="obligatory_expenses_description">Добавьте ваши обязательные расходы на месяц</string>
+    <string name="savings_description">Сколько процентов вы хотите сберегать?</string>
+    <string name="unforeseen">Сколько процентов оставите на непредвиденные расходы?</string>
+    <string name="add">Добавить</string>
+    <string name="total_price">%s ₸</string>
+    <string name="search">Поиск</string>
+    <string name="add_service_header">Добавление платежа</string>
+    <string name="add_service_title">Название</string>
+    <string name="add_service_total_sum">Сумма</string>
+    <string name="add_service_date">Дата</string>
+    <string name="cancel">Отмена</string>
+    <string name="save">Сохранить</string>
+    <string name="total_sum_title">Общая сумма:</string>
+
     <!--Card Page-->
     <string name="fill_empty_fields">Заполните все поля</string>
-
 </resources>
