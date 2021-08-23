@@ -33,5 +33,3 @@ val servicesList = listOf(
     Services(2, "Beeline", ""),
     Services(3, "Kaspi", ""),
 )
-
-const val totalSum = 134600

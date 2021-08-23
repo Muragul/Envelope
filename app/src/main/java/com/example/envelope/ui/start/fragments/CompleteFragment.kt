@@ -7,7 +7,6 @@ import com.example.envelope.R
 import com.example.envelope.databinding.FragmentCompleteBinding
 import com.example.envelope.ui.start.StartActivity
 import com.example.envelope.utils.binding.BindingFragment
-import com.example.envelope.utils.totalSum
 
 class CompleteFragment :
     BindingFragment<FragmentCompleteBinding>(FragmentCompleteBinding::inflate) {
@@ -17,7 +16,7 @@ class CompleteFragment :
         binding.run {
             tvTotalAmount.text = String.format(
                 getString(R.string.finish_set_up_caution),
-                totalSum.toString()
+                ""
             )
 
             includeNav.apply {

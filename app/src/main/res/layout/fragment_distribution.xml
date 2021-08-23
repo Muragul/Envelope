@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.start.fragments.DistributionFragment">
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        tools:context=".MainActivity">
+        android:orientation="vertical">
 
         <LinearLayout
             android:id="@+id/lt_expenses"
@@ -34,8 +31,7 @@
                 android:id="@+id/lt_expenses_content"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:visibility="visible">
+                android:layout_marginStart="16dp">
 
                 <TextView
                     android:id="@+id/expenses_text_hint"
@@ -95,7 +91,7 @@
                     app:layout_constraintTop_toBottomOf="@id/btn_add_service" />
 
                 <Button
-                    android:id="@+id/btn_save_obligatory"
+                    android:id="@+id/btn_save_expenses"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
@@ -250,13 +246,13 @@
             android:layout_height="0.5dp"
             android:background="@color/black" />
 
+        <include
+            android:id="@+id/include_nav"
+            layout="@layout/start_activity_bottom_navigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom" />
+
     </LinearLayout>
 
-    <include
-        android:id="@+id/include_nav"
-        layout="@layout/start_activity_bottom_navigation"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom" />
-
-</FrameLayout>
+</androidx.core.widget.NestedScrollView>

@@ -32,7 +32,6 @@ class DistributionFragment :
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         binding.run {
             val adapter = ExpensesAdapter()
             adapter.submitList(expensesList)
@@ -52,7 +51,7 @@ class DistributionFragment :
                     (activity as StartActivity).restart()
                 }
 
-                btnSaveObligatory.setOnClickListener {
+                btnSaveExpenses.setOnClickListener {
                     ltExpensesContent.hide()
                     tvTitleExpenses.showCheckMark()
                 }

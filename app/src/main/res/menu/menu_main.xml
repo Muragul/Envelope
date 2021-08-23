@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/historyPage"
-        android:icon="@drawable/ic_bottom_nav_history"
-        android:title="@string/bottom_nav_history" />
-    <item
-        android:id="@+id/budgetPage"
+        android:id="@+id/main_page"
         android:icon="@drawable/ic_bottom_nav_budget"
         android:title="@string/bottom_nav_budget" />
     <item
-        android:id="@+id/profilePage"
+        android:id="@+id/history_page"
+        android:icon="@drawable/ic_bottom_nav_history"
+        android:title="@string/bottom_nav_history" />
+    <item
+        android:id="@+id/profile_page"
         android:icon="@drawable/ic_bottom_nav_profile"
         android:title="@string/bottom_nav_profile" />
 
