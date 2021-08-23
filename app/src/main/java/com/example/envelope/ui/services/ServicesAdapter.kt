@@ -1,12 +1,12 @@
 package com.example.envelope.ui.services
 
-import com.example.envelope.data.Services
+import com.example.envelope.data.Service
 import com.example.envelope.databinding.ServiceItemLayoutBinding
 import com.example.envelope.utils.binding.BindingAdapter
 
 class ServicesAdapter :
-    BindingAdapter<Services, ServiceItemLayoutBinding>(ServiceItemLayoutBinding::inflate) {
-    override fun bind(item: Services, binding: ServiceItemLayoutBinding) {
+    BindingAdapter<Service, ServiceItemLayoutBinding>(ServiceItemLayoutBinding::inflate) {
+    override fun bind(item: Service, binding: ServiceItemLayoutBinding) {
         binding.run {
             cvServiceTitle.text = item.title
         }

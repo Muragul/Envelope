@@ -2,7 +2,7 @@ package com.example.envelope.utils
 
 import com.example.envelope.data.Expense
 import com.example.envelope.data.OnBoarding
-import com.example.envelope.data.Services
+import com.example.envelope.data.Service
 
 val onBoardingList = listOf(
     OnBoarding(
@@ -29,7 +29,7 @@ val expensesList = listOf(
 )
 
 val servicesList = listOf(
-    Services(1, "Onay", ""),
-    Services(2, "Beeline", ""),
-    Services(3, "Kaspi", ""),
+    Service(1, "Onay", ""),
+    Service(2, "Beeline", ""),
+    Service(3, "Kaspi", ""),
 )
