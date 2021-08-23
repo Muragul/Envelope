@@ -1,4 +1,4 @@
-package com.example.envelope.ui.start.fragments
+package com.example.envelope.ui.start.card
 
 import android.os.Bundle
 import android.view.View
@@ -6,6 +6,7 @@ import android.widget.Toast
 import com.example.envelope.R
 import com.example.envelope.databinding.FragmentCardBinding
 import com.example.envelope.ui.start.StartActivity
+import com.example.envelope.ui.start.complete.CompleteFragment
 import com.example.envelope.utils.COMPLETE_TAG
 import com.example.envelope.utils.binding.BindingFragment
 import com.redmadrobot.inputmask.MaskedTextChangedListener

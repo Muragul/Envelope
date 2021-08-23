@@ -1,12 +1,12 @@
-package com.example.envelope.ui.home
+package com.example.envelope.ui.main
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.example.envelope.R
 import com.example.envelope.databinding.ActivityMainBinding
-import com.example.envelope.ui.home.fragments.HistoryFragment
-import com.example.envelope.ui.home.fragments.HomeFragment
-import com.example.envelope.ui.home.fragments.ProfileFragment
+import com.example.envelope.ui.main.history.HistoryFragment
+import com.example.envelope.ui.main.home.HomeFragment
+import com.example.envelope.ui.main.profile.ProfileFragment
 import com.example.envelope.utils.binding.BindingActivity
 
 class MainActivity : BindingActivity<ActivityMainBinding>(ActivityMainBinding::inflate) {

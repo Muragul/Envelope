@@ -1,4 +1,4 @@
-package com.example.envelope.ui.start.fragments
+package com.example.envelope.ui.start.complete
 
 import android.os.Bundle
 import android.view.View

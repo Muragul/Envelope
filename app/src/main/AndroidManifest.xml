@@ -20,7 +20,7 @@
         <activity
             android:name=".ui.start.StartActivity"
             android:windowSoftInputMode="adjustResize" />
-        <activity android:name=".ui.home.MainActivity" />
+        <activity android:name=".ui.main.MainActivity" />
     </application>
 
 </manifest>

@@ -1,4 +1,4 @@
-package com.example.envelope.ui.start.fragments
+package com.example.envelope.ui.start.distribution
 
 import android.app.Activity
 import android.os.Bundle
@@ -8,6 +8,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import com.example.envelope.databinding.FragmentDistributionBinding
 import com.example.envelope.ui.ContainerActivity
 import com.example.envelope.ui.start.StartActivity
+import com.example.envelope.ui.start.card.CardFragment
 import com.example.envelope.utils.CARD_TAG
 import com.example.envelope.utils.REQUEST_CODE
 import com.example.envelope.utils.SCREEN

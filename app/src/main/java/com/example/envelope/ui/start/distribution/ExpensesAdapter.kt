@@ -1,4 +1,4 @@
-package com.example.envelope.ui.start.fragments
+package com.example.envelope.ui.start.distribution
 
 import com.example.envelope.R
 import com.example.envelope.data.Expense

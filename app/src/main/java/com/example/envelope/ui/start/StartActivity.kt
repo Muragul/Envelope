@@ -5,8 +5,8 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.example.envelope.R
 import com.example.envelope.databinding.ActivityStartBinding
-import com.example.envelope.ui.home.MainActivity
-import com.example.envelope.ui.start.fragments.AmountFragment
+import com.example.envelope.ui.main.MainActivity
+import com.example.envelope.ui.start.amount.AmountFragment
 import com.example.envelope.utils.binding.BindingActivity
 
 class StartActivity : BindingActivity<ActivityStartBinding>(ActivityStartBinding::inflate) {
