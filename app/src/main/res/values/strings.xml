@@ -62,4 +62,7 @@
     <string name="withdraw_sum">Введите сумму для изъятия</string>
     <string name="savings_title">Сбережения</string>
     <string name="create_deposit">Открыть депозит</string>
+
+    <!--    Transaction History-->
+    <string name="transaction_history">История транзакций</string>
 </resources>
