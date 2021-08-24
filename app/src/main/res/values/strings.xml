@@ -51,4 +51,7 @@
     <string name="my_cards">Мои карты</string>
     <string name="name_surname">%1$s %2$s</string>
     <string name="user_age">%d лет</string>
+
+    <!--    Transaction History-->
+    <string name="transaction_history">История транзакций</string>
 </resources>
