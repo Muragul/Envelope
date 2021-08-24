@@ -53,12 +53,7 @@
     <string name="user_age">%d лет</string>
 
     <!--Home Page-->
-    <string name="tele2">Теле2</string>
-    <string name="sample_price">3 490₸</string>
     <string name="pay">Оплатить</string>
-    <string name="sample_week_number">1 неделя</string>
-    <string name="sample_date_range">19.07 - 26.07</string>
-    <string name="sample_week_amount">23 650₸</string>
     <string name="budget">Мой бюджет</string>
     <string name="expenses">Обязательные расходы</string>
     <string name="all_payments">Все платежи</string>

@@ -27,7 +27,6 @@
                 android:id="@+id/tv_date_range"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/sample_date_range"
                 android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="@id/tv_budget_title"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -39,7 +38,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                android:text="@string/sample_price"
                 android:textSize="18sp"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_budget_title" />
@@ -71,7 +69,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                android:text="@string/sample_price"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_expenses_title" />
 
@@ -81,6 +78,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:clipToPadding="false"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_expenses_amount" />
 
@@ -97,7 +96,6 @@
                 android:id="@+id/tv_envelope_amount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/sample_price"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_envelope_title" />
 
@@ -111,14 +109,14 @@
                 app:layout_constraintTop_toBottomOf="@id/tv_envelope_amount">
 
                 <include
-                    layout="@layout/four_envelope_item"
+                    layout="@layout/item_main_page_envelope"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
                     android:layout_weight="1" />
 
                 <include
-                    layout="@layout/four_envelope_item"
+                    layout="@layout/item_main_page_envelope"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="4dp"
@@ -135,14 +133,14 @@
                 app:layout_constraintTop_toBottomOf="@id/lt_envelope">
 
                 <include
-                    layout="@layout/four_envelope_item"
+                    layout="@layout/item_main_page_envelope"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="4dp"
                     android:layout_weight="1" />
 
                 <include
-                    layout="@layout/four_envelope_item"
+                    layout="@layout/item_main_page_envelope"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="4dp"
@@ -162,7 +160,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
-            android:text="@string/sample_price" />
+            />
 
         <EditText
             android:id="@+id/et_withdraw_sum"
@@ -183,7 +181,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
-            android:text="@string/sample_price" />
+             />
 
         <Button
             android:id="@+id/btn_create_deposit"
@@ -194,4 +192,5 @@
             android:text="@string/create_deposit" />
 
     </LinearLayout>
+
 </androidx.core.widget.NestedScrollView>
