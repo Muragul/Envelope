@@ -45,6 +45,10 @@
 
     <!--Card Page-->
     <string name="fill_empty_fields">Заполните все поля</string>
+    <string name="card_number">Номер карты</string>
+    <string name="owner_name">Имя владельца</string>
+    <string name="cvv">CVV</string>
+    <string name="expire_date_hint">ММ/ГГ</string>
 
     <!--    Profile Page-->
     <string name="change_profile">Изменить</string>

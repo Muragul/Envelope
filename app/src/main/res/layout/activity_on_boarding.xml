@@ -29,7 +29,7 @@
             app:dotsSpacing="8dp"
             app:dotsWidthFactor="3"
             app:progressMode="false"
-            app:selectedDotColor="@color/black" />
+            app:selectedDotColor="@color/text_white" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/lt_container"

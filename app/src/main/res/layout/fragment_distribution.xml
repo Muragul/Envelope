@@ -24,7 +24,6 @@
                 android:checkMarkTint="@drawable/check_mark_selector"
                 android:checked="false"
                 android:text="@string/obligatory_expenses"
-                android:textColor="@color/black"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
@@ -35,12 +34,11 @@
                 android:layout_marginStart="16dp">
 
                 <TextView
-                    android:id="@+id/expenses_text_hint"
+                    android:id="@+id/tv_expenses_hint"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:text="@string/obligatory_expenses_description"
-                    android:textColor="@color/black"
                     android:textSize="14sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -54,7 +52,7 @@
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/expenses_text_hint" />
+                    app:layout_constraintTop_toBottomOf="@id/tv_expenses_hint" />
 
                 <Button
                     android:id="@+id/btn_add_service"
@@ -73,7 +71,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:text="@string/total_sum_title"
-                    android:textColor="@color/black"
                     android:textSize="16sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/btn_add_service" />
@@ -85,7 +82,6 @@
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="16dp"
                     android:textAlignment="textEnd"
-                    android:textColor="@color/black"
                     android:textSize="16sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@id/tv_total_title"
@@ -106,8 +102,7 @@
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="0.5dp"
-            android:background="@color/black" />
+            android:layout_height="0.5dp" />
 
         <LinearLayout
             android:id="@+id/lt_savings"
@@ -123,7 +118,6 @@
                 android:checkMark="@drawable/ic_baseline_check_24"
                 android:checked="false"
                 android:text="@string/savings"
-                android:textColor="@color/black"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
@@ -139,11 +133,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/savings_description"
-                    android:textColor="@color/black"
                     android:textSize="14sp" />
 
                 <com.google.android.material.slider.Slider
-                    android:id="@+id/savings_percent_seek_bar"
+                    android:id="@+id/sb_savings_percent"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
@@ -158,7 +151,6 @@
                     android:layout_marginTop="10dp"
                     android:inputType="number"
                     android:padding="10dp"
-                    android:textColor="@color/black"
                     android:textSize="14sp" />
 
                 <Button
@@ -175,8 +167,7 @@
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="0.5dp"
-            android:background="@color/black" />
+            android:layout_height="0.5dp" />
 
         <LinearLayout
             android:id="@+id/lt_unexpected"
@@ -192,7 +183,6 @@
                 android:checkMark="@drawable/ic_baseline_check_24"
                 android:checked="false"
                 android:text="@string/unforeseen_expenses"
-                android:textColor="@color/black"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
@@ -208,11 +198,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/unforeseen"
-                    android:textColor="@color/black"
                     android:textSize="14sp" />
 
                 <com.google.android.material.slider.Slider
-                    android:id="@+id/unexpected_percent_seek_bar"
+                    android:id="@+id/sb_unexpected_percent"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
@@ -227,7 +216,6 @@
                     android:layout_marginTop="10dp"
                     android:inputType="number"
                     android:padding="10dp"
-                    android:textColor="@color/black"
                     android:textSize="14sp" />
 
                 <Button
@@ -244,8 +232,7 @@
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="0.5dp"
-            android:background="@color/black" />
+            android:layout_height="0.5dp" />
 
         <include
             android:id="@+id/include_nav"

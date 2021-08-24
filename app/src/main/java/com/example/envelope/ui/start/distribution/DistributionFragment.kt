@@ -1,10 +1,7 @@
 package com.example.envelope.ui.start.distribution
 
-import android.app.Activity
 import android.os.Bundle
 import android.view.View
-import androidx.activity.result.ActivityResult
-import androidx.activity.result.contract.ActivityResultContracts
 import com.example.envelope.databinding.FragmentDistributionBinding
 import com.example.envelope.ui.ContainerActivity
 import com.example.envelope.ui.start.StartActivity
@@ -22,13 +19,13 @@ import com.example.envelope.utils.navigation.Screen
 class DistributionFragment :
     BindingFragment<FragmentDistributionBinding>(FragmentDistributionBinding::inflate) {
 
-    private val startForResult = this.registerForActivityResult(
-        ActivityResultContracts.StartActivityForResult()
-    ) { result: ActivityResult ->
-        if (result.resultCode == Activity.RESULT_OK) {
-            val intent = result.data
-        }
-    }
+//    private val startForResult = this.registerForActivityResult(
+//        ActivityResultContracts.StartActivityForResult()
+//    ) { result: ActivityResult ->
+//        if (result.resultCode == Activity.RESULT_OK) {
+//            val intent = result.data
+//        }
+//    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

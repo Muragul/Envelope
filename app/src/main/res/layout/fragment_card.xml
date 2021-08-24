@@ -19,7 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:digits="0123456789 "
-            android:hint="Номер карты"
+            android:hint="@string/card_number"
             android:imeOptions="actionNext"
             android:inputType="number"
             android:maxLength="19" />
@@ -28,7 +28,7 @@
             android:id="@+id/et_card_owner_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Имя владельца"
+            android:hint="@string/owner_name"
             android:imeOptions="actionNext"
             android:inputType="textPersonName"
             android:maxLength="50" />
@@ -44,7 +44,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:digits="0123456789/"
-                android:hint="ММ/ГГ"
+                android:hint="@string/expire_date_hint"
                 android:imeOptions="actionNext"
                 android:inputType="number"
                 android:maxLength="6" />
@@ -54,11 +54,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:hint="CVV"
+                android:hint="@string/cvv"
                 android:imeOptions="actionDone"
                 android:inputType="numberPassword"
                 android:maxLength="3" />
         </LinearLayout>
+
     </LinearLayout>
 
     <include

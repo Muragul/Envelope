@@ -3,11 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="130dp"
     android:layout_height="wrap_content"
-    android:layout_marginRight="8dp"
+    android:layout_marginEnd="8dp"
     android:padding="12dp">
 
     <ImageView
-        android:id="@+id/iv_expense_logo"
+        android:id="@+id/iv_expense_icon"
         android:layout_width="30dp"
         android:layout_height="30dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -17,31 +17,34 @@
         android:id="@+id/tv_expenses_title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="4dp"
+        android:layout_marginStart="4dp"
+        android:textColor="@color/text_white"
         android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="@id/iv_expense_logo"
+        app:layout_constraintBottom_toBottomOf="@id/iv_expense_icon"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/iv_expense_logo"
-        app:layout_constraintTop_toTopOf="@id/iv_expense_logo" />
+        app:layout_constraintStart_toEndOf="@id/iv_expense_icon"
+        app:layout_constraintTop_toTopOf="@id/iv_expense_icon" />
 
     <TextView
         android:id="@+id/tv_expenses_amount"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-
+        android:textColor="@color/text_white"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/iv_expense_logo" />
+        app:layout_constraintTop_toBottomOf="@id/iv_expense_icon" />
 
     <Button
         android:id="@+id/btn_pay_expenses"
-        android:layout_width="86dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:backgroundTint="@color/button_light_blue"
         android:padding="0dp"
         android:text="@string/pay"
         android:textAllCaps="false"
+        android:textColor="@color/text_dark"
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_expenses_amount" />
