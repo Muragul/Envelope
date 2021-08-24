@@ -65,4 +65,7 @@
 
     <!--    Transaction History-->
     <string name="transaction_history">История транзакций</string>
+
+    <string name="phone_number">Номер телефона</string>
+    <string name="sum">Сумма</string>
 </resources>
