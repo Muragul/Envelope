@@ -52,6 +52,17 @@
     <string name="name_surname">%1$s %2$s</string>
     <string name="user_age">%d лет</string>
 
+    <!--Home Page-->
+    <string name="pay">Оплатить</string>
+    <string name="budget">Мой бюджет</string>
+    <string name="expenses">Обязательные расходы</string>
+    <string name="all_payments">Все платежи</string>
+    <string name="envelops">4 конверта</string>
+    <string name="unexpected_expense">Непредвиденные расходы</string>
+    <string name="withdraw_sum">Введите сумму для изъятия</string>
+    <string name="savings_title">Сбережения</string>
+    <string name="create_deposit">Открыть депозит</string>
+
     <!--    Transaction History-->
     <string name="transaction_history">История транзакций</string>
 </resources>
