@@ -3,6 +3,7 @@ package com.example.envelope.ui.main.history
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.envelope.R
 import com.example.envelope.data.Transaction
 import com.example.envelope.data.TransactionHeader
 import com.example.envelope.data.TransactionMarker
@@ -65,8 +66,10 @@ class HistoryAdapter(
             binding.run {
                 cvServiceIcon.loadUrl(item.icon)
                 tvServiceTitle.text = item.title
-                //todo string format
-                tvServicePrice.text = item.amount.toString()
+                tvServicePrice.text = String.format(
+                    cvServiceIcon.context.getString(R.string.total_price),
+                    item.amount.toString()
+                )
             }
         }
     }
