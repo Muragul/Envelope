@@ -1,8 +1,6 @@
 package com.example.envelope.utils
 
-import com.example.envelope.data.Expense
-import com.example.envelope.data.OnBoarding
-import com.example.envelope.data.Service
+import com.example.envelope.data.*
 
 val onBoardingList = listOf(
     OnBoarding(
@@ -32,4 +30,30 @@ val servicesList = listOf(
     Service(1, "Onay", ""),
     Service(2, "Beeline", ""),
     Service(3, "Kaspi", ""),
+)
+
+val cardsList = listOf(
+    Card(
+        name = "NAME 1",
+        type = "VISA",
+        number = "**** **** **** 4444",
+        expireDate = "04/23",
+        cvv = "654",
+        imageUrl = ""
+    ),
+    Card(
+        name = "NAME 2",
+        type = "MasterCard",
+        number = "**** **** **** 3232",
+        expireDate = "12/12",
+        cvv = "321",
+        imageUrl = ""
+    )
+)
+
+val defaultUser = User(
+    name = "Дидар",
+    surname = "Мусаханов",
+    gender = "Мужчина",
+    age = 27
 )
