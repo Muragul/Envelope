@@ -45,4 +45,18 @@
 
     <!--Card Page-->
     <string name="fill_empty_fields">Заполните все поля</string>
+    <string name="tele2">Теле2</string>
+    <string name="sample_price">3 490₸</string>
+    <string name="pay">Оплатить</string>
+    <string name="sample_week_number">1 неделя</string>
+    <string name="sample_date_range">19.07 - 26.07</string>
+    <string name="sample_week_amount">23 650₸</string>
+    <string name="budget">Мой бюджет</string>
+    <string name="expenses">Обязательные расходы</string>
+    <string name="all_payments">Все платежи</string>
+    <string name="envelops">4 конверта</string>
+    <string name="unexpected_expense">Непредвиденные расходы</string>
+    <string name="withdraw_sum">Введите сумму для изъятия</string>
+    <string name="savings_title">Сбережения</string>
+    <string name="create_deposit">Открыть депозит</string>
 </resources>
