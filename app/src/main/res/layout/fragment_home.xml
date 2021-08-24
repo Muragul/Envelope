@@ -112,15 +112,16 @@
                     layout="@layout/item_main_page_envelope"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="4dp"
+                    android:layout_marginEnd="4dp"
                     android:layout_weight="1" />
 
                 <include
                     layout="@layout/item_main_page_envelope"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="4dp"
+                    android:layout_marginStart="4dp"
                     android:layout_weight="1" />
+
             </LinearLayout>
 
             <LinearLayout
@@ -136,16 +137,17 @@
                     layout="@layout/item_main_page_envelope"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="4dp"
+                    android:layout_marginEnd="4dp"
                     android:layout_weight="1" />
 
                 <include
                     layout="@layout/item_main_page_envelope"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="4dp"
+                    android:layout_marginStart="4dp"
                     android:layout_weight="1" />
             </LinearLayout>
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <TextView
@@ -159,8 +161,7 @@
             android:id="@+id/tv_unexpected_expense_amount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            />
+            android:layout_marginTop="4dp" />
 
         <EditText
             android:id="@+id/et_withdraw_sum"
@@ -180,8 +181,7 @@
             android:id="@+id/tv_savings_amount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-             />
+            android:layout_marginTop="4dp" />
 
         <Button
             android:id="@+id/btn_create_deposit"

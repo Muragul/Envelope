@@ -4,7 +4,6 @@
     android:layout_height="wrap_content"
     android:layout_gravity="center"
     android:layout_marginHorizontal="32dp"
-    android:background="#6C6C6C"
     android:orientation="vertical"
     android:padding="16dp">
 
@@ -14,7 +13,6 @@
         android:layout_marginBottom="16dp"
         android:text="@string/add_service_header"
         android:textAlignment="center"
-        android:textColor="@color/white"
         android:textSize="16sp" />
 
     <EditText
@@ -22,7 +20,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:background="@drawable/edit_text_bg_white"
         android:hint="@string/add_service_title"
         android:padding="10dp"
         android:textSize="13sp" />
@@ -32,7 +29,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:background="@drawable/edit_text_bg_white"
         android:hint="@string/add_service_total_sum"
         android:padding="10dp"
         android:textSize="13sp" />
@@ -43,7 +39,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
-        android:background="@drawable/edit_text_bg_white"
         android:hint="@string/add_service_date"
         android:padding="10dp"
         android:textSize="13sp" />

@@ -14,7 +14,13 @@
     <color name="gradient_purple_light">#A887E7</color>
 
     <!--    Main Page-->
-    <color name="bottom_nav_icon_tint_checked">#140E4F</color>
-    <color name="bottom_nav_icon_tint_unchecked">#8D99AE</color>
+    <color name="bottom_nav_icon_tint_checked">#3ABEF0</color>
+    <color name="bottom_nav_icon_tint_unchecked">#F9FAFB</color>
     <color name="bottom_nav_text_color">#2B2D42</color>
+    <color name="bottom_nav_background">#262851</color>
+    <color name="main_page_background_dark">#1D1E36</color>
+
+    <!--    Profile-->
+    <color name="text_white">#F9FAFB</color>
+    <color name="button_blue">#3ABEF0</color>
 </resources>

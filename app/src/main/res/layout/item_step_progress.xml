@@ -14,7 +14,6 @@
             android:id="@+id/iv_step_icon"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/black"
             app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent" />
 
         <TextView
@@ -23,7 +22,6 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:textAlignment="center"
-            android:textColor="@color/white"
             android:textSize="12sp" />
 
     </FrameLayout>
