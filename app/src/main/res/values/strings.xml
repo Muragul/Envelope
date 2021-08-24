@@ -45,6 +45,14 @@
 
     <!--Card Page-->
     <string name="fill_empty_fields">Заполните все поля</string>
+
+    <!--    Profile Page-->
+    <string name="change_profile">Изменить</string>
+    <string name="my_cards">Мои карты</string>
+    <string name="name_surname">%1$s %2$s</string>
+    <string name="user_age">%d лет</string>
+
+    <!--Home Page-->
     <string name="tele2">Теле2</string>
     <string name="sample_price">3 490₸</string>
     <string name="pay">Оплатить</string>
