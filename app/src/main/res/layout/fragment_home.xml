@@ -19,6 +19,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/budget"
+                android:textColor="@color/text_white"
                 android:textSize="26sp"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -27,6 +28,7 @@
                 android:id="@+id/tv_date_range"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/text_white"
                 android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="@id/tv_budget_title"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -38,6 +40,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
+                android:textColor="@color/gradient_purple_light"
                 android:textSize="18sp"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_budget_title" />
@@ -48,6 +51,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="28dp"
                 android:text="@string/expenses"
+                android:textColor="@color/text_white"
                 android:textSize="18sp"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_budget_amount" />
@@ -59,6 +63,7 @@
                 android:drawableEnd="@drawable/ic_baseline_keyboard_arrow_right_24"
                 android:paddingVertical="10dp"
                 android:text="@string/all_payments"
+                android:textColor="@color/button_light_blue"
                 app:layout_constraintBottom_toBottomOf="@id/tv_expenses_title"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintLeft_toRightOf="@id/tv_expenses_title"
@@ -69,6 +74,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
+                android:textColor="@color/gradient_purple_light"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_expenses_title" />
 
@@ -89,6 +95,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="28dp"
                 android:text="@string/envelops"
+                android:textColor="@color/text_white"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/rv_expenses" />
 
@@ -96,6 +103,7 @@
                 android:id="@+id/tv_envelope_amount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/text_light_purple"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_envelope_title" />
 
@@ -155,7 +163,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="28dp"
-            android:text="@string/unexpected_expense" />
+            android:text="@string/unexpected_expense"
+            android:textColor="@color/text_white" />
 
         <TextView
             android:id="@+id/tv_unexpected_expense_amount"
@@ -175,13 +184,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="28dp"
-            android:text="@string/savings_title" />
+            android:text="@string/savings_title"
+            android:textColor="@color/text_white" />
 
         <TextView
             android:id="@+id/tv_savings_amount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp" />
+            android:layout_marginTop="4dp"
+            android:textColor="@color/text_light_purple" />
 
         <Button
             android:id="@+id/btn_create_deposit"
@@ -189,7 +200,10 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="50dp"
-            android:text="@string/create_deposit" />
+            android:backgroundTint="@color/button_light_blue"
+            android:text="@string/create_deposit"
+            android:textAllCaps="false"
+            android:textColor="@color/text_dark" />
 
     </LinearLayout>
 

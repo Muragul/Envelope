@@ -8,6 +8,11 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
+    <color name="text_white">#F9FAFB</color>
+    <color name="button_light_blue">#3ABEF0</color>
+    <color name="text_light_purple">#98ADEB</color>
+    <color name="text_dark">#1F1D28</color>
+
     <!--    Start Page-->
     <color name="gradient_purple_dark">#5357FA</color>
     <color name="gradient_purple_middle">#9883EE</color>
@@ -21,6 +26,4 @@
     <color name="main_page_background_dark">#1D1E36</color>
 
     <!--    Profile-->
-    <color name="text_white">#F9FAFB</color>
-    <color name="button_blue">#3ABEF0</color>
 </resources>

@@ -27,6 +27,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:textColor="@color/text_white"
                 android:textSize="14sp" />
 
             <TextView
@@ -35,6 +36,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_weight="1"
+                android:textColor="@color/text_white"
                 android:textSize="11sp" />
 
         </LinearLayout>
@@ -43,6 +45,7 @@
             android:id="@+id/tv_week_amount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="@color/text_white"
             android:textSize="18sp" />
 
     </LinearLayout>

@@ -7,7 +7,7 @@ import com.example.envelope.R
 import com.example.envelope.data.Transaction
 import com.example.envelope.data.TransactionHeader
 import com.example.envelope.data.TransactionMarker
-import com.example.envelope.databinding.ExpensesItemBinding
+import com.example.envelope.databinding.ItemExpensesListBinding
 import com.example.envelope.databinding.ItemHistoryHeaderBinding
 import com.example.envelope.utils.extensions.loadUrl
 
@@ -28,7 +28,7 @@ class HistoryAdapter(
                 HeaderViewHolder(binding)
             }
             ITEM -> {
-                val binding = ExpensesItemBinding
+                val binding = ItemExpensesListBinding
                     .inflate(LayoutInflater.from(parent.context), parent, false)
                 TransactionViewHolder(binding)
             }
@@ -60,14 +60,14 @@ class HistoryAdapter(
         }
     }
 
-    inner class TransactionViewHolder(val binding: ExpensesItemBinding) :
+    inner class TransactionViewHolder(val binding: ItemExpensesListBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(item: Transaction) {
             binding.run {
-                cvServiceIcon.loadUrl(item.icon)
+                ivServiceIcon.loadUrl(item.icon)
                 tvServiceTitle.text = item.title
                 tvServicePrice.text = String.format(
-                    cvServiceIcon.context.getString(R.string.total_price),
+                    ivServiceIcon.context.getString(R.string.total_price),
                     item.amount.toString()
                 )
             }

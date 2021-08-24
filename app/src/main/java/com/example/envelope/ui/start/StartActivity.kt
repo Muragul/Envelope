@@ -29,9 +29,6 @@ class StartActivity : BindingActivity<ActivityStartBinding>(ActivityStartBinding
         }
     }
 
-    fun updateProgressBar(finishedStep: Int) {
-    }
-
     fun showFragment(fragment: Fragment, tag: String? = null) {
         changeFragment(fragment = fragment, tag = tag, container = binding.container.id)
     }
