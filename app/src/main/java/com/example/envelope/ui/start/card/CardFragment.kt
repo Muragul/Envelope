@@ -42,7 +42,8 @@ class CardFragment : BindingFragment<FragmentCardBinding>(FragmentCardBinding::i
     }
 
     private fun validateFields(): Boolean {
-        return binding.etCardNumber.text.toString().length == 19
+        //todo remove true when logic is ready
+        return true || binding.etCardNumber.text.toString().length == 19
                 && binding.etCardOwnerName.text.isNotEmpty() &&
                 if (binding.etCardExpireDate.text.toString().length != 5) false
                 else binding.etCardExpireDate.text.toString()

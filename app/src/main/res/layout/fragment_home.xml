@@ -7,17 +7,18 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:padding="16dp">
+        android:orientation="vertical">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp">
 
             <TextView
                 android:id="@+id/tv_budget_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
                 android:text="@string/budget"
                 android:textColor="@color/text_white"
                 android:textSize="26sp"
@@ -28,6 +29,7 @@
                 android:id="@+id/tv_date_range"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
                 android:textColor="@color/text_white"
                 android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="@id/tv_budget_title"
@@ -39,6 +41,7 @@
                 android:id="@+id/tv_budget_amount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
                 android:layout_marginTop="4dp"
                 android:textColor="@color/gradient_purple_light"
                 android:textSize="18sp"
@@ -49,6 +52,7 @@
                 android:id="@+id/tv_expenses_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
                 android:layout_marginTop="28dp"
                 android:text="@string/expenses"
                 android:textColor="@color/text_white"
@@ -60,6 +64,7 @@
                 android:id="@+id/tv_all_expenses"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
                 android:drawableEnd="@drawable/ic_baseline_keyboard_arrow_right_24"
                 android:paddingVertical="10dp"
                 android:text="@string/all_payments"
@@ -73,6 +78,7 @@
                 android:id="@+id/tv_expenses_amount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
                 android:layout_marginTop="4dp"
                 android:textColor="@color/gradient_purple_light"
                 app:layout_constraintLeft_toLeftOf="parent"
@@ -85,6 +91,7 @@
                 android:layout_marginTop="8dp"
                 android:clipToPadding="false"
                 android:orientation="horizontal"
+                android:paddingHorizontal="16dp"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_expenses_amount" />
@@ -93,6 +100,7 @@
                 android:id="@+id/tv_envelope_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
                 android:layout_marginTop="28dp"
                 android:text="@string/envelops"
                 android:textColor="@color/text_white"
@@ -103,6 +111,7 @@
                 android:id="@+id/tv_envelope_amount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
                 android:textColor="@color/text_light_purple"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_envelope_title" />
@@ -111,6 +120,7 @@
                 android:id="@+id/lt_envelope"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
                 android:layout_marginTop="8dp"
                 android:orientation="horizontal"
                 app:layout_constraintLeft_toLeftOf="parent"
@@ -136,6 +146,7 @@
                 android:id="@+id/lt_envelope_second"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
                 android:layout_marginTop="11dp"
                 android:orientation="horizontal"
                 app:layout_constraintLeft_toLeftOf="parent"
@@ -162,6 +173,7 @@
             android:id="@+id/tv_unexpected_expense_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
             android:layout_marginTop="28dp"
             android:text="@string/unexpected_expense"
             android:textColor="@color/text_white" />
@@ -170,12 +182,14 @@
             android:id="@+id/tv_unexpected_expense_amount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
             android:layout_marginTop="4dp" />
 
         <EditText
             android:id="@+id/et_withdraw_sum"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
             android:layout_marginTop="8dp"
             android:hint="@string/withdraw_sum" />
 
@@ -183,6 +197,7 @@
             android:id="@+id/tv_savings_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
             android:layout_marginTop="28dp"
             android:text="@string/savings_title"
             android:textColor="@color/text_white" />
@@ -191,6 +206,7 @@
             android:id="@+id/tv_savings_amount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
             android:layout_marginTop="4dp"
             android:textColor="@color/text_light_purple" />
 
@@ -198,6 +214,7 @@
             android:id="@+id/btn_create_deposit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="50dp"
             android:backgroundTint="@color/button_light_blue"
