@@ -4,18 +4,16 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.*
-import androidx.annotation.LayoutRes
-import com.example.envelope.R
+import android.widget.ArrayAdapter
 import com.example.envelope.data.Card
+import com.example.envelope.databinding.DropdownCardItemBinding
 import com.example.envelope.utils.extensions.loadUrl
 
 class CardAdapter(
-    private var cardList: List<Card> = listOf(),
     private val myContext: Context,
-    @LayoutRes private val layoutRes: Int,
+    private var cardList: List<Card> = listOf()
 ) :
-    ArrayAdapter<Card>(myContext, layoutRes, cardList), Filterable {
+    ArrayAdapter<Card>(myContext, 0, cardList) {
     private var paymentCardList: List<Card> = cardList
 
     override fun getCount(): Int {
@@ -31,46 +29,15 @@ class CardAdapter(
     }
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
-        var v: View? = convertView
-        if (v == null) {
-            val vi = myContext
-                .getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-            v = vi.inflate(layoutRes, null)
-        }
-        val card: Card? = cardList[position]
-        if (card != null) {
-            val cardNumber = v?.findViewById(R.id.tv_card_number) as TextView?
-            val cardImage = v?.findViewById(R.id.iv_card_image) as ImageView?
-            cardNumber?.text = card.number.substring(10)
-            cardImage?.loadUrl(card.imageUrl)
-        }
-        return v!!
+        return dropDownCardItemView(position, convertView, parent)
     }
 
-    override fun getFilter(): Filter {
-        return object : Filter() {
-            override fun publishResults(
-                charSequence: CharSequence?,
-                filterResults: Filter.FilterResults
-            ) {
-                cardList = filterResults.values as List<Card>
-                notifyDataSetChanged()
-            }
-
-            override fun performFiltering(charSequence: CharSequence?): Filter.FilterResults {
-                val queryString = charSequence?.toString()?.toLowerCase()
-
-                val filterResults = Filter.FilterResults()
-                filterResults.values = if (queryString == null || queryString.isEmpty())
-                    cardList
-                else
-                    cardList.filter {
-                        it.name.toLowerCase().contains(queryString) ||
-                                it.number.toLowerCase().contains(queryString)
-                    }
-                return filterResults
-            }
-        }
+    private fun dropDownCardItemView(position: Int, convertView: View?, parent: ViewGroup): View {
+        val card = getItem(position)
+        val view =
+            DropdownCardItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        view.tvCardNumber.text = card.number
+        view.ivCardImage.loadUrl(card.imageUrl)
+        return view.root
     }
-
 }

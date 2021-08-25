@@ -8,7 +8,7 @@
     <include layout="@layout/layout_main_toolbar" />
 
     <include
-        layout="@layout/service_item_layout"
+        layout="@layout/item_service"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp" />
