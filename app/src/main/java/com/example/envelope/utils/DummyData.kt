@@ -57,3 +57,27 @@ val defaultUser = User(
     gender = "Мужчина",
     age = 27
 )
+
+
+val depositList = listOf(
+    Deposit(
+        imageUrl = "",
+        title = "Сберегательный “Хоум”",
+        description = "13,4% годовых"
+    ),
+    Deposit(
+        imageUrl = "",
+        title = "Депозит Forte",
+        description = "Эффективная ставка 8,7%"
+    ),
+    Deposit(
+        imageUrl = "",
+        title = "Депозит Halyk Bank",
+        description = "Эффективная ставка до 13%"
+    ),
+    Deposit(
+        imageUrl = "",
+        title = "Kaspi Депозит",
+        description = "Эффективная ставка 9%"
+    )
+)
