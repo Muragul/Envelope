@@ -9,6 +9,7 @@ import com.example.envelope.data.Card
 import com.example.envelope.databinding.DropdownCardItemBinding
 import com.example.envelope.utils.extensions.loadUrl
 
+//todo refactor - use abstraction
 class CardAdapter(
     private val myContext: Context,
     private var cardList: List<Card> = listOf()
