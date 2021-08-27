@@ -14,6 +14,7 @@ import com.example.envelope.utils.expensesList
 import com.example.envelope.utils.extensions.check
 import com.example.envelope.utils.extensions.enable
 import com.example.envelope.utils.extensions.hide
+import com.example.envelope.utils.extensions.show
 import com.example.envelope.utils.navigation.Screen
 
 class DistributionFragment :
@@ -66,6 +67,30 @@ class DistributionFragment :
 
                 btnAddService.setOnClickListener {
                     openServices()
+                }
+
+                ltExpenses.setOnClickListener {
+                    //todo refactor: add toggle extension
+                    if (ltExpensesContent.visibility == View.GONE)
+                        ltExpensesContent.show()
+                    else
+                        ltExpensesContent.hide()
+                }
+
+                ltSavings.setOnClickListener {
+                    //todo refactor: add toggle extension
+                    if (ltSavingsContent.visibility == View.GONE)
+                        ltSavingsContent.show()
+                    else
+                        ltSavingsContent.hide()
+                }
+
+                ltUnexpected.setOnClickListener {
+                    //todo refactor: add toggle extension
+                    if (ltUnexpectedContent.visibility == View.GONE)
+                        ltUnexpectedContent.show()
+                    else
+                        ltUnexpectedContent.hide()
                 }
             }
         }

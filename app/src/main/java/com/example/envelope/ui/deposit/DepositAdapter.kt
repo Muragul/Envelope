@@ -7,7 +7,6 @@ import com.example.envelope.utils.extensions.loadUrl
 
 class DepositAdapter : BindingAdapter<Deposit, ItemDepositBinding>(ItemDepositBinding::inflate) {
     override fun bind(item: Deposit, binding: ItemDepositBinding) {
-        super.bind(item, binding)
         binding.run {
             ivDepositImage.loadUrl(item.imageUrl)
             tvDepositTitle.text = item.title
