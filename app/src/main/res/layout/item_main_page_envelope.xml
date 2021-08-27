@@ -2,13 +2,13 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="64dp"
+    android:background="@drawable/card_gradient"
     android:orientation="horizontal">
 
-    <LinearLayout
+    <FrameLayout
         android:id="@+id/lt_current_week_indicator"
         android:layout_width="4dp"
-        android:layout_height="match_parent"
-        android:orientation="horizontal" />
+        android:layout_height="match_parent" />
 
     <LinearLayout
         android:layout_width="0dp"
@@ -32,12 +32,11 @@
 
             <TextView
                 android:id="@+id/tv_envelope_date_range"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:layout_weight="1"
                 android:textColor="@color/text_white"
-                android:textSize="11sp" />
+                android:textSize="12sp" />
 
         </LinearLayout>
 

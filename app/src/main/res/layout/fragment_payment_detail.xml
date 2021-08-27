@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/main_page_background_dark"
     android:orientation="vertical"
     android:paddingHorizontal="16dp">
 
@@ -17,7 +19,10 @@
         android:id="@+id/il_phone_number"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/phone_number">
+        android:hint="@string/phone_number"
+        app:boxBackgroundColor="@color/white"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeWidthFocused="0dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/et_phone_number"
@@ -31,7 +36,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-        android:hint="@string/sum">
+        android:hint="@string/sum"
+        app:boxBackgroundColor="@color/white"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeWidthFocused="0dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/et_sum"
@@ -45,7 +53,10 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp">
+        android:layout_marginTop="4dp"
+        app:boxBackgroundColor="@color/white"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeWidthFocused="0dp">
 
         <AutoCompleteTextView
             android:id="@+id/atv_cards"
@@ -59,6 +70,12 @@
         android:id="@+id/btn_pay"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp" />
+        android:layout_marginTop="32dp"
+        android:backgroundTint="@color/button_light_blue"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="@string/service_payment"
+        android:textAllCaps="false"
+        android:textColor="@color/black" />
 
 </LinearLayout>
