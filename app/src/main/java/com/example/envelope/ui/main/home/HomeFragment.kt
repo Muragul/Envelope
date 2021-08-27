@@ -26,6 +26,10 @@ class HomeFragment : BindingFragment<FragmentHomeBinding>(FragmentHomeBinding::i
             tvAllExpenses.setOnClickListener {
                 openServices()
             }
+
+            btnCreateDeposit.setOnClickListener {
+                openDeposit()
+            }
         }
     }
 
@@ -38,6 +42,12 @@ class HomeFragment : BindingFragment<FragmentHomeBinding>(FragmentHomeBinding::i
     private fun openPayment(id: Int) {
         val bundle = Bundle()
         bundle.putSerializable(SCREEN, Screen.PAYMENT)
+        ContainerActivity.start(fragment = this, bundle = bundle, requestCode = REQUEST_CODE)
+    }
+
+    private fun openDeposit() {
+        val bundle = Bundle()
+        bundle.putSerializable(SCREEN, Screen.DEPOSITS)
         ContainerActivity.start(fragment = this, bundle = bundle, requestCode = REQUEST_CODE)
     }
 
