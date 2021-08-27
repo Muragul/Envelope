@@ -25,6 +25,8 @@
     <color name="bottom_nav_background">#262851</color>
     <color name="main_page_background_dark">#1D1E36</color>
     <color name="divider_color">#262851</color>
+    <color name="purple_gradient_light">#5D608C</color>
+    <color name="purple_gradient_dark">#3C3866</color>
     <color name="light_grey">#CCCFDE</color>
 
     <!--    Profile-->
