@@ -10,6 +10,15 @@ import com.example.envelope.utils.expensesList
 class PaymentAllFragment :
     BindingFragment<FragmentPaymentAllBinding>(FragmentPaymentAllBinding::inflate) {
 
+    companion object {
+        fun newInstance(bundle: Bundle?): PaymentAllFragment {
+            val fragment = PaymentAllFragment()
+            fragment.arguments = bundle
+            return fragment
+        }
+    }
+
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.run {

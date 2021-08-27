@@ -2,6 +2,9 @@ package com.example.envelope.utils.navigation
 
 import android.os.Bundle
 import com.example.envelope.ui.ContainerActivity
+import com.example.envelope.ui.deposit.DepositFragment
+import com.example.envelope.ui.payment.all.PaymentAllFragment
+import com.example.envelope.ui.payment.detail.PaymentDetailFragment
 import com.example.envelope.ui.services.ServicesFragment
 
 object FragmentNavigator {
@@ -16,15 +19,16 @@ object FragmentNavigator {
     ) {
         val fragment = when (screen) {
             Screen.EXPENSES -> {
-                //todo remove
-                ServicesFragment.newInstance(bundle = data)
+                PaymentAllFragment.newInstance(bundle = data)
             }
             Screen.PAYMENT -> {
-                //todo remove
-                ServicesFragment.newInstance(bundle = data)
+                PaymentDetailFragment.newInstance(bundle = data)
             }
             Screen.SERVICES -> {
                 ServicesFragment.newInstance(bundle = data)
+            }
+            Screen.DEPOSITS -> {
+                DepositFragment.newInstance(bundle = data)
             }
         }
         activity.showFragment(

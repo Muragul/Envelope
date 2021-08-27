@@ -7,6 +7,15 @@ import com.example.envelope.utils.binding.BindingFragment
 import com.example.envelope.utils.depositList
 
 class DepositFragment : BindingFragment<FragmentDepositBinding>(FragmentDepositBinding::inflate) {
+
+    companion object {
+        fun newInstance(bundle: Bundle?): DepositFragment {
+            val fragment = DepositFragment()
+            fragment.arguments = bundle
+            return fragment
+        }
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.run {
