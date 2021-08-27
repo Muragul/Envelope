@@ -2,7 +2,8 @@
 <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/main_page_background_dark">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -66,6 +67,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="16dp"
                 android:drawableEnd="@drawable/ic_baseline_keyboard_arrow_right_24"
+                android:drawableTint="@color/button_light_blue"
+                android:gravity="center_vertical"
                 android:paddingVertical="10dp"
                 android:text="@string/all_payments"
                 android:textColor="@color/button_light_blue"
@@ -81,6 +84,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="4dp"
                 android:textColor="@color/gradient_purple_light"
+                android:textSize="16sp"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_expenses_title" />
 
@@ -104,6 +108,7 @@
                 android:layout_marginTop="28dp"
                 android:text="@string/envelops"
                 android:textColor="@color/text_white"
+                android:textSize="18sp"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/rv_expenses" />
 
@@ -113,6 +118,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:textColor="@color/text_light_purple"
+                android:textSize="16sp"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_envelope_title" />
 
@@ -176,22 +182,46 @@
             android:layout_marginHorizontal="16dp"
             android:layout_marginTop="28dp"
             android:text="@string/unexpected_expense"
-            android:textColor="@color/text_white" />
+            android:textColor="@color/text_white"
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/tv_unexpected_expense_amount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="16dp"
-            android:layout_marginTop="4dp" />
+            android:layout_marginTop="4dp"
+            android:textColor="@color/gradient_purple_light"
+            android:textSize="16sp" />
 
-        <EditText
-            android:id="@+id/et_withdraw_sum"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="16dp"
             android:layout_marginTop="8dp"
-            android:hint="@string/withdraw_sum" />
+            android:background="@drawable/accent_outlined"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/et_withdraw_sum"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:hint="@string/withdraw_sum"
+                android:textColor="#CCCFDE"
+                android:textColorHint="#CCCFDE"
+                android:textSize="14sp" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/button_light_blue"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:textAllCaps="false"
+                android:textColor="@color/text_dark" />
+        </LinearLayout>
 
         <TextView
             android:id="@+id/tv_savings_title"
@@ -200,7 +230,8 @@
             android:layout_marginHorizontal="16dp"
             android:layout_marginTop="28dp"
             android:text="@string/savings_title"
-            android:textColor="@color/text_white" />
+            android:textColor="@color/text_white"
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/tv_savings_amount"
@@ -208,16 +239,19 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="16dp"
             android:layout_marginTop="4dp"
-            android:textColor="@color/text_light_purple" />
+            android:textColor="@color/text_light_purple"
+            android:textSize="16sp" />
 
         <Button
             android:id="@+id/btn_create_deposit"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_marginHorizontal="16dp"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="50dp"
             android:backgroundTint="@color/button_light_blue"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
             android:text="@string/create_deposit"
             android:textAllCaps="false"
             android:textColor="@color/text_dark" />
