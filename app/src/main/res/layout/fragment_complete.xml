@@ -33,6 +33,7 @@
             android:layout_marginTop="4dp"
             android:text="@string/finish_set_up_caution"
             android:textColor="@color/text_white" />
+
     </LinearLayout>
 
     <include
