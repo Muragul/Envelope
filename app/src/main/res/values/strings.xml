@@ -26,9 +26,9 @@
 
 
     <!--    Distribution Page-->
-    <string name="obligatory_expenses">1. Обязательные расходы</string>
-    <string name="savings">2. Сбережения</string>
-    <string name="unforeseen_expenses">3. Непредвиденные расходы</string>
+    <string name="obligatory_expenses">Обязательные расходы</string>
+    <string name="savings">Сбережения</string>
+    <string name="unforeseen_expenses">Непредвиденные расходы</string>
     <string name="obligatory_expenses_description">Добавьте ваши обязательные расходы на месяц</string>
     <string name="savings_description">Сколько процентов вы хотите сберегать?</string>
     <string name="unforeseen">Сколько процентов оставите на непредвиденные расходы?</string>
@@ -72,4 +72,7 @@
 
     <string name="phone_number">Номер телефона</string>
     <string name="sum">Сумма</string>
+
+    <string name="service_payment">Оплатить %s₸</string>
+
 </resources>
