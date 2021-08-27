@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/main_page_background_dark">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -12,22 +13,34 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/set_card_info" />
+            android:layout_marginBottom="12dp"
+            android:text="@string/set_card_info"
+            android:textColor="@color/text_white"
+            android:textSize="16sp"
+
+            />
 
         <EditText
             android:id="@+id/et_card_number"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginVertical="4dp"
+            android:background="@drawable/search_view_bg"
             android:digits="0123456789 "
             android:hint="@string/card_number"
             android:imeOptions="actionNext"
             android:inputType="number"
-            android:maxLength="19" />
+            android:maxLength="19"
+            android:textSize="16sp"
+
+            />
 
         <EditText
             android:id="@+id/et_card_owner_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginVertical="4dp"
+            android:background="@drawable/search_view_bg"
             android:hint="@string/owner_name"
             android:imeOptions="actionNext"
             android:inputType="textPersonName"
@@ -36,13 +49,16 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginVertical="4dp"
             android:orientation="horizontal">
 
             <EditText
                 android:id="@+id/et_card_expire_date"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="4dp"
                 android:layout_weight="1"
+                android:background="@drawable/search_view_bg"
                 android:digits="0123456789/"
                 android:hint="@string/expire_date_hint"
                 android:imeOptions="actionNext"
@@ -53,7 +69,9 @@
                 android:id="@+id/et_card_cvv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
                 android:layout_weight="1"
+                android:background="@drawable/search_view_bg"
                 android:hint="@string/cvv"
                 android:imeOptions="actionDone"
                 android:inputType="numberPassword"
