@@ -5,7 +5,9 @@
     android:layout_gravity="center"
     android:layout_marginHorizontal="32dp"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:background="@color/main_page_background_dark"
+    >
 
     <TextView
         android:layout_width="match_parent"
@@ -13,6 +15,7 @@
         android:layout_marginBottom="16dp"
         android:text="@string/add_service_header"
         android:textAlignment="center"
+        android:textColor="@color/text_white"
         android:textSize="16sp" />
 
     <EditText
@@ -21,8 +24,12 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:hint="@string/add_service_title"
+        android:lines="1"
+        android:maxLength="30"
         android:padding="10dp"
-        android:textSize="13sp" />
+        android:textSize="13sp"
+        android:background="@drawable/search_view_bg"
+        />
 
     <EditText
         android:id="@+id/et_price"
@@ -30,8 +37,12 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:hint="@string/add_service_total_sum"
+        android:lines="1"
+        android:maxLength="30"
         android:padding="10dp"
-        android:textSize="13sp" />
+        android:textSize="13sp"
+        android:background="@drawable/search_view_bg"
+        />
 
     <EditText
         android:id="@+id/et_date"
@@ -40,23 +51,32 @@
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
         android:hint="@string/add_service_date"
+        android:lines="1"
+        android:maxLength="30"
         android:padding="10dp"
-        android:textSize="13sp" />
+        android:textSize="13sp"
+        android:background="@drawable/search_view_bg"
+        />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_add"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/add"
         android:textAllCaps="false"
-        android:textSize="13sp" />
+        android:textSize="13sp"
+        android:background="@color/button_light_blue"
+        android:layout_marginBottom="10dp"
+        />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_cancel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/cancel"
         android:textAllCaps="false"
-        android:textSize="13sp" />
+        android:textSize="13sp"
+        android:background="@color/button_light_blue"
+        />
 
 </LinearLayout>
