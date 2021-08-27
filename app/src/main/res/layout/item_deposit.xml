@@ -4,8 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginHorizontal="16dp"
-    android:paddingVertical="12dp"
-    >
+    android:paddingVertical="12dp">
 
 
     <androidx.cardview.widget.CardView
@@ -22,6 +21,7 @@
             android:id="@+id/iv_deposit_image"
             android:layout_width="36dp"
             android:layout_height="36dp" />
+
     </androidx.cardview.widget.CardView>
 
 
@@ -57,4 +57,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/cv_deposit_image"
         app:tint="@color/white" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
