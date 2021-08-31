@@ -74,5 +74,6 @@
     <string name="sum">Сумма</string>
 
     <string name="service_payment">Оплатить %s₸</string>
+    <string name="withdraw">Изъять</string>
 
 </resources>

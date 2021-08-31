@@ -66,7 +66,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="16dp"
-                android:drawableEnd="@drawable/ic_baseline_keyboard_arrow_right_24"
+                android:drawableEnd="@drawable/ic_arrow_right"
                 android:drawableTint="@color/button_light_blue"
                 android:gravity="center_vertical"
                 android:paddingVertical="10dp"
@@ -219,6 +219,7 @@
                 android:backgroundTint="@color/button_light_blue"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
+                android:text="@string/withdraw"
                 android:textAllCaps="false"
                 android:textColor="@color/text_dark" />
         </LinearLayout>

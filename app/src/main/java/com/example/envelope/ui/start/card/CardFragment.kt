@@ -17,6 +17,7 @@ class CardFragment : BindingFragment<FragmentCardBinding>(FragmentCardBinding::i
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.run {
+            (activity as StartActivity).setStepFocus(3)
             includeNav.apply {
                 btnBack.setOnClickListener {
                     activity?.onBackPressed()
@@ -25,6 +26,7 @@ class CardFragment : BindingFragment<FragmentCardBinding>(FragmentCardBinding::i
                     (activity as StartActivity).restart()
                 }
                 btnNext.setOnClickListener {
+                    (activity as StartActivity).setStep(3)
                     goToCompletion()
                 }
             }

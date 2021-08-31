@@ -2,6 +2,7 @@ package com.example.envelope.ui.start.distribution
 
 import android.os.Bundle
 import android.view.View
+import com.example.envelope.R
 import com.example.envelope.databinding.FragmentDistributionBinding
 import com.example.envelope.ui.ContainerActivity
 import com.example.envelope.ui.start.StartActivity
@@ -31,6 +32,7 @@ class DistributionFragment :
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.run {
+            (activity as StartActivity).setStepFocus(2)
             val adapter = ExpensesAdapter()
             adapter.submitList(expensesList)
             rvServices.adapter = adapter
@@ -45,6 +47,7 @@ class DistributionFragment :
                         CardFragment(),
                         CARD_TAG
                     )
+                    (activity as StartActivity).setStep(2)
                 }
                 btnReturn.setOnClickListener {
                     (activity as StartActivity).restart()
@@ -71,26 +74,41 @@ class DistributionFragment :
 
                 ltExpenses.setOnClickListener {
                     //todo refactor: add toggle extension
-                    if (ltExpensesContent.visibility == View.GONE)
+                    if (ltExpensesContent.visibility == View.GONE) {
                         ltExpensesContent.show()
-                    else
+                        ltExpenses.setBackgroundColor(resources.getColor(R.color.white_grey))
+                        tvTitleExpenses.setTextColor(resources.getColor(R.color.black))
+                    } else {
+                        ltExpenses.setBackgroundColor(resources.getColor(R.color.main_page_background_dark))
+                        tvTitleExpenses.setTextColor(resources.getColor(R.color.white_grey))
                         ltExpensesContent.hide()
+                    }
                 }
 
                 ltSavings.setOnClickListener {
                     //todo refactor: add toggle extension
-                    if (ltSavingsContent.visibility == View.GONE)
+                    if (ltSavingsContent.visibility == View.GONE) {
+                        ltSavings.setBackgroundColor(resources.getColor(R.color.white_grey))
+                        tvSavings.setTextColor(resources.getColor(R.color.black))
                         ltSavingsContent.show()
-                    else
+                    } else {
+                        ltSavings.setBackgroundColor(resources.getColor(R.color.main_page_background_dark))
+                        tvSavings.setTextColor(resources.getColor(R.color.white_grey))
                         ltSavingsContent.hide()
+                    }
                 }
 
                 ltUnexpected.setOnClickListener {
                     //todo refactor: add toggle extension
-                    if (ltUnexpectedContent.visibility == View.GONE)
+                    if (ltUnexpectedContent.visibility == View.GONE) {
+                        ltUnexpected.setBackgroundColor(resources.getColor(R.color.white_grey))
+                        tvTitleUnexpected.setTextColor(resources.getColor(R.color.black))
                         ltUnexpectedContent.show()
-                    else
+                    } else {
+                        ltUnexpected.setBackgroundColor(resources.getColor(R.color.main_page_background_dark))
+                        tvTitleUnexpected.setTextColor(resources.getColor(R.color.white_grey))
                         ltUnexpectedContent.hide()
+                    }
                 }
             }
         }
