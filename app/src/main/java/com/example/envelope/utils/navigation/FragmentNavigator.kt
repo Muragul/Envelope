@@ -2,6 +2,7 @@ package com.example.envelope.utils.navigation
 
 import android.os.Bundle
 import com.example.envelope.ui.ContainerActivity
+import com.example.envelope.ui.budget.BudgetFragment
 import com.example.envelope.ui.deposit.DepositFragment
 import com.example.envelope.ui.payment.all.PaymentAllFragment
 import com.example.envelope.ui.payment.detail.PaymentDetailFragment
@@ -29,6 +30,9 @@ object FragmentNavigator {
             }
             Screen.DEPOSITS -> {
                 DepositFragment.newInstance(bundle = data)
+            }
+            Screen.BUDGET -> {
+                BudgetFragment.newInstance(bundle = data)
             }
         }
         activity.showFragment(

@@ -4,5 +4,6 @@ enum class Screen {
     EXPENSES,
     SERVICES,
     PAYMENT,
-    DEPOSITS
+    DEPOSITS,
+    BUDGET
 }
