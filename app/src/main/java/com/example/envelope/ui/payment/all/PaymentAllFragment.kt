@@ -25,6 +25,9 @@ class PaymentAllFragment :
             val adapter = ExpensesAdapter()
             adapter.submitList(expensesList)
             rvAllPayments.adapter = adapter
+            toolbar.ivBack.setOnClickListener {
+                activity?.onBackPressed()
+            }
         }
     }
 }

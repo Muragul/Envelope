@@ -14,7 +14,8 @@
             android:id="@+id/iv_step_icon"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/progress_bg"
+            android:background="@drawable/progress_bg_default"
+            android:scaleType="fitCenter"
             app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent" />
 
         <TextView
@@ -23,7 +24,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:textAlignment="center"
-            android:textColor="@color/button_light_blue"
+            android:textColor="@color/text_light_purple"
             android:textSize="12sp" />
 
     </FrameLayout>
@@ -33,7 +34,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAlignment="center"
-        android:textColor="@color/button_light_blue"
+        android:textColor="@color/text_light_purple"
         android:textSize="12sp" />
 
 </LinearLayout>

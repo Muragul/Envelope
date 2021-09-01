@@ -157,16 +157,20 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
+                    android:background="@drawable/distribution_et_bg"
                     android:inputType="number"
                     android:lines="1"
                     android:padding="10dp"
                     android:textSize="14sp" />
 
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn_save_savings"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
+                    android:background="@color/button_light_blue"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
                     android:text="@string/save"
                     android:textAllCaps="false" />
 
@@ -224,16 +228,18 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
+                    android:background="@drawable/distribution_et_bg"
                     android:inputType="number"
                     android:lines="1"
                     android:padding="10dp"
                     android:textSize="14sp" />
 
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn_save_unexpected"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
+                    android:background="@color/button_light_blue"
                     android:text="@string/save"
                     android:textAllCaps="false" />
 

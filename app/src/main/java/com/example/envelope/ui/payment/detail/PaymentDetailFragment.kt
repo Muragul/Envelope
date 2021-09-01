@@ -22,6 +22,9 @@ class PaymentDetailFragment :
         binding.run {
             val adapter = CardAdapter(atvCards.context, cardsList)
             atvCards.setAdapter(adapter)
+            toolbar.ivBack.setOnClickListener {
+                activity?.onBackPressed()
+            }
         }
     }
 }
