@@ -32,7 +32,7 @@ class DistributionFragment :
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.run {
-            (activity as StartActivity).setStepFocus(2)
+            (activity as StartActivity).stepOnFocus(2)
             val adapter = ExpensesAdapter()
             adapter.submitList(expensesList)
             rvServices.adapter = adapter
@@ -47,7 +47,7 @@ class DistributionFragment :
                         CardFragment(),
                         CARD_TAG
                     )
-                    (activity as StartActivity).setStep(2)
+                    (activity as StartActivity).stepOnCompleted(2)
                 }
                 btnReturn.setOnClickListener {
                     (activity as StartActivity).restart()

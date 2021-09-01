@@ -34,7 +34,7 @@ class StartActivity : BindingActivity<ActivityStartBinding>(ActivityStartBinding
         changeFragment(fragment = fragment, tag = tag, container = binding.container.id)
     }
 
-    fun setStep(step: Int) {
+    fun stepOnCompleted(step: Int) {
         when (step) {
             1 -> {
                 binding.firstStepAmount.ivStepIcon.background =
@@ -57,7 +57,7 @@ class StartActivity : BindingActivity<ActivityStartBinding>(ActivityStartBinding
         }
     }
 
-    fun setStepFocus(step: Int) {
+    fun stepOnFocus(step: Int) {
         when (step) {
             1 -> {
                 binding.firstStepAmount.ivStepIcon.background = getDrawable(R.drawable.progress_bg)

@@ -16,7 +16,7 @@ class AmountFragment : BindingFragment<FragmentAmountBinding>(FragmentAmountBind
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.run {
-            (activity as StartActivity).setStepFocus(1)
+            (activity as StartActivity).stepOnFocus(1)
             includeNav.apply {
                 btnBack.hide()
                 btnNext.disable()
@@ -25,7 +25,7 @@ class AmountFragment : BindingFragment<FragmentAmountBinding>(FragmentAmountBind
                         DistributionFragment(),
                         DISTRIBUTION_TAG
                     )
-                    (activity as StartActivity).setStep(1)
+                    (activity as StartActivity).stepOnCompleted(1)
                 }
                 btnReturn.setOnClickListener {
                     (activity as StartActivity).restart()

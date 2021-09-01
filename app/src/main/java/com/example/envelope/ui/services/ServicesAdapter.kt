@@ -4,6 +4,7 @@ import com.example.envelope.data.Service
 import com.example.envelope.databinding.ItemServiceBinding
 import com.example.envelope.utils.binding.BindingAdapter
 import com.example.envelope.utils.extensions.hide
+import com.example.envelope.utils.extensions.loadUrl
 import com.example.envelope.utils.extensions.show
 
 class ServicesAdapter :
@@ -12,7 +13,10 @@ class ServicesAdapter :
         binding.run {
             if (item.imageUrl.isNullOrEmpty())
                 cvServiceIcon.hide()
-            else cvServiceIcon.show()
+            else {
+                cvServiceIcon.show()
+                ivServiceIcon.loadUrl(item.imageUrl)
+            }
             tvServiceTitle.text = item.title
         }
     }
