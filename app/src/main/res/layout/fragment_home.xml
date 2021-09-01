@@ -133,6 +133,7 @@
                 app:layout_constraintTop_toBottomOf="@id/tv_envelope_amount">
 
                 <include
+                    android:id="@+id/btn_budget"
                     layout="@layout/item_main_page_envelope"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

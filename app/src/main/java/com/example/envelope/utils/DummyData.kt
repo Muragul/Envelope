@@ -81,3 +81,10 @@ val depositList = listOf(
         description = "Эффективная ставка 9%"
     )
 )
+
+val budgetList = listOf(
+    Budget(weekNumber = 1, weekRange = "19.07 - 26.07", weekSentDate = 0, weekBudget = "23650"),
+    Budget(weekNumber = 2, weekRange = "27.07 - 4.08", weekSentDate = 3, weekBudget = "23650"),
+    Budget(weekNumber = 3, weekRange = "27.07 - 4.08", weekSentDate = 7, weekBudget = "23650"),
+    Budget(weekNumber = 4, weekRange = "27.07 - 4.08", weekSentDate = 15, weekBudget = "23650"),
+)

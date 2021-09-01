@@ -75,5 +75,9 @@
 
     <string name="service_payment">Оплатить %s₸</string>
     <string name="withdraw">Изъять</string>
+    <string name="total_sum">Общая сумма</string>
+    <string name="withdraw_early">Снять досрочно</string>
 
+    <string name="sent_date">Отправим через %s %s</string>
+    <string name="week_number">%s неделя</string>
 </resources>
