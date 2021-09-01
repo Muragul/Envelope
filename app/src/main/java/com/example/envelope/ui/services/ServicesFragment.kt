@@ -3,6 +3,7 @@ package com.example.envelope.ui.services
 import android.app.Dialog
 import android.os.Bundle
 import android.view.View
+import android.view.ViewGroup
 import android.view.Window
 import com.example.envelope.databinding.AddExtraServiceDialogBinding
 import com.example.envelope.databinding.FragmentServicesBinding
@@ -31,6 +32,10 @@ class ServicesFragment :
             ivAdd.setOnClickListener {
                 showAddServiceDialog()
             }
+
+            ivBack.setOnClickListener {
+                activity?.onBackPressed()
+            }
         }
     }
 
@@ -46,6 +51,10 @@ class ServicesFragment :
             dialog.dismiss()
         }
         dialog.show()
+        dialog.window?.setLayout(
+            ViewGroup.LayoutParams.MATCH_PARENT,
+            ViewGroup.LayoutParams.WRAP_CONTENT
+        );
     }
 
 }

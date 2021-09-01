@@ -22,6 +22,9 @@ class DepositFragment : BindingFragment<FragmentDepositBinding>(FragmentDepositB
             val adapter = DepositAdapter()
             adapter.submitList(depositList)
             rvDeposit.adapter = adapter
+            toolbar.ivBack.setOnClickListener {
+                activity?.onBackPressed()
+            }
         }
     }
 }

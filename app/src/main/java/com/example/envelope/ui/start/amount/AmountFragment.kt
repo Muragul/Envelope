@@ -16,27 +16,24 @@ class AmountFragment : BindingFragment<FragmentAmountBinding>(FragmentAmountBind
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.run {
-
+            (activity as StartActivity).stepOnFocus(1)
             includeNav.apply {
                 btnBack.hide()
                 btnNext.disable()
-
                 btnNext.setOnClickListener {
                     (activity as StartActivity).showFragment(
                         DistributionFragment(),
                         DISTRIBUTION_TAG
                     )
+                    (activity as StartActivity).stepOnCompleted(1)
                 }
-
                 btnReturn.setOnClickListener {
                     (activity as StartActivity).restart()
                 }
             }
-
             etAmount.doAfterTextChanged {
                 includeNav.btnNext.isEnabled = !it.isNullOrBlank()
             }
-
         }
     }
 
