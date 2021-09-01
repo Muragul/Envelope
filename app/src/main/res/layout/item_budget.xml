@@ -75,7 +75,9 @@
                     tools:text="Отправлено на карту"
 
                     />
+
             </androidx.constraintlayout.widget.ConstraintLayout>
+
         </LinearLayout>
 
     </LinearLayout>
@@ -90,4 +92,5 @@
         android:textAllCaps="false"
         android:textColor="@color/button_light_blue"
         android:textSize="16sp" />
+
 </LinearLayout>
