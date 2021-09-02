@@ -80,4 +80,5 @@
 
     <string name="sent_date">Отправим через %s %s</string>
     <string name="week_number">%s неделя</string>
+    <string name="condition">Я принимаю условия пользовательского соглашения и согласен на обработку персональных данных</string>
 </resources>

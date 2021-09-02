@@ -6,6 +6,7 @@
     android:paddingVertical="10dp">
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cv_service_icon"
         android:layout_width="30dp"
         android:layout_height="30dp"
         app:cardCornerRadius="100dp"

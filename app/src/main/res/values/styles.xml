@@ -20,4 +20,10 @@
         <item name="backgroundTint">@color/button_selector</item>
     </style>
 
+    <style name="MySeekBar" parent="Widget.MaterialComponents.Slider">
+        <item name="android:progressBackgroundTint">@color/distribution_et_stroke</item>
+        <item name="android:progressTint">@color/button_light_blue</item>
+        <item name="android:thumbTint">@color/button_light_blue</item>
+    </style>
+
 </resources>

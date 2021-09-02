@@ -62,6 +62,12 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
                     android:background="@drawable/outlined_btn_light"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:paddingHorizontal="13dp"
+                    android:paddingVertical="6dp"
                     android:text="@string/add"
                     android:textAllCaps="false"
                     android:textColor="@color/button_light_blue"
@@ -108,15 +114,19 @@
         </LinearLayout>
 
         <View
+            android:id="@+id/v_divider_expenses"
             android:layout_width="match_parent"
-            android:layout_height="0.5dp" />
+            android:layout_height="0.5dp"
+            android:layout_marginHorizontal="16dp"
+            android:background="@color/divider_color" />
 
         <LinearLayout
             android:id="@+id/lt_savings"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="16dp">
+            android:padding="16dp"
+            >
 
             <CheckedTextView
                 android:id="@+id/tv_savings"
@@ -150,7 +160,10 @@
                     android:layout_marginTop="20dp"
                     android:stepSize="1"
                     android:valueFrom="0"
-                    android:valueTo="100" />
+                    android:valueTo="100"
+                    app:thumbColor="@color/button_light_blue"
+                    app:trackColorActive="@color/button_light_blue"
+                    app:trackColorInactive="@color/distribution_et_stroke" />
 
                 <EditText
                     android:id="@+id/et_savings_amount"
@@ -179,8 +192,11 @@
         </LinearLayout>
 
         <View
+            android:id="@+id/v_divider_savings"
             android:layout_width="match_parent"
-            android:layout_height="0.5dp" />
+            android:layout_height="0.5dp"
+            android:layout_marginHorizontal="16dp"
+            android:background="@color/divider_color" />
 
         <LinearLayout
             android:id="@+id/lt_unexpected"
@@ -221,7 +237,10 @@
                     android:layout_marginTop="20dp"
                     android:stepSize="1"
                     android:valueFrom="0"
-                    android:valueTo="100" />
+                    android:valueTo="100"
+                    app:thumbColor="@color/button_light_blue"
+                    app:trackColorActive="@color/button_light_blue"
+                    app:trackColorInactive="@color/distribution_et_stroke" />
 
                 <EditText
                     android:id="@+id/et_unexpected_amount"
