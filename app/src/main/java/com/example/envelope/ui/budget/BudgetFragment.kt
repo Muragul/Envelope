@@ -3,6 +3,7 @@ package com.example.envelope.ui.budget
 import android.os.Bundle
 import android.view.View
 import com.example.envelope.databinding.FragmentBudgetBinding
+import com.example.envelope.utils.SCREEN_TITLE
 import com.example.envelope.utils.binding.BindingFragment
 import com.example.envelope.utils.budgetList
 
@@ -17,6 +18,7 @@ class BudgetFragment : BindingFragment<FragmentBudgetBinding>(FragmentBudgetBind
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val title = arguments?.getString(SCREEN_TITLE)
         binding.run {
             val adapter = BudgetAdapter()
             adapter.submitList(budgetList)
@@ -24,6 +26,7 @@ class BudgetFragment : BindingFragment<FragmentBudgetBinding>(FragmentBudgetBind
             toolbar.ivBack.setOnClickListener {
                 activity?.onBackPressed()
             }
+            toolbar.tvToolbarTitle.text = title.toString()
         }
     }
 }
