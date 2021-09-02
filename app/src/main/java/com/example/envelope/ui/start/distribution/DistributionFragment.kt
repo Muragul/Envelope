@@ -19,7 +19,6 @@ import com.example.envelope.utils.extensions.hide
 import com.example.envelope.utils.extensions.show
 import com.example.envelope.utils.navigation.Screen
 
-
 class DistributionFragment :
     BindingFragment<FragmentDistributionBinding>(FragmentDistributionBinding::inflate) {
 
