@@ -88,3 +88,25 @@ val budgetList = listOf(
     Budget(weekNumber = 3, weekRange = "27.07 - 4.08", weekSentDate = 7, weekBudget = "23650"),
     Budget(weekNumber = 4, weekRange = "27.07 - 4.08", weekSentDate = 15, weekBudget = "23650"),
 )
+
+
+val transactionHistoryList = listOf<TransactionMarker>(
+    TransactionHeader("Вчера"),
+    Transaction(date = "", title = "Сбережения", type = "", amount = -20000, icon = ""),
+    Transaction(
+        date = "",
+        title = "Onay",
+        type = "",
+        amount = -2200,
+        icon = "https://www.google.com/url?sa=i&url=http%3A%2F%2Fappvisor.ru%2Fapp%2Fios%2Fonay-51716%2F&psig=AOvVaw0O6pzYN8pyvaS-Af3nrrCn&ust=1630662206432000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPCJmJ-A4PICFQAAAAAdAAAAABAD"
+    ),
+    TransactionHeader("15.08.2021"),
+    Transaction(
+        date = "",
+        title = "Kaspi Рассрочка",
+        type = "",
+        amount = -18940,
+        icon = "https://www.google.com/url?sa=i&url=https%3A%2F%2Fiphone.apkpure.com%2Fkaspikz%2Fkz.kaspi.mobile&psig=AOvVaw0nK_ng0v0RTrW0R4WdYQII&ust=1630662225085000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCJCa_6iA4PICFQAAAAAdAAAAABAD"
+    ),
+    Transaction(date = "", title = "Конверт 1 недели", type = "", amount = 23650, icon = ""),
+)

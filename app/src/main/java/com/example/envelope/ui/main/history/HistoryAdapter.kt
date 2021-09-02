@@ -9,7 +9,9 @@ import com.example.envelope.data.TransactionHeader
 import com.example.envelope.data.TransactionMarker
 import com.example.envelope.databinding.ItemExpensesListBinding
 import com.example.envelope.databinding.ItemHistoryHeaderBinding
+import com.example.envelope.utils.extensions.hide
 import com.example.envelope.utils.extensions.loadUrl
+import com.example.envelope.utils.extensions.show
 
 class HistoryAdapter(
     private val transactionHistory: List<TransactionMarker>
@@ -64,8 +66,18 @@ class HistoryAdapter(
         RecyclerView.ViewHolder(binding.root) {
         fun bind(item: Transaction) {
             binding.run {
+                if (item.icon.isNullOrEmpty()) {
+                    cvServiceIcon.hide()
+                } else {
+                    cvServiceIcon.show()
+                }
                 ivServiceIcon.loadUrl(item.icon)
                 tvServiceTitle.text = item.title
+                if (item.amount < 0) {
+                    tvServicePrice.setTextColor(tvServicePrice.context.resources.getColor(R.color.red))
+                } else {
+                    tvServicePrice.setTextColor(tvServicePrice.context.resources.getColor(R.color.green))
+                }
                 tvServicePrice.text = String.format(
                     ivServiceIcon.context.getString(R.string.total_price),
                     item.amount.toString()

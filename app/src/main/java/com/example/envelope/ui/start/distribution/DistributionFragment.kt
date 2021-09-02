@@ -2,6 +2,7 @@ package com.example.envelope.ui.start.distribution
 
 import android.os.Bundle
 import android.view.View
+import android.view.animation.AnimationUtils
 import com.example.envelope.R
 import com.example.envelope.databinding.FragmentDistributionBinding
 import com.example.envelope.ui.ContainerActivity
@@ -75,13 +76,22 @@ class DistributionFragment :
                 ltExpenses.setOnClickListener {
                     //todo refactor: add toggle extension
                     if (ltExpensesContent.visibility == View.GONE) {
-                        ltExpensesContent.show()
                         ltExpenses.setBackgroundColor(resources.getColor(R.color.white_grey))
                         tvTitleExpenses.setTextColor(resources.getColor(R.color.black))
+                        vDividerExpenses.hide()
+                        //todo animation
+                        ltExpensesContent.show()
+                        ltExpenses.startAnimation(
+                            AnimationUtils.loadAnimation(
+                                context,
+                                R.anim.slide_down
+                            )
+                        )
                     } else {
                         ltExpenses.setBackgroundColor(resources.getColor(R.color.main_page_background_dark))
                         tvTitleExpenses.setTextColor(resources.getColor(R.color.white_grey))
                         ltExpensesContent.hide()
+                        vDividerExpenses.show()
                     }
                 }
 
@@ -91,10 +101,18 @@ class DistributionFragment :
                         ltSavings.setBackgroundColor(resources.getColor(R.color.white_grey))
                         tvSavings.setTextColor(resources.getColor(R.color.black))
                         ltSavingsContent.show()
+                        vDividerSavings.hide()
+                        ltSavings.startAnimation(
+                            AnimationUtils.loadAnimation(
+                                context,
+                                R.anim.slide_down
+                            )
+                        )
                     } else {
                         ltSavings.setBackgroundColor(resources.getColor(R.color.main_page_background_dark))
                         tvSavings.setTextColor(resources.getColor(R.color.white_grey))
                         ltSavingsContent.hide()
+                        vDividerSavings.show()
                     }
                 }
 
@@ -104,6 +122,12 @@ class DistributionFragment :
                         ltUnexpected.setBackgroundColor(resources.getColor(R.color.white_grey))
                         tvTitleUnexpected.setTextColor(resources.getColor(R.color.black))
                         ltUnexpectedContent.show()
+                        ltUnexpected.startAnimation(
+                            AnimationUtils.loadAnimation(
+                                context,
+                                R.anim.slide_down
+                            )
+                        )
                     } else {
                         ltUnexpected.setBackgroundColor(resources.getColor(R.color.main_page_background_dark))
                         tvTitleUnexpected.setTextColor(resources.getColor(R.color.white_grey))
