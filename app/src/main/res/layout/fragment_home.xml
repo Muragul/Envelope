@@ -237,6 +237,7 @@
                 android:textAllCaps="false"
                 android:textColor="@color/text_dark"
                 android:textSize="14sp" />
+            
         </LinearLayout>
 
         <TextView
@@ -268,13 +269,13 @@
             android:layout_marginTop="8dp"
             android:layout_marginBottom="50dp"
             android:backgroundTint="@color/button_light_blue"
+            android:fontFamily="@font/nunito_semibold_600"
             android:insetTop="0dp"
             android:insetBottom="0dp"
             android:text="@string/create_deposit"
             android:textAllCaps="false"
             android:textColor="@color/text_dark"
-            android:textSize="16sp"
-            android:fontFamily="@font/nunito_semibold_600"/>
+            android:textSize="16sp" />
 
     </LinearLayout>
 
