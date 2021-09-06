@@ -3,5 +3,7 @@
     android:id="@+id/tv_date"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:fontFamily="@font/nunito_regular_400"
+    android:paddingVertical="4dp"
     android:textColor="@color/text_light_purple"
     android:textSize="14sp" />

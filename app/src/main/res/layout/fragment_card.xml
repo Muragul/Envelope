@@ -14,6 +14,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="12dp"
+            android:fontFamily="@font/nunito_semibold_600"
             android:text="@string/set_card_info"
             android:textColor="@color/text_white"
             android:textSize="16sp" />
@@ -25,13 +26,12 @@
             android:layout_marginVertical="4dp"
             android:background="@drawable/search_view_bg"
             android:digits="0123456789 "
+            android:fontFamily="@font/nunito_regular_400"
             android:hint="@string/card_number"
             android:imeOptions="actionNext"
             android:inputType="number"
             android:maxLength="19"
-            android:textSize="16sp"
-
-            />
+            android:textSize="16sp" />
 
         <EditText
             android:id="@+id/et_card_owner_name"
@@ -39,10 +39,12 @@
             android:layout_height="wrap_content"
             android:layout_marginVertical="4dp"
             android:background="@drawable/search_view_bg"
+            android:fontFamily="@font/nunito_regular_400"
             android:hint="@string/owner_name"
             android:imeOptions="actionNext"
             android:inputType="textPersonName"
-            android:maxLength="50" />
+            android:maxLength="50"
+            android:textSize="16sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -58,10 +60,12 @@
                 android:layout_weight="1"
                 android:background="@drawable/search_view_bg"
                 android:digits="0123456789/"
+                android:fontFamily="@font/nunito_regular_400"
                 android:hint="@string/expire_date_hint"
                 android:imeOptions="actionNext"
                 android:inputType="number"
-                android:maxLength="6" />
+                android:maxLength="6"
+                android:textSize="16sp" />
 
             <EditText
                 android:id="@+id/et_card_cvv"
@@ -70,10 +74,13 @@
                 android:layout_marginStart="4dp"
                 android:layout_weight="1"
                 android:background="@drawable/search_view_bg"
+                android:fontFamily="@font/nunito_regular_400"
                 android:hint="@string/cvv"
                 android:imeOptions="actionDone"
                 android:inputType="numberPassword"
-                android:maxLength="3" />
+                android:maxLength="3"
+                android:textSize="16sp" />
+
         </LinearLayout>
 
     </LinearLayout>

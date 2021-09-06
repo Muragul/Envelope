@@ -11,6 +11,7 @@
         android:id="@+id/tv_attention"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/nunito_bold_700"
         android:text="@string/attention"
         android:textColor="@color/text_white"
         android:textSize="18sp"
@@ -22,8 +23,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:fontFamily="@font/nunito_regular_400"
         android:textColor="@color/text_white"
-        android:textSize="14sp"
+        android:textSize="16sp"
         app:layout_constraintTop_toBottomOf="@id/tv_attention"
         tools:text="С вашей карты снимутся 200 000₸" />
 
@@ -39,6 +41,7 @@
     <TextView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/nunito_regular_400"
         android:text="@string/condition"
         android:textColor="@color/text_white"
         android:textSize="12sp"
@@ -53,9 +56,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:background="@color/button_light_blue"
+        android:fontFamily="@font/nunito_semibold_600"
         android:text="@string/on_boarding_next"
         android:textAllCaps="false"
         android:textColor="@color/black"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

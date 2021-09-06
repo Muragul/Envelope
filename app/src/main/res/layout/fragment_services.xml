@@ -28,6 +28,7 @@
             android:layout_marginHorizontal="10dp"
             android:layout_weight="1"
             android:background="@drawable/search_view_bg"
+            android:fontFamily="@font/nunito_regular_400"
             android:hint="@string/search"
             android:padding="10dp"
             android:textSize="14sp" />
