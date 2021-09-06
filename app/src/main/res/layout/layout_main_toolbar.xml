@@ -22,6 +22,7 @@
         android:layout_marginStart="8dp"
         android:layout_weight="1"
         android:textColor="@color/text_white"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:fontFamily="@font/nunito_bold_700"/>
 
 </LinearLayout>

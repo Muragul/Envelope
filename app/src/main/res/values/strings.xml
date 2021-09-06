@@ -61,7 +61,7 @@
     <string name="budget">Мой бюджет</string>
     <string name="expenses">Обязательные расходы</string>
     <string name="all_payments">Все платежи</string>
-    <string name="envelops">4 конверта</string>
+    <string name="envelops">Бюджет на месяц</string>
     <string name="unexpected_expense">Непредвиденные расходы</string>
     <string name="withdraw_sum">Введите сумму для изъятия</string>
     <string name="savings_title">Сбережения</string>

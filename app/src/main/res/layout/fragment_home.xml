@@ -20,6 +20,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
+                android:fontFamily="@font/nunito_bold_700"
                 android:text="@string/budget"
                 android:textColor="@color/text_white"
                 android:textSize="26sp"
@@ -31,6 +32,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="16dp"
+                android:fontFamily="@font/nunito_regular_400"
                 android:textColor="@color/text_white"
                 android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="@id/tv_budget_title"
@@ -44,6 +46,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="4dp"
+                android:fontFamily="@font/nunito_bold_700"
                 android:textColor="@color/gradient_purple_light"
                 android:textSize="18sp"
                 app:layout_constraintLeft_toLeftOf="parent"
@@ -55,6 +58,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="28dp"
+                android:fontFamily="@font/nunito_bold_700"
                 android:text="@string/expenses"
                 android:textColor="@color/text_white"
                 android:textSize="18sp"
@@ -68,10 +72,12 @@
                 android:layout_marginEnd="16dp"
                 android:drawableEnd="@drawable/ic_arrow_right"
                 android:drawableTint="@color/button_light_blue"
+                android:fontFamily="@font/nunito_semibold_600"
                 android:gravity="center_vertical"
                 android:paddingVertical="10dp"
                 android:text="@string/all_payments"
                 android:textColor="@color/button_light_blue"
+                android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="@id/tv_expenses_title"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintLeft_toRightOf="@id/tv_expenses_title"
@@ -83,6 +89,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="4dp"
+                android:fontFamily="@font/nunito_semibold_600"
                 android:textColor="@color/gradient_purple_light"
                 android:textSize="16sp"
                 app:layout_constraintLeft_toLeftOf="parent"
@@ -106,6 +113,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="28dp"
+                android:fontFamily="@font/nunito_bold_700"
                 android:text="@string/envelops"
                 android:textColor="@color/text_white"
                 android:textSize="18sp"
@@ -117,6 +125,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
+                android:fontFamily="@font/nunito_semibold_600"
                 android:textColor="@color/text_light_purple"
                 android:textSize="16sp"
                 app:layout_constraintLeft_toLeftOf="parent"
@@ -182,6 +191,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="16dp"
             android:layout_marginTop="28dp"
+            android:fontFamily="@font/nunito_bold_700"
             android:text="@string/unexpected_expense"
             android:textColor="@color/text_white"
             android:textSize="18sp" />
@@ -192,6 +202,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="16dp"
             android:layout_marginTop="4dp"
+            android:fontFamily="@font/nunito_semibold_600"
             android:textColor="@color/gradient_purple_light"
             android:textSize="16sp" />
 
@@ -209,6 +220,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
+                android:fontFamily="@font/nunito_regular_400"
                 android:hint="@string/withdraw_sum"
                 android:textColor="@color/light_grey"
                 android:textColorHint="@color/light_grey"
@@ -218,11 +230,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/button_light_blue"
+                android:fontFamily="@font/nunito_semibold_600"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
                 android:text="@string/withdraw"
                 android:textAllCaps="false"
-                android:textColor="@color/text_dark" />
+                android:textColor="@color/text_dark"
+                android:textSize="14sp" />
         </LinearLayout>
 
         <TextView
@@ -231,6 +245,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="16dp"
             android:layout_marginTop="28dp"
+            android:fontFamily="@font/nunito_bold_700"
             android:text="@string/savings_title"
             android:textColor="@color/text_white"
             android:textSize="18sp" />
@@ -241,6 +256,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="16dp"
             android:layout_marginTop="4dp"
+            android:fontFamily="@font/nunito_semibold_600"
             android:textColor="@color/text_light_purple"
             android:textSize="16sp" />
 
@@ -256,7 +272,9 @@
             android:insetBottom="0dp"
             android:text="@string/create_deposit"
             android:textAllCaps="false"
-            android:textColor="@color/text_dark" />
+            android:textColor="@color/text_dark"
+            android:textSize="16sp"
+            android:fontFamily="@font/nunito_semibold_600"/>
 
     </LinearLayout>
 

@@ -25,6 +25,7 @@
             android:layout_gravity="center"
             android:textAlignment="center"
             android:textColor="@color/text_light_purple"
+            android:fontFamily="@font/nunito_regular_400"
             android:textSize="12sp" />
 
     </FrameLayout>
@@ -35,6 +36,8 @@
         android:layout_height="wrap_content"
         android:textAlignment="center"
         android:textColor="@color/text_light_purple"
-        android:textSize="12sp" />
+        android:textSize="14sp"
+        android:fontFamily="@font/nunito_regular_400"
+        />
 
 </LinearLayout>

@@ -16,6 +16,7 @@
             android:id="@+id/tv_set_amount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/nunito_semibold_600"
             android:text="@string/set_amount"
             android:textColor="@color/text_white"
             android:textSize="16sp" />
@@ -26,6 +27,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:background="@drawable/search_view_bg"
+            android:fontFamily="@font/nunito_regular_400"
             android:inputType="number"
             android:textSize="16sp" />
 

@@ -7,7 +7,9 @@
     android:orientation="vertical"
     android:paddingHorizontal="16dp">
 
-    <include layout="@layout/layout_main_toolbar" android:id="@+id/toolbar"/>
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/layout_main_toolbar" />
 
     <include
         layout="@layout/item_service"
@@ -27,7 +29,9 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/et_phone_number"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nunito_regular_400"
+            android:textSize="16sp" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -44,7 +48,9 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/et_sum"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nunito_regular_400"
+            android:textSize="16sp" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -72,10 +78,12 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:backgroundTint="@color/button_light_blue"
+        android:fontFamily="@font/nunito_semibold_600"
         android:insetTop="0dp"
         android:insetBottom="0dp"
         android:text="@string/service_payment"
         android:textAllCaps="false"
-        android:textColor="@color/black" />
+        android:textColor="@color/black"
+        android:textSize="16sp" />
 
 </LinearLayout>

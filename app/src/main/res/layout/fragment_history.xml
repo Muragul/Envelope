@@ -12,7 +12,8 @@
         android:layout_margin="16dp"
         android:text="@string/transaction_history"
         android:textColor="@color/text_white"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:fontFamily="@font/nunito_bold_700"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_history"

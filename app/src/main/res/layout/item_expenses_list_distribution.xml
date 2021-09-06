@@ -27,6 +27,7 @@
         android:layout_gravity="center"
         android:layout_marginStart="8dp"
         android:layout_weight="1"
+        android:fontFamily="@font/nunito_regular_400"
         android:textColor="@color/black"
         android:textSize="16sp" />
 
@@ -36,6 +37,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginStart="8dp"
+        android:fontFamily="@font/nunito_semibold_600"
         android:gravity="end"
         android:textColor="@color/black"
         android:textSize="16sp" />
