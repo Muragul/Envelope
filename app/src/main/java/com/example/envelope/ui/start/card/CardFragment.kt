@@ -11,6 +11,7 @@ import com.example.envelope.databinding.DistributionOnCompleteDialogBinding
 import com.example.envelope.databinding.FragmentCardBinding
 import com.example.envelope.ui.start.StartActivity
 import com.example.envelope.utils.binding.BindingFragment
+import com.example.envelope.utils.extensions.show
 import com.redmadrobot.inputmask.MaskedTextChangedListener
 import com.redmadrobot.inputmask.helper.AffinityCalculationStrategy
 
@@ -83,4 +84,31 @@ class CardFragment : BindingFragment<FragmentCardBinding>(FragmentCardBinding::i
             AffinityCalculationStrategy.WHOLE_STRING
         )
     }
+
+
+    private fun showIncorrectCardNumber() {
+        binding.incorrectCardNumber.show()
+        binding.etCardNumber.setBackgroundResource(R.drawable.error_edit_text)
+        binding.etCardNumber.setTextColor(resources.getColor(R.color.red))
+    }
+
+    private fun showIncorrectCvv() {
+        binding.incorrectCvvCode.show()
+        binding.etCardCvv.setBackgroundResource(R.drawable.error_edit_text)
+        binding.etCardCvv.setTextColor(resources.getColor(R.color.red))
+    }
+
+    private fun showIncorrectFullName() {
+        binding.incorrectFullName.show()
+        binding.etCardOwnerName.setBackgroundResource(R.drawable.error_edit_text)
+        binding.etCardOwnerName.setTextColor(resources.getColor(R.color.red))
+    }
+
+    private fun showIncorrectDate() {
+        binding.incorrectDate.show()
+        binding.etCardExpireDate.setBackgroundResource(R.drawable.error_edit_text)
+        binding.etCardExpireDate.setTextColor(resources.getColor(R.color.red))
+    }
+
+
 }
