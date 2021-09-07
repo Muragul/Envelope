@@ -85,4 +85,8 @@
     <string name="required_field">Обязательное поле</string>
     <string name="incorrect_date">Некорректная дата</string>
     <string name="incorrect_cvv_code">Неверный CVV-код</string>
+
+    <string name="incorrect_phone_number">Некорректный номер телефона</string>
+    <string name="incorrect_sum">Ошибка</string>
+
 </resources>
