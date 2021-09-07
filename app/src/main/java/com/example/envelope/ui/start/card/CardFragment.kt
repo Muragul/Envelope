@@ -110,5 +110,4 @@ class CardFragment : BindingFragment<FragmentCardBinding>(FragmentCardBinding::i
         binding.etCardExpireDate.setTextColor(resources.getColor(R.color.red))
     }
 
-
 }
