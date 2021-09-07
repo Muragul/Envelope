@@ -81,4 +81,8 @@
     <string name="sent_date">Отправим через %s %s</string>
     <string name="week_number">%s неделя</string>
     <string name="condition">Я принимаю условия пользовательского соглашения и согласен на обработку персональных данных</string>
+    <string name="incorrect_card_number">Неверный номер карты</string>
+    <string name="required_field">Обязательное поле</string>
+    <string name="incorrect_date">Некорректная дата</string>
+    <string name="incorrect_cvv_code">Неверный CVV-код</string>
 </resources>
