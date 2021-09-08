@@ -18,7 +18,6 @@ import com.skydoves.balloon.BalloonAnimation
 import com.skydoves.balloon.BalloonSizeSpec
 import com.skydoves.balloon.createBalloon
 
-
 class HomeFragment : BindingFragment<FragmentHomeBinding>(FragmentHomeBinding::inflate) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -31,11 +30,9 @@ class HomeFragment : BindingFragment<FragmentHomeBinding>(FragmentHomeBinding::i
             )
             adapter.submitList(expensesList)
             rvExpenses.adapter = adapter
-
             tvAllExpenses.setOnClickListener {
                 openServices()
             }
-
             btnCreateDeposit.setOnClickListener {
                 openDeposit()
             }
