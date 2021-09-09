@@ -3,7 +3,6 @@ package com.example.envelope.ui.payment.all
 import android.os.Bundle
 import android.view.View
 import com.example.envelope.databinding.FragmentPaymentAllBinding
-import com.example.envelope.ui.start.distribution.ExpensesAdapter
 import com.example.envelope.utils.SCREEN_TITLE
 import com.example.envelope.utils.binding.BindingFragment
 import com.example.envelope.utils.expensesList
@@ -19,12 +18,11 @@ class PaymentAllFragment :
         }
     }
 
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val title = arguments?.getString(SCREEN_TITLE)
         binding.run {
-            val adapter = ExpensesAdapter()
+            val adapter = ExpensesPaymentAllAdapter()
             adapter.submitList(expensesList)
             rvAllPayments.adapter = adapter
             toolbar.ivBack.setOnClickListener {
