@@ -81,10 +81,10 @@ class DistributionFragment :
                         vDividerExpenses.hide()
                         //todo animation
                         ltExpensesContent.show()
-                        ltExpenses.startAnimation(
+                        ltExpensesContent.startAnimation(
                             AnimationUtils.loadAnimation(
                                 context,
-                                R.anim.slide_down
+                                R.anim.slide_up
                             )
                         )
                     } else {
@@ -102,10 +102,10 @@ class DistributionFragment :
                         tvSavings.setTextColor(resources.getColor(R.color.black))
                         ltSavingsContent.show()
                         vDividerSavings.hide()
-                        ltSavings.startAnimation(
+                        ltSavingsContent.startAnimation(
                             AnimationUtils.loadAnimation(
                                 context,
-                                R.anim.slide_down
+                                R.anim.slide_up
                             )
                         )
                     } else {
@@ -122,10 +122,10 @@ class DistributionFragment :
                         ltUnexpected.setBackgroundColor(resources.getColor(R.color.white_grey))
                         tvTitleUnexpected.setTextColor(resources.getColor(R.color.black))
                         ltUnexpectedContent.show()
-                        ltUnexpected.startAnimation(
+                        ltUnexpectedContent.startAnimation(
                             AnimationUtils.loadAnimation(
                                 context,
-                                R.anim.slide_down
+                                R.anim.slide_up
                             )
                         )
                     } else {
