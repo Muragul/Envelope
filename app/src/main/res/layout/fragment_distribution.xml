@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/main_page_background_dark">
@@ -33,7 +34,10 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/lt_expenses_content"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:background="@color/white_grey"
+                android:visibility="gone"
+                tools:visibility="visible">
 
                 <TextView
                     android:id="@+id/tv_expenses_hint"
@@ -42,6 +46,7 @@
                     android:layout_marginTop="8dp"
                     android:fontFamily="@font/nunito_semibold_600"
                     android:text="@string/obligatory_expenses_description"
+                    android:textColor="@color/text_dark"
                     android:textSize="14sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -84,6 +89,7 @@
                     android:layout_marginTop="16dp"
                     android:fontFamily="@font/nunito_semibold_600"
                     android:text="@string/total_sum_title"
+                    android:textColor="@color/text_dark"
                     android:textSize="16sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/btn_add_service" />
@@ -148,6 +154,7 @@
                 android:id="@+id/lt_savings_content"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@color/white_grey"
                 android:orientation="vertical"
                 android:visibility="gone">
 
@@ -156,6 +163,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/nunito_semibold_600"
                     android:text="@string/savings_description"
+                    android:textColor="@color/text_dark"
                     android:textSize="14sp" />
 
                 <com.google.android.material.slider.Slider
@@ -228,6 +236,7 @@
                 android:id="@+id/lt_unexpected_content"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@color/white_grey"
                 android:orientation="vertical"
                 android:visibility="gone">
 
@@ -236,6 +245,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/nunito_semibold_600"
                     android:text="@string/unforeseen"
+                    android:textColor="@color/text_dark"
                     android:textSize="14sp" />
 
                 <com.google.android.material.slider.Slider
