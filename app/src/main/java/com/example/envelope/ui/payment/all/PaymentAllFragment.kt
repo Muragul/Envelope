@@ -18,7 +18,6 @@ class PaymentAllFragment :
         }
     }
 
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val title = arguments?.getString(SCREEN_TITLE)
