@@ -24,6 +24,8 @@ class CardFragment : BindingFragment<FragmentCardBinding>(FragmentCardBinding::i
             (activity as StartActivity).stepOnFocus(3)
             includeNav.apply {
                 btnBack.setOnClickListener {
+                    (activity as StartActivity).stepOnFocus(2)
+                    (activity as StartActivity).makeStepDefault(3)
                     activity?.onBackPressed()
                 }
                 btnReturn.setOnClickListener {
