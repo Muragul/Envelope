@@ -41,6 +41,8 @@ class DistributionFragment :
                 //todo disable "Next" button when logic is ready
 //                btnNext.disable()
                 btnBack.setOnClickListener {
+                    (activity as StartActivity).stepOnFocus(1)
+                    (activity as StartActivity).makeStepDefault(2)
                     activity?.onBackPressed()
                 }
                 btnNext.setOnClickListener {
