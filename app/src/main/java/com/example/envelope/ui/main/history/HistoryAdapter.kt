@@ -2,6 +2,7 @@ package com.example.envelope.ui.main.history
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.envelope.R
 import com.example.envelope.data.Transaction
@@ -74,9 +75,13 @@ class HistoryAdapter(
                 ivServiceIcon.loadUrl(item.icon)
                 tvServiceTitle.text = item.title
                 if (item.amount < 0) {
-                    tvServicePrice.setTextColor(tvServicePrice.context.resources.getColor(R.color.red))
+                    tvServicePrice.setTextColor(
+                        ContextCompat.getColor(tvServicePrice.context, R.color.red)
+                    )
                 } else {
-                    tvServicePrice.setTextColor(tvServicePrice.context.resources.getColor(R.color.green))
+                    tvServicePrice.setTextColor(
+                        ContextCompat.getColor(tvServicePrice.context, R.color.green)
+                    )
                 }
                 tvServicePrice.text = String.format(
                     ivServiceIcon.context.getString(R.string.total_price),

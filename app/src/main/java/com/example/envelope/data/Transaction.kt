@@ -5,5 +5,5 @@ data class Transaction(
     val title: String,
     val type: String,
     val amount: Int,
-    val icon: String
+    val icon: String?
 ) : TransactionMarker

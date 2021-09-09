@@ -2,6 +2,7 @@ package com.example.envelope.ui.start
 
 import android.content.Intent
 import android.os.Bundle
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.example.envelope.R
 import com.example.envelope.databinding.ActivityStartBinding
@@ -38,19 +39,19 @@ class StartActivity : BindingActivity<ActivityStartBinding>(ActivityStartBinding
         when (step) {
             1 -> {
                 binding.firstStepAmount.ivStepIcon.background =
-                    getDrawable(R.drawable.progress_bg_done)
+                    ContextCompat.getDrawable(this, R.drawable.progress_bg_done)
                 binding.firstStepAmount.ivStepIcon.setImageResource(R.drawable.ic_baseline_check_24)
                 binding.firstStepAmount.tvStepNumber.hide()
             }
             2 -> {
                 binding.secondStepDistribution.ivStepIcon.background =
-                    getDrawable(R.drawable.progress_bg_done)
+                    ContextCompat.getDrawable(this, R.drawable.progress_bg_done)
                 binding.secondStepDistribution.ivStepIcon.setImageResource(R.drawable.ic_baseline_check_24)
                 binding.secondStepDistribution.tvStepNumber.hide()
             }
             3 -> {
                 binding.thirdStepCard.ivStepIcon.background =
-                    getDrawable(R.drawable.progress_bg_done)
+                    ContextCompat.getDrawable(this, R.drawable.progress_bg_done)
                 binding.thirdStepCard.ivStepIcon.setImageResource(R.drawable.ic_baseline_check_24)
                 binding.thirdStepCard.tvStepNumber.hide()
             }
@@ -60,21 +61,36 @@ class StartActivity : BindingActivity<ActivityStartBinding>(ActivityStartBinding
     fun stepOnFocus(step: Int) {
         when (step) {
             1 -> {
-                binding.firstStepAmount.ivStepIcon.background = getDrawable(R.drawable.progress_bg)
-                binding.firstStepAmount.tvStepNumber.setTextColor(resources.getColor(R.color.button_light_blue))
-                binding.firstStepAmount.tvStepTitle.setTextColor(resources.getColor(R.color.button_light_blue))
+                binding.firstStepAmount.ivStepIcon.background =
+                    ContextCompat.getDrawable(this, R.drawable.progress_bg)
+                binding.firstStepAmount.tvStepNumber.setTextColor(
+                    ContextCompat.getColor(this, R.color.button_light_blue)
+                )
+                binding.firstStepAmount.tvStepTitle.setTextColor(
+
+                    ContextCompat.getColor(this, R.color.button_light_blue)
+                )
             }
             2 -> {
                 binding.secondStepDistribution.ivStepIcon.background =
-                    getDrawable(R.drawable.progress_bg)
-                binding.secondStepDistribution.tvStepNumber.setTextColor(resources.getColor(R.color.button_light_blue))
-                binding.secondStepDistribution.tvStepTitle.setTextColor(resources.getColor(R.color.button_light_blue))
+                    ContextCompat.getDrawable(this, R.drawable.progress_bg)
+                binding.secondStepDistribution.tvStepNumber.setTextColor(
+                    ContextCompat.getColor(this, R.color.button_light_blue)
+                )
+
+                binding.secondStepDistribution.tvStepTitle.setTextColor(
+                    ContextCompat.getColor(this, R.color.button_light_blue)
+                )
             }
             3 -> {
                 binding.thirdStepCard.ivStepIcon.background =
-                    getDrawable(R.drawable.progress_bg)
-                binding.thirdStepCard.tvStepNumber.setTextColor(resources.getColor(R.color.button_light_blue))
-                binding.thirdStepCard.tvStepTitle.setTextColor(resources.getColor(R.color.button_light_blue))
+                    ContextCompat.getDrawable(this, R.drawable.progress_bg)
+                binding.thirdStepCard.tvStepNumber.setTextColor(
+                    ContextCompat.getColor(this, R.color.button_light_blue)
+                )
+                binding.thirdStepCard.tvStepTitle.setTextColor(
+                    ContextCompat.getColor(this, R.color.button_light_blue)
+                )
             }
         }
     }

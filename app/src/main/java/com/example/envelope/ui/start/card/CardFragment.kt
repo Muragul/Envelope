@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.Window
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import com.example.envelope.R
 import com.example.envelope.databinding.DistributionOnCompleteDialogBinding
 import com.example.envelope.databinding.FragmentCardBinding
@@ -87,27 +88,43 @@ class CardFragment : BindingFragment<FragmentCardBinding>(FragmentCardBinding::i
 
 
     private fun showIncorrectCardNumber() {
-        binding.incorrectCardNumber.show()
-        binding.etCardNumber.setBackgroundResource(R.drawable.error_edit_text)
-        binding.etCardNumber.setTextColor(resources.getColor(R.color.red))
+        binding.run {
+            incorrectCardNumber.show()
+            etCardNumber.setBackgroundResource(R.drawable.error_edit_text)
+            etCardNumber.setTextColor(
+                ContextCompat.getColor(etCardNumber.context, R.color.red)
+            )
+        }
     }
 
     private fun showIncorrectCvv() {
-        binding.incorrectCvvCode.show()
-        binding.etCardCvv.setBackgroundResource(R.drawable.error_edit_text)
-        binding.etCardCvv.setTextColor(resources.getColor(R.color.red))
+        binding.run {
+            incorrectCvvCode.show()
+            etCardCvv.setBackgroundResource(R.drawable.error_edit_text)
+            etCardCvv.setTextColor(
+                ContextCompat.getColor(etCardCvv.context, R.color.red)
+            )
+        }
     }
 
     private fun showIncorrectFullName() {
-        binding.incorrectFullName.show()
-        binding.etCardOwnerName.setBackgroundResource(R.drawable.error_edit_text)
-        binding.etCardOwnerName.setTextColor(resources.getColor(R.color.red))
+        binding.run {
+            incorrectFullName.show()
+            etCardOwnerName.setBackgroundResource(R.drawable.error_edit_text)
+            etCardOwnerName.setTextColor(
+                ContextCompat.getColor(etCardOwnerName.context, R.color.red)
+            )
+        }
     }
 
     private fun showIncorrectDate() {
-        binding.incorrectDate.show()
-        binding.etCardExpireDate.setBackgroundResource(R.drawable.error_edit_text)
-        binding.etCardExpireDate.setTextColor(resources.getColor(R.color.red))
+        binding.run {
+            incorrectDate.show()
+            etCardExpireDate.setBackgroundResource(R.drawable.error_edit_text)
+            etCardExpireDate.setTextColor(
+                ContextCompat.getColor(etCardExpireDate.context, R.color.red)
+            )
+        }
     }
 
 }
