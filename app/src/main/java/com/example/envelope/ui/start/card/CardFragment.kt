@@ -22,19 +22,9 @@ class CardFragment : BindingFragment<FragmentCardBinding>(FragmentCardBinding::i
         super.onViewCreated(view, savedInstanceState)
         binding.run {
             (activity as StartActivity).stepOnFocus(3)
-            includeNav.apply {
-                btnBack.setOnClickListener {
-                    (activity as StartActivity).stepOnFocus(2)
-                    (activity as StartActivity).makeStepDefault(3)
-                    activity?.onBackPressed()
-                }
-                btnReturn.setOnClickListener {
-                    (activity as StartActivity).restart()
-                }
-                btnNext.setOnClickListener {
-                    (activity as StartActivity).stepOnCompleted(3)
-                    goToCompletion()
-                }
+            btnNext.setOnClickListener {
+                (activity as StartActivity).stepOnCompleted(3)
+                goToCompletion()
             }
         }
         initViews()

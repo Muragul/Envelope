@@ -9,7 +9,6 @@ import com.example.envelope.ui.start.distribution.DistributionFragment
 import com.example.envelope.utils.DISTRIBUTION_TAG
 import com.example.envelope.utils.binding.BindingFragment
 import com.example.envelope.utils.extensions.disable
-import com.example.envelope.utils.extensions.hide
 
 class AmountFragment : BindingFragment<FragmentAmountBinding>(FragmentAmountBinding::inflate) {
 
@@ -17,22 +16,16 @@ class AmountFragment : BindingFragment<FragmentAmountBinding>(FragmentAmountBind
         super.onViewCreated(view, savedInstanceState)
         binding.run {
             (activity as StartActivity).stepOnFocus(1)
-            includeNav.apply {
-                btnBack.hide()
-                btnNext.disable()
-                btnNext.setOnClickListener {
-                    (activity as StartActivity).showFragment(
-                        DistributionFragment(),
-                        DISTRIBUTION_TAG
-                    )
-                    (activity as StartActivity).stepOnCompleted(1)
-                }
-                btnReturn.setOnClickListener {
-                    (activity as StartActivity).restart()
-                }
+            btnNext.disable()
+            btnNext.setOnClickListener {
+                (activity as StartActivity).showFragment(
+                    DistributionFragment(),
+                    DISTRIBUTION_TAG
+                )
+                (activity as StartActivity).stepOnCompleted(1)
             }
             etAmount.doAfterTextChanged {
-                includeNav.btnNext.isEnabled = !it.isNullOrBlank()
+                btnNext.isEnabled = !it.isNullOrBlank()
             }
         }
     }

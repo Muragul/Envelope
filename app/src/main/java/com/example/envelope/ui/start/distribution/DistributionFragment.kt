@@ -3,6 +3,7 @@ package com.example.envelope.ui.start.distribution
 import android.os.Bundle
 import android.view.View
 import android.view.animation.AnimationUtils
+import androidx.core.content.ContextCompat
 import com.example.envelope.R
 import com.example.envelope.databinding.FragmentDistributionBinding
 import com.example.envelope.ui.ContainerActivity
@@ -37,104 +38,154 @@ class DistributionFragment :
             val adapter = ExpensesAdapter()
             adapter.submitList(expensesList)
             rvServices.adapter = adapter
-            includeNav.apply {
-                //todo disable "Next" button when logic is ready
-//                btnNext.disable()
-                btnBack.setOnClickListener {
-                    (activity as StartActivity).stepOnFocus(1)
-                    (activity as StartActivity).makeStepDefault(2)
-                    activity?.onBackPressed()
-                }
-                btnNext.setOnClickListener {
-                    (activity as StartActivity).showFragment(
-                        CardFragment(),
-                        CARD_TAG
+            //todo disable "Next" button when logic is ready
+//            btnNext.disable()
+            btnNext.setOnClickListener {
+                (activity as StartActivity).showFragment(
+                    CardFragment(),
+                    CARD_TAG
+                )
+                (activity as StartActivity).stepOnCompleted(2)
+            }
+
+            btnSaveExpenses.setOnClickListener {
+                ltExpensesContent.hide()
+                tvTitleExpenses.check()
+            }
+
+            btnSaveSavings.setOnClickListener {
+                ltSavingsContent.hide()
+                tvSavings.check()
+            }
+            btnSaveUnexpected.setOnClickListener {
+                ltUnexpectedContent.hide()
+                tvTitleUnexpected.check()
+                btnNext.enable()
+            }
+
+            btnAddService.setOnClickListener {
+                openServices()
+            }
+
+            ltExpenses.setOnClickListener {
+                //todo refactor: add toggle extension
+                if (ltExpensesContent.visibility == View.GONE) {
+                    ltExpenses.setBackgroundColor(
+                        ContextCompat.getColor(
+                            ltExpenses.context,
+                            R.color.white_grey
+                        )
                     )
-                    (activity as StartActivity).stepOnCompleted(2)
-                }
-                btnReturn.setOnClickListener {
-                    (activity as StartActivity).restart()
-                }
-
-                btnSaveExpenses.setOnClickListener {
+                    tvTitleExpenses.setTextColor(
+                        ContextCompat.getColor(
+                            tvTitleExpenses.context,
+                            R.color.black
+                        )
+                    )
+                    vDividerExpenses.hide()
+                    //todo animation
+                    ltExpensesContent.show()
+                    ltExpensesContent.startAnimation(
+                        AnimationUtils.loadAnimation(
+                            context,
+                            R.anim.slide_up
+                        )
+                    )
+                } else {
+                    ltExpenses.setBackgroundColor(
+                        ContextCompat.getColor(
+                            ltExpenses.context,
+                            R.color.main_page_background_dark
+                        )
+                    )
+                    tvTitleExpenses.setTextColor(
+                        ContextCompat.getColor(
+                            tvTitleExpenses.context,
+                            R.color.white_grey
+                        )
+                    )
                     ltExpensesContent.hide()
-                    tvTitleExpenses.check()
+                    vDividerExpenses.show()
                 }
+            }
 
-                btnSaveSavings.setOnClickListener {
+            ltSavings.setOnClickListener {
+                //todo refactor: add toggle extension
+                if (ltSavingsContent.visibility == View.GONE) {
+                    ltSavings.setBackgroundColor(
+                        ContextCompat.getColor(
+                            ltSavings.context,
+                            R.color.white_grey
+                        )
+                    )
+                    tvSavings.setTextColor(
+                        ContextCompat.getColor(
+                            ltSavings.context,
+                            R.color.black
+                        )
+                    )
+                    ltSavingsContent.show()
+                    vDividerSavings.hide()
+                    ltSavingsContent.startAnimation(
+                        AnimationUtils.loadAnimation(
+                            context,
+                            R.anim.slide_up
+                        )
+                    )
+                } else {
+                    ltSavings.setBackgroundColor(
+                        ContextCompat.getColor(
+                            ltSavings.context,
+                            R.color.main_page_background_dark
+                        )
+                    )
+                    tvSavings.setTextColor(
+                        ContextCompat.getColor(
+                            tvSavings.context,
+                            R.color.white_grey
+                        )
+                    )
                     ltSavingsContent.hide()
-                    tvSavings.check()
+                    vDividerSavings.show()
                 }
-                btnSaveUnexpected.setOnClickListener {
+            }
+
+            ltUnexpected.setOnClickListener {
+                //todo refactor: add toggle extension
+                if (ltUnexpectedContent.visibility == View.GONE) {
+                    ltUnexpected.setBackgroundColor(
+                        ContextCompat.getColor(
+                            ltUnexpected.context,
+                            R.color.white_grey
+                        )
+                    )
+                    tvTitleUnexpected.setTextColor(
+                        ContextCompat.getColor(
+                            tvTitleUnexpected.context,
+                            R.color.black
+                        )
+                    )
+                    ltUnexpectedContent.show()
+                    ltUnexpectedContent.startAnimation(
+                        AnimationUtils.loadAnimation(
+                            context,
+                            R.anim.slide_up
+                        )
+                    )
+                } else {
+                    ltUnexpected.setBackgroundColor(
+                        ContextCompat.getColor(
+                            ltUnexpected.context,
+                            R.color.main_page_background_dark
+                        )
+                    )
+                    tvTitleUnexpected.setTextColor(
+                        ContextCompat.getColor(
+                            tvTitleUnexpected.context,
+                            R.color.white_grey
+                        )
+                    )
                     ltUnexpectedContent.hide()
-                    tvTitleUnexpected.check()
-                    btnNext.enable()
-                }
-
-                btnAddService.setOnClickListener {
-                    openServices()
-                }
-
-                ltExpenses.setOnClickListener {
-                    //todo refactor: add toggle extension
-                    if (ltExpensesContent.visibility == View.GONE) {
-                        ltExpenses.setBackgroundColor(resources.getColor(R.color.white_grey))
-                        tvTitleExpenses.setTextColor(resources.getColor(R.color.black))
-                        vDividerExpenses.hide()
-                        //todo animation
-                        ltExpensesContent.show()
-                        ltExpensesContent.startAnimation(
-                            AnimationUtils.loadAnimation(
-                                context,
-                                R.anim.slide_up
-                            )
-                        )
-                    } else {
-                        ltExpenses.setBackgroundColor(resources.getColor(R.color.main_page_background_dark))
-                        tvTitleExpenses.setTextColor(resources.getColor(R.color.white_grey))
-                        ltExpensesContent.hide()
-                        vDividerExpenses.show()
-                    }
-                }
-
-                ltSavings.setOnClickListener {
-                    //todo refactor: add toggle extension
-                    if (ltSavingsContent.visibility == View.GONE) {
-                        ltSavings.setBackgroundColor(resources.getColor(R.color.white_grey))
-                        tvSavings.setTextColor(resources.getColor(R.color.black))
-                        ltSavingsContent.show()
-                        vDividerSavings.hide()
-                        ltSavingsContent.startAnimation(
-                            AnimationUtils.loadAnimation(
-                                context,
-                                R.anim.slide_up
-                            )
-                        )
-                    } else {
-                        ltSavings.setBackgroundColor(resources.getColor(R.color.main_page_background_dark))
-                        tvSavings.setTextColor(resources.getColor(R.color.white_grey))
-                        ltSavingsContent.hide()
-                        vDividerSavings.show()
-                    }
-                }
-
-                ltUnexpected.setOnClickListener {
-                    //todo refactor: add toggle extension
-                    if (ltUnexpectedContent.visibility == View.GONE) {
-                        ltUnexpected.setBackgroundColor(resources.getColor(R.color.white_grey))
-                        tvTitleUnexpected.setTextColor(resources.getColor(R.color.black))
-                        ltUnexpectedContent.show()
-                        ltUnexpectedContent.startAnimation(
-                            AnimationUtils.loadAnimation(
-                                context,
-                                R.anim.slide_up
-                            )
-                        )
-                    } else {
-                        ltUnexpected.setBackgroundColor(resources.getColor(R.color.main_page_background_dark))
-                        tvTitleUnexpected.setTextColor(resources.getColor(R.color.white_grey))
-                        ltUnexpectedContent.hide()
-                    }
                 }
             }
         }

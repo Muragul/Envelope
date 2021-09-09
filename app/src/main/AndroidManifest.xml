@@ -19,7 +19,7 @@
         </activity>
         <activity
             android:name=".ui.start.StartActivity"
-            android:windowSoftInputMode="adjustResize" />
+            android:windowSoftInputMode="adjustPan" />
         <activity android:name=".ui.main.MainActivity" />
     </application>
 
