@@ -33,13 +33,12 @@ class DistributionFragment :
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        initViews()
+        setupListeners()
+    }
+
+    private fun setupListeners() {
         binding.run {
-            (activity as StartActivity).stepOnFocus(2)
-            val adapter = ExpensesAdapter()
-            adapter.submitList(expensesList)
-            rvServices.adapter = adapter
-            //todo disable "Next" button when logic is ready
-//            btnNext.disable()
             btnNext.setOnClickListener {
                 (activity as StartActivity).showFragment(
                     CardFragment(),
@@ -66,7 +65,6 @@ class DistributionFragment :
             btnAddService.setOnClickListener {
                 openServices()
             }
-
             ltExpenses.setOnClickListener {
                 //todo refactor: add toggle extension
                 if (ltExpensesContent.visibility == View.GONE) {
@@ -188,6 +186,17 @@ class DistributionFragment :
                     ltUnexpectedContent.hide()
                 }
             }
+        }
+    }
+
+    private fun initViews() {
+        binding.run {
+            (activity as StartActivity).stepOnFocus(2)
+            val adapter = ExpensesAdapter()
+            adapter.submitList(expensesList)
+            rvServices.adapter = adapter
+            //todo disable "Next" button when logic is ready
+//            btnNext.disable()
         }
     }
 

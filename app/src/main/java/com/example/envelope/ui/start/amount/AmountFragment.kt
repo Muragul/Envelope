@@ -14,9 +14,12 @@ class AmountFragment : BindingFragment<FragmentAmountBinding>(FragmentAmountBind
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        initViews()
+        setupListeners()
+    }
+
+    private fun setupListeners() {
         binding.run {
-            (activity as StartActivity).stepOnFocus(1)
-            btnNext.disable()
             btnNext.setOnClickListener {
                 (activity as StartActivity).showFragment(
                     DistributionFragment(),
@@ -24,10 +27,18 @@ class AmountFragment : BindingFragment<FragmentAmountBinding>(FragmentAmountBind
                 )
                 (activity as StartActivity).stepOnCompleted(1)
             }
+        }
+    }
+
+    private fun initViews() {
+        binding.run {
+            (activity as StartActivity).stepOnFocus(1)
+            btnNext.disable()
             etAmount.doAfterTextChanged {
                 btnNext.isEnabled = !it.isNullOrBlank()
             }
         }
+
     }
 
 }

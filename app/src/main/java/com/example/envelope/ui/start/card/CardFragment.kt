@@ -20,14 +20,17 @@ class CardFragment : BindingFragment<FragmentCardBinding>(FragmentCardBinding::i
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        initViews()
+        setupListeners()
+    }
+
+    private fun setupListeners() {
         binding.run {
-            (activity as StartActivity).stepOnFocus(3)
             btnNext.setOnClickListener {
                 (activity as StartActivity).stepOnCompleted(3)
                 goToCompletion()
             }
         }
-        initViews()
     }
 
     private fun goToCompletion() {
@@ -76,6 +79,7 @@ class CardFragment : BindingFragment<FragmentCardBinding>(FragmentCardBinding::i
             arrayListOf("[00]{/}[00]"),
             AffinityCalculationStrategy.WHOLE_STRING
         )
+        (activity as StartActivity).stepOnFocus(3)
     }
 
 

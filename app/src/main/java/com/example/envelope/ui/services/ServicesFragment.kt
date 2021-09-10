@@ -23,12 +23,12 @@ class ServicesFragment :
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.run {
-            val adapter = ServicesAdapter()
-            val servicesList = servicesList
-            adapter.submitList(servicesList)
-            rvServices.adapter = adapter
+        initViews()
+        setupListeners()
+    }
 
+    private fun setupListeners() {
+        binding.run {
             ivAdd.setOnClickListener {
                 showAddServiceDialog()
             }
@@ -36,6 +36,15 @@ class ServicesFragment :
             ivBack.setOnClickListener {
                 activity?.onBackPressed()
             }
+        }
+    }
+
+    private fun initViews() {
+        binding.run {
+            val adapter = ServicesAdapter()
+            val servicesList = servicesList
+            adapter.submitList(servicesList)
+            rvServices.adapter = adapter
         }
     }
 

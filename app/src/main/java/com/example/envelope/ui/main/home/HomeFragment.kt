@@ -22,14 +22,12 @@ class HomeFragment : BindingFragment<FragmentHomeBinding>(FragmentHomeBinding::i
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        initViews()
+        setupListeners()
+    }
+
+    private fun setupListeners() {
         binding.run {
-            val adapter = HomeExpensesAdapter(
-                itemClick = { id: Int ->
-                    openPayment(id)
-                }
-            )
-            adapter.submitList(expensesList)
-            rvExpenses.adapter = adapter
             tvAllExpenses.setOnClickListener {
                 openServices()
             }
@@ -71,6 +69,18 @@ class HomeFragment : BindingFragment<FragmentHomeBinding>(FragmentHomeBinding::i
                     ivSavingsHint
                 )
             }
+        }
+    }
+
+    private fun initViews() {
+        binding.run {
+            val adapter = HomeExpensesAdapter(
+                itemClick = { id: Int ->
+                    openPayment(id)
+                }
+            )
+            adapter.submitList(expensesList)
+            rvExpenses.adapter = adapter
         }
     }
 

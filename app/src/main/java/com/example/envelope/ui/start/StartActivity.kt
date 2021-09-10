@@ -14,6 +14,10 @@ import com.example.envelope.utils.extensions.hide
 class StartActivity : BindingActivity<ActivityStartBinding>(ActivityStartBinding::inflate) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        initViews()
+    }
+
+    private fun initViews() {
         binding.run {
             firstStepAmount.apply {
                 tvStepTitle.text = getString(R.string.start_progress_first_step)
@@ -100,24 +104,54 @@ class StartActivity : BindingActivity<ActivityStartBinding>(ActivityStartBinding
         when (step) {
             1 -> {
                 binding.firstStepAmount.ivStepIcon.background =
-                    getDrawable(R.drawable.progress_bg_default)
+                    ContextCompat.getDrawable(this, R.drawable.progress_bg_default)
                 binding.firstStepAmount.ivStepIcon.setImageResource(0)
-                binding.firstStepAmount.tvStepNumber.setTextColor(resources.getColor(R.color.text_light_purple))
-                binding.firstStepAmount.tvStepTitle.setTextColor(resources.getColor(R.color.text_light_purple))
+                binding.firstStepAmount.tvStepNumber.setTextColor(
+                    ContextCompat.getColor(
+                        this,
+                        R.color.text_light_purple
+                    )
+                )
+                binding.firstStepAmount.tvStepTitle.setTextColor(
+                    ContextCompat.getColor(
+                        this,
+                        R.color.text_light_purple
+                    )
+                )
             }
             2 -> {
                 binding.secondStepDistribution.ivStepIcon.background =
-                    getDrawable(R.drawable.progress_bg_default)
+                    ContextCompat.getDrawable(this, R.drawable.progress_bg_default)
                 binding.secondStepDistribution.ivStepIcon.setImageResource(0)
-                binding.secondStepDistribution.tvStepNumber.setTextColor(resources.getColor(R.color.text_light_purple))
-                binding.secondStepDistribution.tvStepTitle.setTextColor(resources.getColor(R.color.text_light_purple))
+                binding.secondStepDistribution.tvStepNumber.setTextColor(
+                    ContextCompat.getColor(
+                        this,
+                        R.color.text_light_purple
+                    )
+                )
+                binding.secondStepDistribution.tvStepTitle.setTextColor(
+                    ContextCompat.getColor(
+                        this,
+                        R.color.text_light_purple
+                    )
+                )
             }
             3 -> {
                 binding.thirdStepCard.ivStepIcon.background =
-                    getDrawable(R.drawable.progress_bg_default)
+                    ContextCompat.getDrawable(this, R.drawable.progress_bg_default)
                 binding.thirdStepCard.ivStepIcon.setImageResource(0)
-                binding.thirdStepCard.tvStepNumber.setTextColor(resources.getColor(R.color.text_light_purple))
-                binding.thirdStepCard.tvStepTitle.setTextColor(resources.getColor(R.color.text_light_purple))
+                binding.thirdStepCard.tvStepNumber.setTextColor(
+                    ContextCompat.getColor(
+                        this,
+                        R.color.text_light_purple
+                    )
+                )
+                binding.thirdStepCard.tvStepTitle.setTextColor(
+                    ContextCompat.getColor(
+                        this,
+                        R.color.text_light_purple
+                    )
+                )
             }
         }
     }

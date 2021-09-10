@@ -18,14 +18,24 @@ class BudgetFragment : BindingFragment<FragmentBudgetBinding>(FragmentBudgetBind
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        initViews()
+        setUpListeners()
+    }
+
+    private fun setUpListeners() {
+        binding.run {
+            toolbar.ivBack.setOnClickListener {
+                activity?.onBackPressed()
+            }
+        }
+    }
+
+    private fun initViews() {
         val title = arguments?.getString(SCREEN_TITLE)
         binding.run {
             val adapter = BudgetAdapter()
             adapter.submitList(budgetList)
             rvBudget.adapter = adapter
-            toolbar.ivBack.setOnClickListener {
-                activity?.onBackPressed()
-            }
             toolbar.tvToolbarTitle.text = title.toString()
         }
     }
