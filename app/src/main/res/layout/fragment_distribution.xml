@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/main_page_background_dark">
@@ -81,8 +80,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/white_grey"
-                android:visibility="gone"
-                tools:visibility="visible">
+                android:visibility="gone">
 
                 <TextView
                     android:id="@+id/tv_expenses_hint"
@@ -217,7 +215,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
-                    android:stepSize="1"
                     android:valueFrom="0"
                     android:valueTo="100"
                     app:thumbColor="@color/button_light_blue"
@@ -301,7 +298,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
-                    android:stepSize="1"
                     android:valueFrom="0"
                     android:valueTo="100"
                     app:thumbColor="@color/button_light_blue"
