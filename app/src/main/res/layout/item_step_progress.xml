@@ -6,8 +6,8 @@
     android:orientation="vertical">
 
     <FrameLayout
-        android:layout_width="26dp"
-        android:layout_height="26dp"
+        android:layout_width="33dp"
+        android:layout_height="33dp"
         android:layout_gravity="center">
 
         <com.google.android.material.imageview.ShapeableImageView
@@ -16,6 +16,7 @@
             android:layout_height="match_parent"
             android:background="@drawable/progress_bg_default"
             android:scaleType="fitCenter"
+            app:contentPadding="5dp"
             app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent" />
 
         <TextView
@@ -24,6 +25,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:fontFamily="@font/nunito_regular_400"
+            android:padding="5dp"
             android:textAlignment="center"
             android:textColor="@color/text_light_purple"
             android:textSize="12sp" />

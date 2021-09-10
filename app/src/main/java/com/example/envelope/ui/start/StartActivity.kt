@@ -22,11 +22,6 @@ class StartActivity : BindingActivity<ActivityStartBinding>(ActivityStartBinding
         changeFragment(fragment = fragment, tag = tag, container = binding.container.id)
     }
 
-    fun restart() {
-        startActivity(Intent(this, StartActivity::class.java))
-        finish()
-    }
-
     fun completeSetup() {
         startActivity(Intent(this, MainActivity::class.java))
         finish()
