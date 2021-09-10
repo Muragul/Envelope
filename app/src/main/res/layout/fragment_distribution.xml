@@ -217,6 +217,7 @@
                     android:layout_marginTop="20dp"
                     android:valueFrom="0"
                     android:valueTo="100"
+                    app:labelStyle="@style/tooltip"
                     app:thumbColor="@color/button_light_blue"
                     app:trackColorActive="@color/button_light_blue"
                     app:trackColorInactive="@color/distribution_et_stroke" />
@@ -300,6 +301,7 @@
                     android:layout_marginTop="20dp"
                     android:valueFrom="0"
                     android:valueTo="100"
+                    app:labelStyle="@style/tooltip"
                     app:thumbColor="@color/button_light_blue"
                     app:trackColorActive="@color/button_light_blue"
                     app:trackColorInactive="@color/distribution_et_stroke" />

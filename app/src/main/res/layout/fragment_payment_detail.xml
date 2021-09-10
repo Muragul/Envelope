@@ -28,6 +28,7 @@
         android:imeOptions="actionNext"
         android:inputType="number"
         android:maxLength="19"
+        android:textColor="@color/main_page_background_dark"
         android:textSize="16sp" />
 
     <TextView
@@ -50,6 +51,7 @@
         android:imeOptions="actionNext"
         android:inputType="number"
         android:maxLength="19"
+        android:textColor="@color/main_page_background_dark"
         android:textSize="16sp" />
 
     <TextView
@@ -67,6 +69,7 @@
         android:layout_width="match_parent"
         android:layout_height="46dp"
         android:layout_marginTop="4dp"
+        android:textColor="@color/main_page_background_dark"
         app:boxBackgroundColor="@color/white"
         app:boxStrokeWidth="0dp"
         app:boxStrokeWidthFocused="0dp">

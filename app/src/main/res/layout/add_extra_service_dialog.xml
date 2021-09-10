@@ -29,6 +29,7 @@
         android:lines="1"
         android:maxLength="30"
         android:padding="10dp"
+        android:textColor="@color/main_page_background_dark"
         android:textSize="14sp" />
 
     <EditText
@@ -43,6 +44,7 @@
         android:lines="1"
         android:maxLength="30"
         android:padding="10dp"
+        android:textColor="@color/main_page_background_dark"
         android:textSize="14sp" />
 
     <androidx.appcompat.widget.AppCompatButton

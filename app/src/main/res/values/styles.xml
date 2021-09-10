@@ -26,4 +26,8 @@
         <item name="android:thumbTint">@color/button_light_blue</item>
     </style>
 
+    <style name="tooltip" parent="Widget.MaterialComponents.Tooltip">
+        <item name="backgroundTint">@color/button_light_blue</item>
+    </style>
+
 </resources>
