@@ -84,6 +84,7 @@
                 android:background="@drawable/search_view_bg"
                 android:fontFamily="@font/nunito_regular_400"
                 android:inputType="number"
+                android:textColor="@color/main_page_background_dark"
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
