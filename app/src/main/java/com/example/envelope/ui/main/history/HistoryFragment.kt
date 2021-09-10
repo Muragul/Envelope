@@ -10,6 +10,10 @@ class HistoryFragment : BindingFragment<FragmentHistoryBinding>(FragmentHistoryB
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        initViews()
+    }
+
+    private fun initViews() {
         binding.run {
             val adapter = HistoryAdapter(transactionHistory = transactionHistoryList)
             rvHistory.adapter = adapter

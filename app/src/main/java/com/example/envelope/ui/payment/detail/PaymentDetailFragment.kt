@@ -23,13 +23,23 @@ class PaymentDetailFragment :
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val title = arguments?.getString(SCREEN_TITLE)
+        initViews()
+        setupListeners()
+    }
+
+    private fun setupListeners() {
         binding.run {
-            val adapter = CardAdapter(atvCards.context, cardsList)
-            atvCards.setAdapter(adapter)
             toolbar.ivBack.setOnClickListener {
                 activity?.onBackPressed()
             }
+        }
+    }
+
+    private fun initViews() {
+        binding.run {
+            val title = arguments?.getString(SCREEN_TITLE)
+            val adapter = CardAdapter(atvCards.context, cardsList)
+            atvCards.setAdapter(adapter)
             toolbar.tvToolbarTitle.text = title.toString()
         }
     }

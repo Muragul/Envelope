@@ -12,6 +12,7 @@ import com.example.envelope.databinding.DistributionOnCompleteDialogBinding
 import com.example.envelope.databinding.FragmentCardBinding
 import com.example.envelope.ui.start.StartActivity
 import com.example.envelope.utils.binding.BindingFragment
+import com.example.envelope.utils.extensions.hide
 import com.example.envelope.utils.extensions.show
 import com.redmadrobot.inputmask.MaskedTextChangedListener
 import com.redmadrobot.inputmask.helper.AffinityCalculationStrategy
@@ -20,14 +21,17 @@ class CardFragment : BindingFragment<FragmentCardBinding>(FragmentCardBinding::i
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        initViews()
+        setupListeners()
+    }
+
+    private fun setupListeners() {
         binding.run {
-            (activity as StartActivity).stepOnFocus(3)
             btnNext.setOnClickListener {
-                (activity as StartActivity).stepOnCompleted(3)
+                stepOnCompleted(3)
                 goToCompletion()
             }
         }
-        initViews()
     }
 
     private fun goToCompletion() {
@@ -64,6 +68,23 @@ class CardFragment : BindingFragment<FragmentCardBinding>(FragmentCardBinding::i
     }
 
     private fun initViews() {
+        binding.run {
+            firstStepDistribution.apply {
+                tvStepTitle.text = getString(R.string.start_progress_first_step)
+                tvStepNumber.text = "1"
+            }
+            secondStepDistribution.apply {
+                tvStepTitle.text = getString(R.string.start_progress_second_step)
+                tvStepNumber.text = "2"
+            }
+            thirdStepDistribution.apply {
+                tvStepTitle.text = getString(R.string.start_progress_third_step)
+                tvStepNumber.text = "3"
+            }
+        }
+        stepOnCompleted(2)
+        stepOnFocus(3)
+        stepOnCompleted(1)
         MaskedTextChangedListener.installOn(
             binding.etCardNumber,
             "[0000] [0000] [0000] [0000]",
@@ -119,4 +140,124 @@ class CardFragment : BindingFragment<FragmentCardBinding>(FragmentCardBinding::i
         }
     }
 
+
+    fun stepOnCompleted(step: Int) {
+        when (step) {
+            1 -> {
+                binding.firstStepDistribution.ivStepIcon.background =
+                    ContextCompat.getDrawable(binding.root.context, R.drawable.progress_bg_done)
+                binding.firstStepDistribution.ivStepIcon.setImageResource(R.drawable.ic_baseline_check_24)
+                binding.firstStepDistribution.tvStepNumber.hide()
+            }
+            2 -> {
+                binding.secondStepDistribution.ivStepIcon.background =
+                    ContextCompat.getDrawable(binding.root.context, R.drawable.progress_bg_done)
+                binding.secondStepDistribution.ivStepIcon.setImageResource(R.drawable.ic_baseline_check_24)
+                binding.secondStepDistribution.tvStepNumber.hide()
+            }
+            3 -> {
+                binding.thirdStepDistribution.ivStepIcon.background =
+                    ContextCompat.getDrawable(binding.root.context, R.drawable.progress_bg_done)
+                binding.thirdStepDistribution.ivStepIcon.setImageResource(R.drawable.ic_baseline_check_24)
+                binding.thirdStepDistribution.tvStepNumber.hide()
+            }
+        }
+    }
+
+    fun stepOnFocus(step: Int) {
+        when (step) {
+            1 -> {
+                binding.firstStepDistribution.ivStepIcon.background =
+                    ContextCompat.getDrawable(
+                        binding.root.context,
+                        R.drawable.progress_bg
+                    )
+                binding.firstStepDistribution.tvStepNumber.setTextColor(
+                    ContextCompat.getColor(binding.root.context, R.color.button_light_blue)
+                )
+                binding.firstStepDistribution.tvStepTitle.setTextColor(
+                    ContextCompat.getColor(binding.root.context, R.color.button_light_blue)
+                )
+            }
+            2 -> {
+
+                binding.secondStepDistribution.ivStepIcon.background =
+                    ContextCompat.getDrawable(binding.root.context, R.drawable.progress_bg)
+                binding.secondStepDistribution.tvStepNumber.setTextColor(
+                    ContextCompat.getColor(binding.root.context, R.color.button_light_blue)
+                )
+                binding.secondStepDistribution.tvStepTitle.setTextColor(
+                    ContextCompat.getColor(binding.root.context, R.color.button_light_blue)
+                )
+
+            }
+            3 -> {
+
+                binding.thirdStepDistribution.ivStepIcon.background =
+                    ContextCompat.getDrawable(binding.root.context, R.drawable.progress_bg)
+                binding.thirdStepDistribution.tvStepNumber.setTextColor(
+                    ContextCompat.getColor(binding.root.context, R.color.button_light_blue)
+                )
+                binding.thirdStepDistribution.tvStepTitle.setTextColor(
+                    ContextCompat.getColor(binding.root.context, R.color.button_light_blue)
+                )
+            }
+        }
+    }
+
+    fun makeStepDefault(step: Int) {
+        when (step) {
+            1 -> {
+                binding.firstStepDistribution.ivStepIcon.background =
+                    ContextCompat.getDrawable(binding.root.context, R.drawable.progress_bg_default)
+                binding.firstStepDistribution.ivStepIcon.setImageResource(0)
+                binding.firstStepDistribution.tvStepNumber.setTextColor(
+                    ContextCompat.getColor(
+                        binding.root.context,
+                        R.color.text_light_purple
+                    )
+                )
+                binding.firstStepDistribution.tvStepTitle.setTextColor(
+                    ContextCompat.getColor(
+                        binding.root.context,
+                        R.color.text_light_purple
+                    )
+                )
+            }
+            2 -> {
+                binding.secondStepDistribution.ivStepIcon.background =
+                    ContextCompat.getDrawable(binding.root.context, R.drawable.progress_bg_default)
+                binding.secondStepDistribution.ivStepIcon.setImageResource(0)
+                binding.secondStepDistribution.tvStepNumber.setTextColor(
+                    ContextCompat.getColor(
+                        binding.root.context,
+                        R.color.text_light_purple
+                    )
+                )
+                binding.secondStepDistribution.tvStepTitle.setTextColor(
+                    ContextCompat.getColor(
+                        binding.root.context,
+                        R.color.text_light_purple
+                    )
+                )
+            }
+            3 -> {
+                binding.thirdStepDistribution.ivStepIcon.background =
+                    ContextCompat.getDrawable(binding.root.context, R.drawable.progress_bg_default)
+                binding.thirdStepDistribution.ivStepIcon.setImageResource(0)
+                binding.thirdStepDistribution.tvStepNumber.setTextColor(
+                    ContextCompat.getColor(
+                        binding.root.context,
+                        R.color.text_light_purple
+                    )
+                )
+                binding.thirdStepDistribution.tvStepTitle.setTextColor(
+                    ContextCompat.getColor(
+                        binding.root.context,
+                        R.color.text_light_purple
+                    )
+                )
+            }
+        }
+    }
 }

@@ -20,14 +20,24 @@ class PaymentAllFragment :
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val title = arguments?.getString(SCREEN_TITLE)
+        initViews()
+        setupListeners()
+    }
+
+    private fun setupListeners() {
         binding.run {
-            val adapter = ExpensesPaymentAllAdapter()
-            adapter.submitList(expensesList)
-            rvAllPayments.adapter = adapter
             toolbar.ivBack.setOnClickListener {
                 activity?.onBackPressed()
             }
+        }
+    }
+
+    private fun initViews() {
+        binding.run {
+            val title = arguments?.getString(SCREEN_TITLE)
+            val adapter = ExpensesPaymentAllAdapter()
+            adapter.submitList(expensesList)
+            rvAllPayments.adapter = adapter
             toolbar.tvToolbarTitle.text = title.toString()
         }
     }

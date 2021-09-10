@@ -12,8 +12,16 @@ class ProfileFragment : BindingFragment<FragmentProfileBinding>(FragmentProfileB
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.run {
+        initViews()
+        setupListeners()
+    }
 
+    private fun setupListeners() {
+
+    }
+
+    private fun initViews() {
+        binding.run {
             val adapter = UserCardsAdapter()
             val cards = cardsList
             adapter.submitList(cards)

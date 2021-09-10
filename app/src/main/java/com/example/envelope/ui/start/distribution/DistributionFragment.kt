@@ -33,19 +33,17 @@ class DistributionFragment :
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        initViews()
+        setupListeners()
+    }
+
+    private fun setupListeners() {
         binding.run {
-            (activity as StartActivity).stepOnFocus(2)
-            val adapter = ExpensesAdapter()
-            adapter.submitList(expensesList)
-            rvServices.adapter = adapter
-            //todo disable "Next" button when logic is ready
-//            btnNext.disable()
             btnNext.setOnClickListener {
                 (activity as StartActivity).showFragment(
                     CardFragment(),
                     CARD_TAG
                 )
-                (activity as StartActivity).stepOnCompleted(2)
             }
 
             btnSaveExpenses.setOnClickListener {
@@ -66,7 +64,6 @@ class DistributionFragment :
             btnAddService.setOnClickListener {
                 openServices()
             }
-
             ltExpenses.setOnClickListener {
                 //todo refactor: add toggle extension
                 if (ltExpensesContent.visibility == View.GONE) {
@@ -191,9 +188,153 @@ class DistributionFragment :
         }
     }
 
+    private fun initViews() {
+        binding.run {
+            firstStepDistribution.apply {
+                tvStepTitle.text = getString(R.string.start_progress_first_step)
+                tvStepNumber.text = "1"
+            }
+            secondStepDistribution.apply {
+                tvStepTitle.text = getString(R.string.start_progress_second_step)
+                tvStepNumber.text = "2"
+            }
+            thirdStepDistribution.apply {
+                tvStepTitle.text = getString(R.string.start_progress_third_step)
+                tvStepNumber.text = "3"
+            }
+            val adapter = ExpensesAdapter()
+            adapter.submitList(expensesList)
+            rvServices.adapter = adapter
+            //todo disable "Next" button when logic is ready
+//            btnNext.disable()
+            stepOnCompleted(1)
+            stepOnFocus(2)
+        }
+    }
+
     private fun openServices() {
         val bundle = Bundle()
         bundle.putSerializable(SCREEN, Screen.SERVICES)
         ContainerActivity.start(fragment = this, bundle = bundle, requestCode = REQUEST_CODE)
+    }
+
+    fun stepOnCompleted(step: Int) {
+        when (step) {
+            1 -> {
+                binding.firstStepDistribution.ivStepIcon.background =
+                    ContextCompat.getDrawable(binding.root.context, R.drawable.progress_bg_done)
+                binding.firstStepDistribution.ivStepIcon.setImageResource(R.drawable.ic_baseline_check_24)
+                binding.firstStepDistribution.tvStepNumber.hide()
+            }
+            2 -> {
+                binding.secondStepDistribution.ivStepIcon.background =
+                    ContextCompat.getDrawable(binding.root.context, R.drawable.progress_bg_done)
+                binding.secondStepDistribution.ivStepIcon.setImageResource(R.drawable.ic_baseline_check_24)
+                binding.secondStepDistribution.tvStepNumber.hide()
+            }
+            3 -> {
+                binding.thirdStepDistribution.ivStepIcon.background =
+                    ContextCompat.getDrawable(binding.root.context, R.drawable.progress_bg_done)
+                binding.thirdStepDistribution.ivStepIcon.setImageResource(R.drawable.ic_baseline_check_24)
+                binding.thirdStepDistribution.tvStepNumber.hide()
+            }
+        }
+    }
+
+    fun stepOnFocus(step: Int) {
+        when (step) {
+            1 -> {
+                binding.firstStepDistribution.ivStepIcon.background =
+                    ContextCompat.getDrawable(
+                        binding.root.context,
+                        R.drawable.progress_bg
+                    )
+                binding.firstStepDistribution.tvStepNumber.setTextColor(
+                    ContextCompat.getColor(binding.root.context, R.color.button_light_blue)
+                )
+                binding.firstStepDistribution.tvStepTitle.setTextColor(
+                    ContextCompat.getColor(binding.root.context, R.color.button_light_blue)
+                )
+            }
+            2 -> {
+
+                binding.secondStepDistribution.ivStepIcon.background =
+                    ContextCompat.getDrawable(binding.root.context, R.drawable.progress_bg)
+                binding.secondStepDistribution.tvStepNumber.setTextColor(
+                    ContextCompat.getColor(binding.root.context, R.color.button_light_blue)
+                )
+                binding.secondStepDistribution.tvStepTitle.setTextColor(
+                    ContextCompat.getColor(binding.root.context, R.color.button_light_blue)
+                )
+
+            }
+            3 -> {
+
+                binding.thirdStepDistribution.ivStepIcon.background =
+                    ContextCompat.getDrawable(binding.root.context, R.drawable.progress_bg)
+                binding.thirdStepDistribution.tvStepNumber.setTextColor(
+                    ContextCompat.getColor(binding.root.context, R.color.button_light_blue)
+                )
+                binding.thirdStepDistribution.tvStepTitle.setTextColor(
+                    ContextCompat.getColor(binding.root.context, R.color.button_light_blue)
+                )
+            }
+        }
+    }
+
+    fun makeStepDefault(step: Int) {
+        when (step) {
+            1 -> {
+                binding.firstStepDistribution.ivStepIcon.background =
+                    ContextCompat.getDrawable(binding.root.context, R.drawable.progress_bg_default)
+                binding.firstStepDistribution.ivStepIcon.setImageResource(0)
+                binding.firstStepDistribution.tvStepNumber.setTextColor(
+                    ContextCompat.getColor(
+                        binding.root.context,
+                        R.color.text_light_purple
+                    )
+                )
+                binding.firstStepDistribution.tvStepTitle.setTextColor(
+                    ContextCompat.getColor(
+                        binding.root.context,
+                        R.color.text_light_purple
+                    )
+                )
+            }
+            2 -> {
+                binding.secondStepDistribution.ivStepIcon.background =
+                    ContextCompat.getDrawable(binding.root.context, R.drawable.progress_bg_default)
+                binding.secondStepDistribution.ivStepIcon.setImageResource(0)
+                binding.secondStepDistribution.tvStepNumber.setTextColor(
+                    ContextCompat.getColor(
+                        binding.root.context,
+                        R.color.text_light_purple
+                    )
+                )
+                binding.secondStepDistribution.tvStepTitle.setTextColor(
+                    ContextCompat.getColor(
+                        binding.root.context,
+                        R.color.text_light_purple
+                    )
+                )
+            }
+            3 -> {
+                binding.thirdStepDistribution.ivStepIcon.background =
+                    ContextCompat.getDrawable(binding.root.context, R.drawable.progress_bg_default)
+                binding.thirdStepDistribution.ivStepIcon.setImageResource(0)
+                binding.thirdStepDistribution.tvStepNumber.setTextColor(
+                    ContextCompat.getColor(
+                        binding.root.context,
+                        R.color.text_light_purple
+                    )
+                )
+                binding.thirdStepDistribution.tvStepTitle.setTextColor(
+                    ContextCompat.getColor(
+                        binding.root.context,
+                        R.color.text_light_purple
+                    )
+                )
+            }
+        }
     }
 }
