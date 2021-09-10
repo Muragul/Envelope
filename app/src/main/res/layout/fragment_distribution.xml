@@ -206,6 +206,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
                     android:fontFamily="@font/nunito_semibold_600"
                     android:text="@string/savings_description"
                     android:textColor="@color/text_dark"
@@ -288,6 +289,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
                     android:fontFamily="@font/nunito_semibold_600"
                     android:text="@string/unforeseen"
                     android:textColor="@color/text_dark"

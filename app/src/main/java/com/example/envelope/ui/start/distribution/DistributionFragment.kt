@@ -2,7 +2,6 @@ package com.example.envelope.ui.start.distribution
 
 import android.os.Bundle
 import android.view.View
-import androidx.core.content.ContextCompat
 import com.example.envelope.R
 import com.example.envelope.databinding.FragmentDistributionBinding
 import com.example.envelope.ui.ContainerActivity
@@ -131,9 +130,7 @@ class DistributionFragment :
     }
 
     private fun stepOnCompleted() {
-        binding.firstStepDistribution.ivStepIcon.background =
-            ContextCompat.getDrawable(binding.root.context, R.drawable.progress_bg_done)
-        binding.firstStepDistribution.ivStepIcon.setImageResource(R.drawable.ic_baseline_check_24)
+        binding.firstStepDistribution.ivStepIcon.setStepDone()
         binding.firstStepDistribution.tvStepNumber.hide()
     }
 
