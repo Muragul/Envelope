@@ -2,13 +2,12 @@ package com.example.envelope.ui.payment.detail
 
 import android.os.Bundle
 import android.view.View
-import androidx.core.content.ContextCompat
-import com.example.envelope.R
 import com.example.envelope.databinding.FragmentPaymentDetailBinding
 import com.example.envelope.utils.SCREEN_TITLE
 import com.example.envelope.utils.binding.BindingFragment
 import com.example.envelope.utils.cardsList
 import com.example.envelope.utils.extensions.show
+import com.example.envelope.utils.extensions.showError
 
 class PaymentDetailFragment :
     BindingFragment<FragmentPaymentDetailBinding>(FragmentPaymentDetailBinding::inflate) {
@@ -47,20 +46,14 @@ class PaymentDetailFragment :
     private fun showIncorrectCardNumber() {
         binding.run {
             incorrectPhoneNumber.show()
-            etPhoneNumber.setBackgroundResource(R.drawable.error_edit_text)
-            etPhoneNumber.setTextColor(
-                ContextCompat.getColor(etPhoneNumber.context, R.color.red)
-            )
+            etPhoneNumber.showError()
         }
     }
 
     private fun showIncorrectSum() {
         binding.run {
             incorrectSum.show()
-            etSum.setBackgroundResource(R.drawable.error_edit_text)
-            etSum.setTextColor(
-                ContextCompat.getColor(etSum.context, R.color.red)
-            )
+            etSum.showError()
         }
     }
 
