@@ -25,6 +25,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:fontFamily="@font/nunito_semibold_600"
+            android:text="@string/total_sum"
             android:textColor="@color/text_light_purple"
             android:textSize="18sp" />
 

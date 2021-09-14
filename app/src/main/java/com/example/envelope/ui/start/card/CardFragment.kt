@@ -44,6 +44,13 @@ class CardFragment : BindingFragment<FragmentCardBinding>(FragmentCardBinding::i
         val dialogBinding = DistributionOnCompleteDialogBinding.inflate(layoutInflater)
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
         dialog.setContentView(dialogBinding.root)
+        dialogBinding.cbCondition.setOnCheckedChangeListener { buttonView, isChecked ->
+            if (isChecked) {
+                dialogBinding.btnNext.enable()
+            } else {
+                dialogBinding.btnNext.disable()
+            }
+        }
         dialogBinding.btnNext.setOnClickListener {
             (activity as StartActivity).completeSetup()
         }

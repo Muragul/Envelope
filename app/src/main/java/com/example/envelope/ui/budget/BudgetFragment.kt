@@ -2,6 +2,7 @@ package com.example.envelope.ui.budget
 
 import android.os.Bundle
 import android.view.View
+import com.example.envelope.R
 import com.example.envelope.databinding.FragmentBudgetBinding
 import com.example.envelope.utils.SCREEN_TITLE
 import com.example.envelope.utils.binding.BindingFragment
@@ -35,8 +36,10 @@ class BudgetFragment : BindingFragment<FragmentBudgetBinding>(FragmentBudgetBind
         binding.run {
             val adapter = BudgetAdapter()
             adapter.submitList(budgetList)
+            val totalSum = budgetList.sumBy { it.weekBudget.toInt() }
             rvBudget.adapter = adapter
             toolbar.tvToolbarTitle.text = title.toString()
+            tvTotalSum.text = getString(R.string.total_price, totalSum.toString())
         }
     }
 }

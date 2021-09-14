@@ -67,7 +67,7 @@
         android:id="@+id/il_cards"
         style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
         android:layout_width="match_parent"
-        android:layout_height="46dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:textColor="@color/main_page_background_dark"
         app:boxBackgroundColor="@color/white"

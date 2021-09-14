@@ -20,3 +20,5 @@ const val DEPOSIT_FRAGMENT_TITLE = "Доступные депозиты"
 const val HISTORY_FRAGMENT_TITLE = "История транзакций"
 const val PAYMENT_DETAIL_FRAGMENT_TITLE = "Оплачивание платежа"
 
+const val MONEY_AMOUNT = 200000
+
