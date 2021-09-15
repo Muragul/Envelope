@@ -74,11 +74,12 @@
         app:boxStrokeWidth="0dp"
         app:boxStrokeWidthFocused="0dp">
 
-        <AutoCompleteTextView
+        <com.google.android.material.textfield.MaterialAutoCompleteTextView
             android:id="@+id/atv_cards"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="none" />
+            android:inputType="none"
+            android:text="@string/card_number" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
