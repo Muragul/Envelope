@@ -61,4 +61,6 @@ dependencies {
     // Tooltip
     implementation "com.github.skydoves:balloon:1.3.6"
 
+    //seekbar
+    implementation 'com.github.warkiz.widget:indicatorseekbar:2.1.2'
 }

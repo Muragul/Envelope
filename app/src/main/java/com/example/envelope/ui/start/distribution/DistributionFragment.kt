@@ -13,6 +13,9 @@ import com.example.envelope.utils.*
 import com.example.envelope.utils.binding.BindingFragment
 import com.example.envelope.utils.extensions.*
 import com.example.envelope.utils.navigation.Screen
+import com.warkiz.widget.IndicatorSeekBar
+import com.warkiz.widget.OnSeekChangeListener
+import com.warkiz.widget.SeekParams
 
 class DistributionFragment :
     BindingFragment<FragmentDistributionBinding>(FragmentDistributionBinding::inflate) {
@@ -104,19 +107,32 @@ class DistributionFragment :
                 }
             }
 
-            sbSavingsPercent.addOnChangeListener { _, value, _ ->
-                val amount = (value * MONEY_AMOUNT) / 100
-                if (amount == 0F) {
-                    etSavingsAmount.setText("")
-                } else {
-                    etSavingsAmount.setText(amount.toInt().toString())
+            sbSavingsPercent.onSeekChangeListener = object : OnSeekChangeListener {
+                override fun onSeeking(p0: SeekParams?) {
+                    if (p0 != null) {
+                        val amount = (p0.progressFloat * MONEY_AMOUNT) / 100
+                        if (amount == 0F) {
+                            etSavingsAmount.setText("")
+                        } else {
+                            etSavingsAmount.setText(amount.toInt().toString())
+                        }
+                        etSavingsAmount.setSelection(etSavingsAmount.length())
+                    }
                 }
-                etSavingsAmount.setSelection(etSavingsAmount.length())
+
+                override fun onStartTrackingTouch(p0: IndicatorSeekBar?) {
+
+                }
+
+                override fun onStopTrackingTouch(p0: IndicatorSeekBar?) {
+
+                }
+
             }
 
             etSavingsAmount.doOnTextChanged { text, _, _, _ ->
                 if (text.toString().isEmpty()) {
-                    sbSavingsPercent.value = 0.toFloat()
+                    sbSavingsPercent.setProgress(0.toFloat())
                 } else if (text.toString().isNotEmpty() && text.toString().toInt() > MONEY_AMOUNT) {
                     Toast.makeText(
                         context,
@@ -126,23 +142,36 @@ class DistributionFragment :
                 } else {
                     val percent =
                         (text.toString().toInt().toFloat() * 100F) / MONEY_AMOUNT.toFloat()
-                    sbSavingsPercent.value = percent
+                    sbSavingsPercent.setProgress(percent)
                 }
             }
 
-            sbUnexpectedPercent.addOnChangeListener { _, value, _ ->
-                val amount = (value * MONEY_AMOUNT) / 100
-                if (amount == 0F) {
-                    etUnexpectedAmount.setText("")
-                } else {
-                    etUnexpectedAmount.setText(amount.toInt().toString())
+            sbUnexpectedPercent.onSeekChangeListener = object : OnSeekChangeListener {
+                override fun onSeeking(p0: SeekParams?) {
+                    if (p0 != null) {
+                        val amount = (p0.progressFloat * MONEY_AMOUNT) / 100
+                        if (amount == 0F) {
+                            etUnexpectedAmount.setText("")
+                        } else {
+                            etUnexpectedAmount.setText(amount.toInt().toString())
+                        }
+                        etUnexpectedAmount.setSelection(etUnexpectedAmount.length())
+                    }
                 }
-                etUnexpectedAmount.setSelection(etUnexpectedAmount.length())
+
+                override fun onStartTrackingTouch(p0: IndicatorSeekBar?) {
+
+                }
+
+                override fun onStopTrackingTouch(p0: IndicatorSeekBar?) {
+
+                }
+
             }
 
             etUnexpectedAmount.doOnTextChanged { text, _, _, _ ->
                 if (text.toString().isEmpty()) {
-                    sbUnexpectedPercent.value = 0.toFloat()
+                    sbUnexpectedPercent.setProgress(0.toFloat())
                 } else if (text.toString().isNotEmpty() && text.toString().toInt() > MONEY_AMOUNT) {
                     Toast.makeText(
                         context,
@@ -152,7 +181,7 @@ class DistributionFragment :
                 } else {
                     val percent =
                         (text.toString().toInt().toFloat() * 100F) / MONEY_AMOUNT.toFloat()
-                    sbUnexpectedPercent.value = percent
+                    sbUnexpectedPercent.setProgress(percent)
                 }
             }
         }
@@ -172,6 +201,8 @@ class DistributionFragment :
                 tvStepTitle.text = getString(R.string.start_progress_third_step)
                 tvStepNumber.text = "3"
             }
+            sbSavingsPercent.setIndicatorTextFormat("\${PROGRESS} %")
+            sbUnexpectedPercent.setIndicatorTextFormat("\${PROGRESS} %")
             val adapter = ExpensesAdapter()
             adapter.submitList(expensesList)
             val totalSum = expensesList.sumBy { it.totalSum ?: 0 }
