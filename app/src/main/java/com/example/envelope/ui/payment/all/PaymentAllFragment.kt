@@ -2,6 +2,7 @@ package com.example.envelope.ui.payment.all
 
 import android.os.Bundle
 import android.view.View
+import com.example.envelope.R
 import com.example.envelope.databinding.FragmentPaymentAllBinding
 import com.example.envelope.utils.SCREEN_TITLE
 import com.example.envelope.utils.binding.BindingFragment
@@ -39,6 +40,8 @@ class PaymentAllFragment :
             adapter.submitList(expensesList)
             rvAllPayments.adapter = adapter
             toolbar.tvToolbarTitle.text = title.toString()
+            val totalSum = expensesList.sumBy { it.totalSum ?: 0 }
+            tvTotalSum.text = getString(R.string.total_price, totalSum.toString())
         }
     }
 }

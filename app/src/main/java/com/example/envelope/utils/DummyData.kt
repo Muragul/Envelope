@@ -21,15 +21,38 @@ val onBoardingList = listOf(
 )
 
 val expensesList = listOf(
-    Expense(1, "Onay", "", 3000),
-    Expense(2, "Beeline", "", 2500),
-    Expense(3, "Kaspi", "", 9500),
+    Expense(
+        1,
+        "Onay",
+        "https://is5-ssl.mzstatic.com/image/thumb/Purple124/v4/87/78/1f/87781f59-23e4-a443-6f16-4ecccbc2a029/source/512x512bb.jpg",
+        3000
+    ),
+    Expense(
+        2,
+        "Beeline",
+        "https://i0.wp.com/apptractor.ru/wp-content/uploads/2014/05/beeline.png?fit=300%2C300&ssl=1",
+        2500
+    ),
+    Expense(
+        3,
+        "Kaspi",
+        "https://upload.wikimedia.org/wikipedia/ru/a/aa/Logo_of_Kaspi_bank.png",
+        9500
+    ),
 )
 
 val servicesList = listOf(
-    Service(1, "Onay", ""),
-    Service(2, "Beeline", ""),
-    Service(3, "Kaspi", ""),
+    Service(
+        1,
+        "Onay",
+        "https://is5-ssl.mzstatic.com/image/thumb/Purple124/v4/87/78/1f/87781f59-23e4-a443-6f16-4ecccbc2a029/source/512x512bb.jpg"
+    ),
+    Service(
+        2,
+        "Beeline",
+        "https://i0.wp.com/apptractor.ru/wp-content/uploads/2014/05/beeline.png?fit=300%2C300&ssl=1"
+    ),
+    Service(3, "Kaspi", "https://upload.wikimedia.org/wikipedia/ru/a/aa/Logo_of_Kaspi_bank.png"),
 )
 
 val cardsList = listOf(
@@ -39,7 +62,7 @@ val cardsList = listOf(
         number = "**** **** **** 4444",
         expireDate = "04/23",
         cvv = "654",
-        imageUrl = ""
+        imageUrl = "https://infocity.az/wp-content/uploads/2020/07/Visa-logo.jpg"
     ),
     Card(
         name = "NAME 2",
@@ -47,7 +70,7 @@ val cardsList = listOf(
         number = "**** **** **** 3232",
         expireDate = "12/12",
         cvv = "321",
-        imageUrl = ""
+        imageUrl = "https://adindex.ru/files2/news/2019_01/230401_5.jpg"
     )
 )
 

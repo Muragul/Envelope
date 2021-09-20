@@ -2,16 +2,15 @@ package com.example.envelope.ui.start.distribution
 
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
+import androidx.core.widget.doOnTextChanged
 import com.example.envelope.R
 import com.example.envelope.databinding.FragmentDistributionBinding
 import com.example.envelope.ui.ContainerActivity
 import com.example.envelope.ui.start.StartActivity
 import com.example.envelope.ui.start.card.CardFragment
-import com.example.envelope.utils.CARD_TAG
-import com.example.envelope.utils.REQUEST_CODE
-import com.example.envelope.utils.SCREEN
+import com.example.envelope.utils.*
 import com.example.envelope.utils.binding.BindingFragment
-import com.example.envelope.utils.expensesList
 import com.example.envelope.utils.extensions.*
 import com.example.envelope.utils.navigation.Screen
 
@@ -36,16 +35,24 @@ class DistributionFragment :
             btnSaveExpenses.setOnClickListener {
                 ltExpensesContent.hide()
                 tvTitleExpenses.check()
+                ltExpenses.setDarkBackground()
+                tvTitleExpenses.setWhiteText()
+                vDividerExpenses.show()
             }
 
             btnSaveSavings.setOnClickListener {
                 ltSavingsContent.hide()
                 tvSavings.check()
+                ltSavings.setDarkBackground()
+                tvSavings.setWhiteText()
+                vDividerSavings.show()
             }
             btnSaveUnexpected.setOnClickListener {
                 ltUnexpectedContent.hide()
                 tvTitleUnexpected.check()
                 btnNext.enable()
+                ltUnexpected.setDarkBackground()
+                tvTitleUnexpected.setWhiteText()
             }
 
             btnAddService.setOnClickListener {
@@ -96,6 +103,58 @@ class DistributionFragment :
                     ltUnexpectedContent.hide()
                 }
             }
+
+            sbSavingsPercent.addOnChangeListener { _, value, _ ->
+                val amount = (value * MONEY_AMOUNT) / 100
+                if (amount == 0F) {
+                    etSavingsAmount.setText("")
+                } else {
+                    etSavingsAmount.setText(amount.toInt().toString())
+                }
+                etSavingsAmount.setSelection(etSavingsAmount.length())
+            }
+
+            etSavingsAmount.doOnTextChanged { text, _, _, _ ->
+                if (text.toString().isEmpty()) {
+                    sbSavingsPercent.value = 0.toFloat()
+                } else if (text.toString().isNotEmpty() && text.toString().toInt() > MONEY_AMOUNT) {
+                    Toast.makeText(
+                        context,
+                        "Вы не можете сберечь больше $MONEY_AMOUNT суммы",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                } else {
+                    val percent =
+                        (text.toString().toInt().toFloat() * 100F) / MONEY_AMOUNT.toFloat()
+                    sbSavingsPercent.value = percent
+                }
+            }
+
+            sbUnexpectedPercent.addOnChangeListener { _, value, _ ->
+                val amount = (value * MONEY_AMOUNT) / 100
+                if (amount == 0F) {
+                    etUnexpectedAmount.setText("")
+                } else {
+                    etUnexpectedAmount.setText(amount.toInt().toString())
+                }
+                etUnexpectedAmount.setSelection(etUnexpectedAmount.length())
+            }
+
+            etUnexpectedAmount.doOnTextChanged { text, _, _, _ ->
+                if (text.toString().isEmpty()) {
+                    sbUnexpectedPercent.value = 0.toFloat()
+                } else if (text.toString().isNotEmpty() && text.toString().toInt() > MONEY_AMOUNT) {
+                    Toast.makeText(
+                        context,
+                        "Вы не можете сберечь больше $MONEY_AMOUNT суммы",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                } else {
+                    val percent =
+                        (text.toString().toInt().toFloat() * 100F) / MONEY_AMOUNT.toFloat()
+                    sbUnexpectedPercent.value = percent
+                }
+            }
         }
     }
 
@@ -115,6 +174,8 @@ class DistributionFragment :
             }
             val adapter = ExpensesAdapter()
             adapter.submitList(expensesList)
+            val totalSum = expensesList.sumBy { it.totalSum ?: 0 }
+            tvTotal.text = getString(R.string.total_price, totalSum.toString())
             rvServices.adapter = adapter
             //todo disable "Next" button when logic is ready
 //            btnNext.disable()

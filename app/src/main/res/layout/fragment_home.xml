@@ -49,7 +49,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="4dp"
                 android:fontFamily="@font/nunito_bold_700"
-                android:textColor="@color/gradient_purple_light"
+                android:textColor="@color/text_light_purple"
                 android:textSize="18sp"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_budget_title"
@@ -92,6 +92,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:fontFamily="@font/nunito_semibold_600"
+                    android:text="@string/_65_400_to_remove"
                     android:textColor="@color/text_light_purple"
                     android:textSize="16sp"
                     app:layout_constraintLeft_toLeftOf="parent"
@@ -109,7 +110,7 @@
                     app:layout_constraintTop_toBottomOf="@id/tv_envelope_amount">
 
                     <include
-                        android:id="@+id/btn_budget"
+                        android:id="@+id/lt_envelope_first_week"
                         layout="@layout/item_main_page_envelope"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -117,6 +118,7 @@
                         android:layout_weight="1" />
 
                     <include
+                        android:id="@+id/lt_envelope_second_week"
                         layout="@layout/item_main_page_envelope"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -136,6 +138,7 @@
                     app:layout_constraintTop_toBottomOf="@id/lt_envelope">
 
                     <include
+                        android:id="@+id/lt_envelope_third_week"
                         layout="@layout/item_main_page_envelope"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -143,6 +146,7 @@
                         android:layout_weight="1" />
 
                     <include
+                        android:id="@+id/lt_envelope_fourth_week"
                         layout="@layout/item_main_page_envelope"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -197,7 +201,8 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="4dp"
                     android:fontFamily="@font/nunito_semibold_600"
-                    android:textColor="@color/gradient_purple_light"
+                    android:text="@string/_96_500_to_remove"
+                    android:textColor="@color/text_light_purple"
                     android:textSize="16sp"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/tv_expenses_title"
@@ -256,7 +261,8 @@
             android:layout_marginHorizontal="16dp"
             android:layout_marginTop="4dp"
             android:fontFamily="@font/nunito_semibold_600"
-            android:textColor="@color/gradient_purple_light"
+            android:text="@string/_20_000_to_remove"
+            android:textColor="@color/text_light_purple"
             android:textSize="16sp"
             tools:text="20 000 ₸" />
 
@@ -331,6 +337,7 @@
             android:layout_marginHorizontal="16dp"
             android:layout_marginTop="4dp"
             android:fontFamily="@font/nunito_semibold_600"
+            android:text="@string/_20_000_to_remove"
             android:textColor="@color/text_light_purple"
             android:textSize="16sp"
             tools:text="20 000 ₸" />

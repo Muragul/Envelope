@@ -2,6 +2,7 @@ package com.example.envelope.ui.payment.detail
 
 import android.os.Bundle
 import android.view.View
+import android.widget.ArrayAdapter
 import com.example.envelope.databinding.FragmentPaymentDetailBinding
 import com.example.envelope.utils.SCREEN_TITLE
 import com.example.envelope.utils.binding.BindingFragment
@@ -37,7 +38,11 @@ class PaymentDetailFragment :
     private fun initViews() {
         binding.run {
             val title = arguments?.getString(SCREEN_TITLE)
-            val adapter = CardAdapter(atvCards.context, cardsList)
+            val adapter = ArrayAdapter(
+                atvCards.context,
+                android.R.layout.simple_spinner_dropdown_item,
+                cardsList.map { item -> item.number }
+            )
             atvCards.setAdapter(adapter)
             toolbar.tvToolbarTitle.text = title.toString()
         }
