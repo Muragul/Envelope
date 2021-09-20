@@ -2,11 +2,13 @@ package com.example.envelope.ui.payment.detail
 
 import android.os.Bundle
 import android.view.View
-import android.widget.ArrayAdapter
+import com.example.envelope.R
 import com.example.envelope.databinding.FragmentPaymentDetailBinding
+import com.example.envelope.utils.MONEY_AMOUNT
 import com.example.envelope.utils.SCREEN_TITLE
 import com.example.envelope.utils.binding.BindingFragment
 import com.example.envelope.utils.cardsList
+import com.example.envelope.utils.extensions.loadUrl
 import com.example.envelope.utils.extensions.show
 import com.example.envelope.utils.extensions.showError
 
@@ -38,13 +40,29 @@ class PaymentDetailFragment :
     private fun initViews() {
         binding.run {
             val title = arguments?.getString(SCREEN_TITLE)
-            val adapter = ArrayAdapter(
-                atvCards.context,
-                android.R.layout.simple_spinner_dropdown_item,
-                cardsList.map { item -> item.number }
-            )
-            atvCards.setAdapter(adapter)
+            val newAdapter =
+                CardAdapter(atvCards.context, cardsList) { number, imageUrl ->
+                    changeCard(
+                        number,
+                        imageUrl
+                    )
+                }
+            atvCards.setAdapter(newAdapter)
             toolbar.tvToolbarTitle.text = title.toString()
+            btnPay.text =
+                String.format(getString(R.string.service_payment), MONEY_AMOUNT.toString())
+            ltChooseCard.setOnClickListener {
+                atvCards.showDropDown()
+            }
+        }
+    }
+
+    private fun changeCard(number: String, imageUrl: String) {
+        //todo refactor with proper view
+        binding.run {
+            atvCards.setText(number, false)
+            ivCardIcon.loadUrl(imageUrl)
+            atvCards.dismissDropDown()
         }
     }
 

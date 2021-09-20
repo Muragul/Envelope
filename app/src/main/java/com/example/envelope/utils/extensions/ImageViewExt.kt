@@ -1,5 +1,6 @@
 package com.example.envelope.utils.extensions
 
+import android.view.View
 import android.widget.ImageView
 import androidx.core.content.ContextCompat
 import com.bumptech.glide.Glide
@@ -7,14 +8,13 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.example.envelope.R
 import com.google.android.material.imageview.ShapeableImageView
 
-fun ImageView.loadUrl(url: String?) {
-    if (!url.isNullOrEmpty()) {
-        Glide.with(this)
-            .load(url)
-            .diskCacheStrategy(DiskCacheStrategy.ALL)
-            .into(this)
-    }
-}
+fun ImageView.loadUrl(url: String?) = if (!url.isNullOrEmpty()) {
+    Glide.with(this)
+        .load(url)
+        .diskCacheStrategy(DiskCacheStrategy.ALL)
+        .into(this)
+    visibility = View.VISIBLE
+} else visibility = View.GONE
 
 fun ShapeableImageView.setStepActive() {
     background = ContextCompat.getDrawable(

@@ -137,7 +137,10 @@ class HomeFragment : BindingFragment<FragmentHomeBinding>(FragmentHomeBinding::i
             adapter.submitList(expensesList)
             rvExpenses.adapter = adapter
             tvDateRange.text = getString(R.string.dateRange, dtf.format(now), dtf.format(end))
-            tvBudgetAmount.text = MONEY_AMOUNT.toString()
+            tvBudgetAmount.text = String.format(
+                getString(R.string.sum_with_t),
+                MONEY_AMOUNT.toString()
+            )
             ltEnvelopeFirstWeek.ltCurrentWeekIndicator.show()
             ltEnvelopeFirstWeek.tvWeekNumberTitle.text = getString(R.string.week_number, "1")
             ltEnvelopeSecondWeek.tvWeekNumberTitle.text = getString(R.string.week_number, "2")

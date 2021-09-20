@@ -10,6 +10,7 @@ import com.example.envelope.R
 import com.example.envelope.databinding.DistributionOnCompleteDialogBinding
 import com.example.envelope.databinding.FragmentCardBinding
 import com.example.envelope.ui.start.StartActivity
+import com.example.envelope.utils.MONEY_AMOUNT
 import com.example.envelope.utils.binding.BindingFragment
 import com.example.envelope.utils.extensions.*
 import com.redmadrobot.inputmask.MaskedTextChangedListener
@@ -42,6 +43,10 @@ class CardFragment : BindingFragment<FragmentCardBinding>(FragmentCardBinding::i
     private fun showCompleteDialog() {
         val dialog = Dialog(binding.root.context)
         val dialogBinding = DistributionOnCompleteDialogBinding.inflate(layoutInflater)
+        dialogBinding.tvWithdrawAmount.text = String.format(
+            getString(R.string.finish_set_up_caution),
+            MONEY_AMOUNT.toString()
+        )
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
         dialog.setContentView(dialogBinding.root)
         dialogBinding.cbCondition.setOnCheckedChangeListener { buttonView, isChecked ->
@@ -140,8 +145,10 @@ class CardFragment : BindingFragment<FragmentCardBinding>(FragmentCardBinding::i
         } else {
             binding.firstStepDistribution.ivStepIcon.setStepDone()
             binding.firstStepDistribution.tvStepNumber.hide()
+            binding.firstStepDistribution.tvStepTitle.setStepActive()
             binding.secondStepDistribution.ivStepIcon.setStepDone()
             binding.secondStepDistribution.tvStepNumber.hide()
+            binding.secondStepDistribution.tvStepTitle.setStepActive()
         }
     }
 

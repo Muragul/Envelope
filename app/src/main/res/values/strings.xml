@@ -19,7 +19,7 @@
     <string name="set_card_info">Укажите данные вашей карты</string>
     <string name="all_steps_completed">Все этапы пройдены!</string>
     <string name="attention">Внимание!</string>
-    <string name="finish_set_up_caution">При нажатии на кнопку “Далее” с вашей карты снимутся %s тг. </string>
+    <string name="finish_set_up_caution">С вашей карты снимутся %s ₸</string>
     <string name="start_progress_first_step">Сумма</string>
     <string name="start_progress_second_step">Распределение</string>
     <string name="start_progress_third_step">Карта</string>
@@ -91,10 +91,8 @@
     <string name="budget_hint">Ваши распределенные деньги на каждую неделю. Постарайтесь не тратить больше лимитированной суммы и не снимать досрочно деньги.</string>
     <string name="unexpected_hint">Деньги предназначенные для непредвиденных ситуаций, такие как дни рождения, больницы, штрафы, вызов сантехника и прочее. Вы можете их снять в любое время.</string>
     <string name="savings_hint">Вы можете открыть депозитный счет, выбрав подходящую для вас процентную ставку и откладывать свои сбережения эффективно.</string>
-    <string name="_65_400_to_remove">65 400 ₸</string>
-    <string name="_20_000_to_remove">20 000 ₸</string>
-    <string name="_96_500_to_remove">96 500 ₸</string>
     <string name="dateRange">%s - %s</string>
     <string name="progress">%s %</string>
+    <string name="sum_with_t">%s ₸</string>
 
 </resources>

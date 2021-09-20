@@ -224,6 +224,7 @@ class DistributionFragment :
     private fun stepOnCompleted() {
         binding.firstStepDistribution.ivStepIcon.setStepDone()
         binding.firstStepDistribution.tvStepNumber.hide()
+        binding.firstStepDistribution.tvStepTitle.setStepActive()
     }
 
     private fun stepOnFocus() {

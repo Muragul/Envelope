@@ -11,8 +11,9 @@ import com.example.envelope.utils.extensions.loadUrl
 
 //todo refactor - use abstraction
 class CardAdapter(
-    private val myContext: Context,
-    private var cardList: List<Card> = listOf()
+    myContext: Context,
+    cardList: List<Card> = listOf(),
+    private val onCardClicked: (number: String, imageUrl: String) -> Unit
 ) :
     ArrayAdapter<Card>(myContext, 0, cardList) {
     private var paymentCardList: List<Card> = cardList
@@ -39,6 +40,9 @@ class CardAdapter(
             DropdownCardItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         view.tvCardNumber.text = card.number
         view.ivCardImage.loadUrl(card.imageUrl)
+        view.root.setOnClickListener {
+            onCardClicked.invoke(card.number, card.imageUrl)
+        }
         return view.root
     }
 }

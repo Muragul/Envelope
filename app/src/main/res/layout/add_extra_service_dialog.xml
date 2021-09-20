@@ -21,7 +21,7 @@
     <EditText
         android:id="@+id/et_card_number"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="43dp"
         android:layout_marginTop="10dp"
         android:background="@drawable/search_view_bg"
         android:fontFamily="@font/nunito_regular_400"
@@ -35,7 +35,7 @@
     <EditText
         android:id="@+id/et_price"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="43dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
         android:background="@drawable/search_view_bg"
@@ -62,10 +62,11 @@
         android:id="@+id/btn_cancel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/button_light_blue"
+        android:background="@drawable/outlined_btn_light"
         android:fontFamily="@font/nunito_semibold_600"
         android:text="@string/cancel"
         android:textAllCaps="false"
+        android:textColor="@color/button_light_blue"
         android:textSize="14sp" />
 
 </LinearLayout>

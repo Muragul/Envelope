@@ -50,8 +50,7 @@
         android:id="@+id/rv_all_payments"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingHorizontal="16dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="@layout/item_expenses_list" />
+        tools:listitem="@layout/item_expenses_list_payment_all" />
 
 </LinearLayout>
