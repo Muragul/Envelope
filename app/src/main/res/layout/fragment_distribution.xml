@@ -211,19 +211,29 @@
                     android:textColor="@color/text_dark"
                     android:textSize="14sp" />
 
-                <com.google.android.material.slider.Slider
-                    android:id="@+id/sb_savings_percent"
+                <com.warkiz.widget.IndicatorStayLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:stepSize="1"
-                    android:valueFrom="0"
-                    android:valueTo="100"
-                    app:labelStyle="@style/tooltip"
-                    app:thumbColor="@color/button_light_blue"
-                    app:tickColor="@android:color/transparent"
-                    app:trackColorActive="@color/button_light_blue"
-                    app:trackColorInactive="@color/distribution_et_stroke" />
+                    android:layout_marginTop="10dp">
+
+                    <com.warkiz.widget.IndicatorSeekBar
+                        android:id="@+id/sb_savings_percent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:isb_indicator_color="@color/light_blue"
+                        app:isb_indicator_content_layout="@layout/custom_top_view_indicator"
+                        app:isb_indicator_text_color="@color/button_light_blue"
+                        app:isb_progress="1"
+                        app:isb_show_indicator="custom"
+                        app:isb_thumb_color="@color/button_light_blue"
+                        app:isb_tick_texts_color="@color/overlay"
+                        app:isb_ticks_count="1"
+                        app:isb_track_background_size="4dp"
+                        app:isb_track_progress_color="@color/button_light_blue"
+                        app:isb_track_progress_size="5dp"
+                        app:isb_track_rounded_corners="true" />
+
+                </com.warkiz.widget.IndicatorStayLayout>
 
                 <EditText
                     android:id="@+id/et_savings_amount"
@@ -298,19 +308,29 @@
                     android:textColor="@color/text_dark"
                     android:textSize="14sp" />
 
-                <com.google.android.material.slider.Slider
-                    android:id="@+id/sb_unexpected_percent"
+                <com.warkiz.widget.IndicatorStayLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:stepSize="1"
-                    android:valueFrom="0"
-                    android:valueTo="100"
-                    app:labelStyle="@style/tooltip"
-                    app:thumbColor="@color/button_light_blue"
-                    app:tickColor="@android:color/transparent"
-                    app:trackColorActive="@color/button_light_blue"
-                    app:trackColorInactive="@color/distribution_et_stroke" />
+                    android:layout_marginTop="10dp">
+
+                    <com.warkiz.widget.IndicatorSeekBar
+                        android:id="@+id/sb_unexpected_percent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:isb_indicator_color="@color/light_blue"
+                        app:isb_indicator_content_layout="@layout/custom_top_view_indicator"
+                        app:isb_indicator_text_color="@color/button_light_blue"
+                        app:isb_progress="1"
+                        app:isb_show_indicator="custom"
+                        app:isb_thumb_color="@color/button_light_blue"
+                        app:isb_tick_texts_color="@color/overlay"
+                        app:isb_ticks_count="1"
+                        app:isb_track_background_size="4dp"
+                        app:isb_track_progress_color="@color/button_light_blue"
+                        app:isb_track_progress_size="5dp"
+                        app:isb_track_rounded_corners="true" />
+
+                </com.warkiz.widget.IndicatorStayLayout>
 
                 <EditText
                     android:id="@+id/et_unexpected_amount"

@@ -95,5 +95,6 @@
     <string name="_20_000_to_remove">20 000 ₸</string>
     <string name="_96_500_to_remove">96 500 ₸</string>
     <string name="dateRange">%s - %s</string>
+    <string name="progress">%s %</string>
 
 </resources>
