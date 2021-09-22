@@ -82,6 +82,7 @@
             android:textColor="@color/main_page_background_dark"
             android:textSize="16sp"
             app:currencySymbol="₸"
+            android:maxLength="15"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_set_amount"
