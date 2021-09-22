@@ -2,11 +2,9 @@ package com.example.envelope.ui.main.home
 
 import android.content.Context
 import android.content.SharedPreferences
-import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.view.View
-import androidx.annotation.RequiresApi
 import com.example.envelope.R
 import com.example.envelope.databinding.FragmentHomeBinding
 import com.example.envelope.ui.ContainerActivity
@@ -16,8 +14,8 @@ import com.example.envelope.utils.binding.BindingFragment
 import com.example.envelope.utils.extensions.show
 import com.example.envelope.utils.navigation.Screen
 import com.skydoves.balloon.*
-import java.time.LocalDateTime
-import java.time.format.DateTimeFormatter
+import java.text.SimpleDateFormat
+import java.util.*
 
 class HomeFragment : BindingFragment<FragmentHomeBinding>(FragmentHomeBinding::inflate) {
 
@@ -26,7 +24,6 @@ class HomeFragment : BindingFragment<FragmentHomeBinding>(FragmentHomeBinding::i
     private lateinit var unexpectedHint: Balloon
     private lateinit var savingsHint: Balloon
 
-    @RequiresApi(Build.VERSION_CODES.O)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         prefs = context?.getSharedPreferences("app_prefs", Context.MODE_PRIVATE)!!
@@ -96,12 +93,43 @@ class HomeFragment : BindingFragment<FragmentHomeBinding>(FragmentHomeBinding::i
         }
     }
 
-    @RequiresApi(Build.VERSION_CODES.O)
     private fun initViews() {
-        val dtf = DateTimeFormatter.ofPattern("d MMMM")
-        val dtfDM = DateTimeFormatter.ofPattern("d.MM")
-        val now = LocalDateTime.now()
-        val end = now.plusDays(30)
+        val calendar = Calendar.getInstance()
+        val today = Calendar.getInstance().time
+        calendar.time = today
+        calendar.add(Calendar.DATE, 30)
+
+        val calendar1 = Calendar.getInstance()
+        calendar1.time = today
+        calendar1.add(Calendar.DATE, 5)
+
+        val calendar2 = Calendar.getInstance()
+        calendar1.add(Calendar.DATE, 1)
+        calendar2.time = calendar1.time
+
+        val calendar3 = Calendar.getInstance()
+        calendar2.add(Calendar.DATE, 1)
+        calendar3.time = calendar2.time
+        calendar3.add(Calendar.DATE, 6)
+
+        val calendar4 = Calendar.getInstance()
+        calendar3.add(Calendar.DATE, 1)
+        calendar4.time = calendar3.time
+
+        val calendar5 = Calendar.getInstance()
+        calendar4.add(Calendar.DATE, 1)
+        calendar5.time = calendar4.time
+        calendar5.add(Calendar.DATE, 6)
+
+        val calendar6 = Calendar.getInstance()
+        calendar5.add(Calendar.DATE, 1)
+        calendar6.time = calendar5.time
+
+        val calendar7 = Calendar.getInstance()
+        calendar6.add(Calendar.DATE, 1)
+        calendar7.time = calendar6.time
+        calendar7.add(Calendar.DATE, 6)
+
         binding.run {
             ivUnexpectedHint.post {
                 val locationArray = IntArray(2)
@@ -136,7 +164,11 @@ class HomeFragment : BindingFragment<FragmentHomeBinding>(FragmentHomeBinding::i
             )
             adapter.submitList(expensesList)
             rvExpenses.adapter = adapter
-            tvDateRange.text = getString(R.string.dateRange, dtf.format(now), dtf.format(end))
+            tvDateRange.text = getString(
+                R.string.dateRange,
+                SimpleDateFormat("d MMMM", Locale("ru")).format(today),
+                SimpleDateFormat("d MMMM", Locale("ru")).format(calendar.time)
+            )
             tvBudgetAmount.text = String.format(
                 getString(R.string.sum_with_t),
                 MONEY_AMOUNT.toString()
@@ -153,27 +185,31 @@ class HomeFragment : BindingFragment<FragmentHomeBinding>(FragmentHomeBinding::i
             ltEnvelopeFourthWeek.tvWeekAmount.text = getString(R.string.total_price, "23 650")
 
             ltEnvelopeFirstWeek.tvEnvelopeDateRange.text =
-                getString(R.string.dateRange, dtfDM.format(now), dtfDM.format(now.plusDays(7)))
+                getString(
+                    R.string.dateRange,
+                    SimpleDateFormat("d.MM", Locale("ru")).format(today),
+                    SimpleDateFormat("d.MM", Locale("ru")).format(calendar1.time)
+                )
 
             ltEnvelopeSecondWeek.tvEnvelopeDateRange.text =
                 getString(
                     R.string.dateRange,
-                    dtfDM.format(now.plusDays(8)),
-                    dtfDM.format(now.plusDays(14))
+                    SimpleDateFormat("d.MM", Locale("ru")).format(calendar2.time),
+                    SimpleDateFormat("d.MM", Locale("ru")).format(calendar3.time)
                 )
 
             ltEnvelopeThirdWeek.tvEnvelopeDateRange.text =
                 getString(
                     R.string.dateRange,
-                    dtfDM.format(now.plusDays(15)),
-                    dtfDM.format(now.plusDays(22))
+                    SimpleDateFormat("d.MM", Locale("ru")).format(calendar4.time),
+                    SimpleDateFormat("d.MM", Locale("ru")).format(calendar5.time)
                 )
 
             ltEnvelopeFourthWeek.tvEnvelopeDateRange.text =
                 getString(
                     R.string.dateRange,
-                    dtfDM.format(now.plusDays(23)),
-                    dtfDM.format(now.plusDays(30))
+                    SimpleDateFormat("d.MM", Locale("ru")).format(calendar6.time),
+                    SimpleDateFormat("d.MM", Locale("ru")).format(calendar7.time)
                 )
 
             ivBudgetHint.post {

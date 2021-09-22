@@ -35,6 +35,9 @@ android {
         viewBinding true
         dataBinding true
     }
+    repositories{
+        maven { url "https://jitpack.io" }
+    }
 }
 
 dependencies {
@@ -63,4 +66,7 @@ dependencies {
 
     //seekbar
     implementation 'com.github.warkiz.widget:indicatorseekbar:2.1.2'
+
+   //currency edittext
+    implementation 'com.cottacush:CurrencyEditText:0.0.9'
 }
