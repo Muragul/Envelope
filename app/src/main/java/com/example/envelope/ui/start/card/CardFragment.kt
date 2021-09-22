@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.view.View
 import android.view.ViewGroup
 import android.view.Window
-import android.widget.Toast
 import com.example.envelope.R
 import com.example.envelope.databinding.DistributionOnCompleteDialogBinding
 import com.example.envelope.databinding.FragmentCardBinding
@@ -34,16 +33,7 @@ class CardFragment : BindingFragment<FragmentCardBinding>(FragmentCardBinding::i
     }
 
     private fun goToCompletion() {
-        if (validateFields())
-            showCompleteDialog()
-        else {
-            //todo implement handle error
-            showIncorrectCardNumber()
-            showIncorrectCvv()
-            showIncorrectDate()
-            showIncorrectFullName()
-            Toast.makeText(context, R.string.fill_empty_fields, Toast.LENGTH_SHORT).show()
-        }
+        validateFields()
     }
 
     private fun showCompleteDialog() {
@@ -72,14 +62,82 @@ class CardFragment : BindingFragment<FragmentCardBinding>(FragmentCardBinding::i
         )
     }
 
-    private fun validateFields(): Boolean {
-        return binding.etCardNumber.text.toString().length == 19
-                && binding.etCardOwnerName.text.isNotEmpty() &&
-                if (binding.etCardExpireDates.text.toString().length != 5) false
-                else binding.etCardExpireDates.text.toString()
-                    .substring(0, binding.etCardExpireDates.text.toString().indexOf("/"))
-                    .toInt() < 13 &&
-                        binding.etCardCvv.text.toString().length == 3
+    private fun validateFields() {
+        binding.run {
+            val check = booleanArrayOf(
+                checkCardNumber(etCardNumber.text.toString()),
+                checkFullName(etCardOwnerName.text.toString()),
+                checkDate(etCardExpireDates.text.toString()),
+                checkCvv(etCardCvv.text.toString())
+            )
+            if (!check.contains(false)) {
+                showCompleteDialog()
+            }
+            for (i in check.indices) {
+                when (i) {
+                    0 -> {
+                        if (!check[i]) {
+                            etCardNumber.setText("")
+                            showIncorrectCardNumber()
+                        } else {
+                            hideIncorrectCardNumber()
+                        }
+                    }
+                    1 -> {
+                        if (!check[i]) {
+                            etCardOwnerName.setText("")
+                            showIncorrectFullName()
+                        } else {
+                            hideIncorrectFullName()
+                        }
+                    }
+                    2 -> {
+                        if (!check[i]) {
+                            etCardExpireDates.setText("")
+                            showIncorrectDate()
+                        } else {
+                            hideIncorrectDate()
+                        }
+                    }
+                    3 -> {
+                        if (!check[i]) {
+                            etCardCvv.setText("")
+                            showIncorrectCvv()
+                        } else {
+                            hideIncorrectCvv()
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    private fun hideIncorrectCvv() {
+        binding.run {
+            incorrectCvvCode.hide()
+            etCardCvv.hideError()
+        }
+    }
+
+    private fun hideIncorrectDate() {
+        binding.run {
+            incorrectDate.hide()
+            etCardExpireDates.hideError()
+        }
+    }
+
+    private fun hideIncorrectFullName() {
+        binding.run {
+            incorrectFullName.hide()
+            etCardOwnerName.hideError()
+        }
+    }
+
+    private fun hideIncorrectCardNumber() {
+        binding.run {
+            incorrectCardNumber.hide()
+            etCardNumber.hideError()
+        }
     }
 
     private fun initViews() {
@@ -162,5 +220,14 @@ class CardFragment : BindingFragment<FragmentCardBinding>(FragmentCardBinding::i
         binding.thirdStepDistribution.tvStepNumber.setStepActive()
         binding.thirdStepDistribution.tvStepTitle.setStepActive()
     }
+
+    private fun checkCardNumber(cardNumber: String): Boolean = cardNumber.length == 19
+    private fun checkFullName(fullName: String): Boolean = fullName.isNotEmpty()
+    private fun checkDate(date: String): Boolean =
+        if (date.length != 5) false
+        else date.substring(0, date.indexOf("/")).toInt() < 13 && date.substring(date.indexOf("/")+1)
+            .toInt() < 32
+
+    private fun checkCvv(cvv: String): Boolean = cvv.length == 3
 
 }

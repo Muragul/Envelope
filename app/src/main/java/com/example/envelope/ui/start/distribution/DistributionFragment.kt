@@ -2,6 +2,9 @@ package com.example.envelope.ui.start.distribution
 
 import android.os.Bundle
 import android.view.View
+import android.view.ViewGroup
+import android.widget.CheckedTextView
+import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.core.widget.doOnTextChanged
 import com.example.envelope.R
@@ -62,48 +65,26 @@ class DistributionFragment :
                 openServices()
             }
             ltExpenses.setOnClickListener {
-                //todo refactor: add toggle extension
                 if (ltExpensesContent.visibility == View.GONE) {
-                    ltExpenses.setWhiteBackground()
-                    tvTitleExpenses.setDarkText()
-                    vDividerExpenses.hide()
-                    ltExpensesContent.show()
-                    ltExpensesContent.startDistributionAnimation()
+                    showItem(ltExpenses, tvTitleExpenses, ltExpensesContent, vDividerExpenses)
                 } else {
-                    ltExpenses.setDarkBackground()
-                    tvTitleExpenses.setWhiteText()
-                    ltExpensesContent.hide()
-                    vDividerExpenses.show()
+                    hideItem(ltExpenses, tvTitleExpenses, ltExpensesContent, vDividerExpenses)
                 }
             }
 
             ltSavings.setOnClickListener {
-                //todo refactor: add toggle extension
                 if (ltSavingsContent.visibility == View.GONE) {
-                    ltSavings.setWhiteBackground()
-                    tvSavings.setDarkText()
-                    ltSavingsContent.show()
-                    vDividerSavings.hide()
-                    ltSavingsContent.startDistributionAnimation()
+                    showItem(ltSavings, tvSavings, ltSavingsContent, vDividerSavings)
                 } else {
-                    ltSavings.setDarkBackground()
-                    tvSavings.setWhiteText()
-                    ltSavingsContent.hide()
-                    vDividerSavings.show()
+                    hideItem(ltSavings, tvSavings, ltSavingsContent, vDividerSavings)
                 }
             }
 
             ltUnexpected.setOnClickListener {
-                //todo refactor: add toggle extension
                 if (ltUnexpectedContent.visibility == View.GONE) {
-                    ltUnexpected.setWhiteBackground()
-                    tvTitleUnexpected.setDarkText()
-                    ltUnexpectedContent.show()
-                    ltUnexpectedContent.startDistributionAnimation()
+                    showItem(ltUnexpected, tvTitleUnexpected, ltUnexpectedContent, null)
                 } else {
-                    ltUnexpected.setDarkBackground()
-                    tvTitleUnexpected.setWhiteText()
-                    ltUnexpectedContent.hide()
+                    hideItem(ltUnexpected, tvTitleUnexpected, ltUnexpectedContent, null)
                 }
             }
 
@@ -160,13 +141,10 @@ class DistributionFragment :
                 }
 
                 override fun onStartTrackingTouch(p0: IndicatorSeekBar?) {
-
                 }
 
                 override fun onStopTrackingTouch(p0: IndicatorSeekBar?) {
-
                 }
-
             }
 
             etUnexpectedAmount.doOnTextChanged { text, _, _, _ ->
@@ -185,6 +163,39 @@ class DistributionFragment :
                 }
             }
         }
+    }
+
+    private fun hideItem(
+        ltMain: LinearLayout,
+        tvTitle: CheckedTextView,
+        ltContent: ViewGroup,
+        vDivider: View?
+    ) {
+        ltMain.setDarkBackground()
+        tvTitle.setWhiteText()
+        ltContent.hide()
+        if (vDivider != null) {
+            vDivider.show()
+        } else {
+            return
+        }
+    }
+
+    private fun showItem(
+        ltMain: LinearLayout,
+        tvCheckedTextView: CheckedTextView,
+        ltContent: ViewGroup,
+        vDivider: View?,
+    ) {
+        ltMain.setWhiteBackground()
+        tvCheckedTextView.setDarkText()
+        ltContent.show()
+        if (vDivider != null) {
+            vDivider.hide()
+        } else {
+            return
+        }
+        ltContent.startDistributionAnimation()
     }
 
     private fun initViews() {
@@ -208,8 +219,7 @@ class DistributionFragment :
             val totalSum = expensesList.sumBy { it.totalSum ?: 0 }
             tvTotal.text = getString(R.string.total_price, totalSum.toString())
             rvServices.adapter = adapter
-            //todo disable "Next" button when logic is ready
-//            btnNext.disable()
+            btnNext.disable()
             stepOnCompleted()
             stepOnFocus()
         }

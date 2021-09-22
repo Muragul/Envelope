@@ -15,7 +15,6 @@ import com.skydoves.balloon.BalloonSizeSpec
 import com.skydoves.balloon.createBalloon
 import com.skydoves.balloon.overlay.BalloonOverlayAnimation
 
-//todo check on different API levels
 class BalloonFactory(private val view: View, private val hintText: String, private val x: Int) :
     Balloon.Factory() {
     override fun create(context: Context, lifecycle: LifecycleOwner?): Balloon {

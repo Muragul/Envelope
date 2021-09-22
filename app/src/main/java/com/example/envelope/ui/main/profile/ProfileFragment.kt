@@ -7,6 +7,7 @@ import com.example.envelope.databinding.FragmentProfileBinding
 import com.example.envelope.utils.binding.BindingFragment
 import com.example.envelope.utils.cardsList
 import com.example.envelope.utils.defaultUser
+import com.example.envelope.utils.extensions.getAgeSpelling
 
 class ProfileFragment : BindingFragment<FragmentProfileBinding>(FragmentProfileBinding::inflate) {
 
@@ -33,10 +34,10 @@ class ProfileFragment : BindingFragment<FragmentProfileBinding>(FragmentProfileB
                 defaultUser.name,
                 defaultUser.surname
             )
-            //todo check spelling
             tvAge.text = String.format(
                 getString(R.string.user_age),
-                defaultUser.age
+                defaultUser.age,
+                defaultUser.age.getAgeSpelling()
             )
             tvGender.text = defaultUser.gender
         }

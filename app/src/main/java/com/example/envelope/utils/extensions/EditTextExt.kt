@@ -13,3 +13,12 @@ fun EditText.showError() {
         )
     )
 }
+fun EditText.hideError() {
+    setBackgroundResource(R.drawable.search_view_bg)
+    setTextColor(
+        ContextCompat.getColor(
+            context,
+            R.color.white
+        )
+    )
+}

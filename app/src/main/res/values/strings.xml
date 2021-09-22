@@ -54,7 +54,7 @@
     <string name="change_profile">Изменить</string>
     <string name="my_cards">Мои карты</string>
     <string name="name_surname">%1$s %2$s</string>
-    <string name="user_age">%d лет</string>
+    <string name="user_age">%d %s</string>
 
     <!--Home Page-->
     <string name="pay">Оплатить</string>
