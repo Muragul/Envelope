@@ -27,13 +27,9 @@ class CardFragment : BindingFragment<FragmentCardBinding>(FragmentCardBinding::i
         binding.run {
             btnNext.setOnClickListener {
                 stepOnCompleted(3)
-                goToCompletion()
+                validateFields()
             }
         }
-    }
-
-    private fun goToCompletion() {
-        validateFields()
     }
 
     private fun showCompleteDialog() {
@@ -225,7 +221,8 @@ class CardFragment : BindingFragment<FragmentCardBinding>(FragmentCardBinding::i
     private fun checkFullName(fullName: String): Boolean = fullName.isNotEmpty()
     private fun checkDate(date: String): Boolean =
         if (date.length != 5) false
-        else date.substring(0, date.indexOf("/")).toInt() < 13 && date.substring(date.indexOf("/")+1)
+        else date.substring(0, date.indexOf("/"))
+            .toInt() < 13 && date.substring(date.indexOf("/") + 1)
             .toInt() < 32
 
     private fun checkCvv(cvv: String): Boolean = cvv.length == 3
