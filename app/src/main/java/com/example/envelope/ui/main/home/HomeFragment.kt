@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.os.Handler
+import android.os.Looper
 import android.view.View
 import com.example.envelope.R
 import com.example.envelope.databinding.FragmentHomeBinding
@@ -17,6 +18,7 @@ import com.skydoves.balloon.*
 import java.text.SimpleDateFormat
 import java.util.*
 
+//todo refactor: beautify code
 class HomeFragment : BindingFragment<FragmentHomeBinding>(FragmentHomeBinding::inflate) {
 
     private lateinit var prefs: SharedPreferences
@@ -158,9 +160,7 @@ class HomeFragment : BindingFragment<FragmentHomeBinding>(FragmentHomeBinding::i
                     )
             }
             val adapter = HomeExpensesAdapter(
-                itemClick = { id: Int ->
-                    openPayment(id)
-                }
+                itemClick = { openPayment() }
             )
             adapter.submitList(expensesList)
             rvExpenses.adapter = adapter
@@ -224,7 +224,7 @@ class HomeFragment : BindingFragment<FragmentHomeBinding>(FragmentHomeBinding::i
                         ivBudgetHint.context,
                         this@HomeFragment
                     )
-                Handler().postDelayed({
+                Handler(Looper.getMainLooper()).postDelayed({
                     if (!prefs.contains("hintShowed")) {
                         budgetHint.relayShowAlignBottom(unexpectedHint, ivUnexpectedHint)
                             .relayShowAlignBottom(savingsHint, ivSavingsHint)
@@ -239,27 +239,27 @@ class HomeFragment : BindingFragment<FragmentHomeBinding>(FragmentHomeBinding::i
     private fun openServices() {
         val bundle = Bundle()
         bundle.putSerializable(SCREEN, Screen.EXPENSES)
-        bundle.putString(SCREEN_TITLE, PAYMENT_ALL_FRAGMENT_TITLE)
+        bundle.putString(SCREEN_TITLE, getString(R.string.obligatory_expenses))
         ContainerActivity.start(fragment = this, bundle = bundle, requestCode = REQUEST_CODE)
     }
 
     private fun openBudget() {
         val bundle = Bundle()
-        bundle.putString(SCREEN_TITLE, BUDGET_FRAGMENT_TITLE)
+        bundle.putString(SCREEN_TITLE, getString(R.string.envelops))
         bundle.putSerializable(SCREEN, Screen.BUDGET)
         ContainerActivity.start(fragment = this, bundle = bundle, requestCode = REQUEST_CODE)
     }
 
-    private fun openPayment(id: Int) {
+    private fun openPayment() {
         val bundle = Bundle()
-        bundle.putString(SCREEN_TITLE, PAYMENT_DETAIL_FRAGMENT_TITLE)
+        bundle.putString(SCREEN_TITLE, getString(R.string.payment_detail_fragment_title))
         bundle.putSerializable(SCREEN, Screen.PAYMENT)
         ContainerActivity.start(fragment = this, bundle = bundle, requestCode = REQUEST_CODE)
     }
 
     private fun openDeposit() {
         val bundle = Bundle()
-        bundle.putString(SCREEN_TITLE, DEPOSIT_FRAGMENT_TITLE)
+        bundle.putString(SCREEN_TITLE, getString(R.string.deposit_fragment_title))
         bundle.putSerializable(SCREEN, Screen.DEPOSITS)
         ContainerActivity.start(fragment = this, bundle = bundle, requestCode = REQUEST_CODE)
     }

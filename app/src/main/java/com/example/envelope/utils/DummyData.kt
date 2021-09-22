@@ -113,7 +113,7 @@ val budgetList = listOf(
 )
 
 
-val transactionHistoryList = listOf<TransactionMarker>(
+val transactionHistoryList = listOf(
     TransactionHeader("Вчера"),
     Transaction(date = "", title = "Сбережения", type = "", amount = -20000, icon = ""),
     Transaction(
@@ -133,3 +133,5 @@ val transactionHistoryList = listOf<TransactionMarker>(
     ),
     Transaction(date = "", title = "Конверт 1 недели", type = "", amount = 23650, icon = ""),
 )
+
+const val MONEY_AMOUNT = 200000

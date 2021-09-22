@@ -14,9 +14,7 @@ object FragmentNavigator {
         activity: ContainerActivity,
         screen: Screen,
         data: Bundle? = null,
-        tag: String? = null,
-//        targetFragment: Fragment? = null,
-//        requestCode: Int? = null
+        tag: String? = null
     ) {
         val fragment = when (screen) {
             Screen.EXPENSES -> {

@@ -36,8 +36,14 @@ class CardFragment : BindingFragment<FragmentCardBinding>(FragmentCardBinding::i
     private fun goToCompletion() {
         if (validateFields())
             showCompleteDialog()
-        else
+        else {
+            //todo implement handle error
+            showIncorrectCardNumber()
+            showIncorrectCvv()
+            showIncorrectDate()
+            showIncorrectFullName()
             Toast.makeText(context, R.string.fill_empty_fields, Toast.LENGTH_SHORT).show()
+        }
     }
 
     private fun showCompleteDialog() {
@@ -49,7 +55,7 @@ class CardFragment : BindingFragment<FragmentCardBinding>(FragmentCardBinding::i
         )
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
         dialog.setContentView(dialogBinding.root)
-        dialogBinding.cbCondition.setOnCheckedChangeListener { buttonView, isChecked ->
+        dialogBinding.cbCondition.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
                 dialogBinding.btnNext.enable()
             } else {
@@ -67,12 +73,11 @@ class CardFragment : BindingFragment<FragmentCardBinding>(FragmentCardBinding::i
     }
 
     private fun validateFields(): Boolean {
-        //todo remove true when logic is ready
-        return true || binding.etCardNumber.text.toString().length == 19
+        return binding.etCardNumber.text.toString().length == 19
                 && binding.etCardOwnerName.text.isNotEmpty() &&
-                if (binding.etCardExpireDate.text.toString().length != 5) false
-                else binding.etCardExpireDate.text.toString()
-                    .substring(0, binding.etCardExpireDate.text.toString().indexOf("/"))
+                if (binding.etCardExpireDates.text.toString().length != 5) false
+                else binding.etCardExpireDates.text.toString()
+                    .substring(0, binding.etCardExpireDates.text.toString().indexOf("/"))
                     .toInt() < 13 &&
                         binding.etCardCvv.text.toString().length == 3
     }
@@ -101,7 +106,7 @@ class CardFragment : BindingFragment<FragmentCardBinding>(FragmentCardBinding::i
             AffinityCalculationStrategy.WHOLE_STRING
         )
         MaskedTextChangedListener.installOn(
-            binding.etCardExpireDate,
+            binding.etCardExpireDates,
             "[00]{/}[00]",
             arrayListOf("[00]{/}[00]"),
             AffinityCalculationStrategy.WHOLE_STRING
@@ -133,7 +138,7 @@ class CardFragment : BindingFragment<FragmentCardBinding>(FragmentCardBinding::i
     private fun showIncorrectDate() {
         binding.run {
             incorrectDate.show()
-            etCardExpireDate.showError()
+            etCardExpireDates.showError()
         }
     }
 

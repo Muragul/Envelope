@@ -9,7 +9,6 @@ import com.example.envelope.data.Card
 import com.example.envelope.databinding.DropdownCardItemBinding
 import com.example.envelope.utils.extensions.loadUrl
 
-//todo refactor - use abstraction
 class CardAdapter(
     myContext: Context,
     cardList: List<Card> = listOf(),
@@ -31,10 +30,10 @@ class CardAdapter(
     }
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
-        return dropDownCardItemView(position, convertView, parent)
+        return dropDownCardItemView(position, parent)
     }
 
-    private fun dropDownCardItemView(position: Int, convertView: View?, parent: ViewGroup): View {
+    private fun dropDownCardItemView(position: Int, parent: ViewGroup): View {
         val card = getItem(position)
         val view =
             DropdownCardItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)

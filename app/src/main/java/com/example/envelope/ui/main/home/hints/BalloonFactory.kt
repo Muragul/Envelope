@@ -1,6 +1,7 @@
 package com.example.envelope.ui.main.home.hints
 
 import android.content.Context
+import android.os.Build
 import android.util.DisplayMetrics
 import android.view.Gravity
 import android.view.View
@@ -14,12 +15,18 @@ import com.skydoves.balloon.BalloonSizeSpec
 import com.skydoves.balloon.createBalloon
 import com.skydoves.balloon.overlay.BalloonOverlayAnimation
 
+//todo check on different API levels
 class BalloonFactory(private val view: View, private val hintText: String, private val x: Int) :
     Balloon.Factory() {
     override fun create(context: Context, lifecycle: LifecycleOwner?): Balloon {
         val vm = context.getSystemService(Context.WINDOW_SERVICE) as WindowManager
         val metrics = DisplayMetrics()
-        vm.defaultDisplay.getMetrics(metrics)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            context.display?.getRealMetrics(metrics)
+        } else {
+            @Suppress("DEPRECATION")
+            vm.defaultDisplay.getMetrics(metrics)
+        }
         val tooltipWidth = metrics.widthPixels
         val arrowLocation: Double =
             x.toDouble() / (tooltipWidth.toDouble() - 60.toDouble())

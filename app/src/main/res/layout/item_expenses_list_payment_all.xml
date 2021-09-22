@@ -21,7 +21,8 @@
             <ImageView
                 android:id="@+id/iv_service_icon"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:contentDescription="@string/pay" />
 
         </androidx.cardview.widget.CardView>
 
@@ -51,6 +52,7 @@
             android:id="@+id/iv_option_menu"
             android:layout_width="40dp"
             android:layout_height="40dp"
+            android:contentDescription="@string/add"
             android:padding="8dp"
             android:src="@drawable/ic_baseline_more_vert_24"
             app:tint="@color/text_white" />

@@ -11,6 +11,7 @@
         android:id="@+id/iv_expense_icon"
         android:layout_width="30dp"
         android:layout_height="30dp"
+        android:contentDescription="@string/pay"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

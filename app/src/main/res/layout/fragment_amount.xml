@@ -1,116 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/main_page_background_dark">
+    android:background="@color/main_page_background_dark"
+    android:orientation="vertical">
 
     <LinearLayout
+        android:id="@+id/lt_step"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="30dp"
+        android:paddingBottom="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <LinearLayout
-            android:id="@+id/lt_step"
-            android:layout_width="match_parent"
+        <include
+            android:id="@+id/first_step_amount"
+            layout="@layout/item_step_progress"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingTop="30dp"
-            android:paddingBottom="30dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:layout_weight="1" />
 
-            <include
-                android:id="@+id/first_step_amount"
-                layout="@layout/item_step_progress"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_gravity="center_vertical"
+            android:layout_weight=".7"
+            android:background="@color/text_light_purple" />
 
-            <View
-                android:layout_width="0dp"
-                android:layout_height="1dp"
-                android:layout_gravity="center_vertical"
-                android:layout_weight=".7"
-                android:background="@color/text_light_purple" />
+        <include
+            android:id="@+id/second_step_distribution"
+            layout="@layout/item_step_progress"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2" />
 
-            <include
-                android:id="@+id/second_step_distribution"
-                layout="@layout/item_step_progress"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="2" />
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_gravity="center_vertical"
+            android:layout_weight=".7"
+            android:background="@color/text_light_purple" />
 
-            <View
-                android:layout_width="0dp"
-                android:layout_height="1dp"
-                android:layout_gravity="center_vertical"
-                android:layout_weight=".7"
-                android:background="@color/text_light_purple" />
-
-            <include
-                android:id="@+id/third_step_card"
-                layout="@layout/item_step_progress"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
-
-        </LinearLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="20dp">
-
-            <TextView
-                android:id="@+id/tv_set_amount"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/nunito_semibold_600"
-                android:text="@string/set_amount"
-                android:textColor="@color/text_white"
-                android:textSize="16sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <com.cottacush.android.currencyedittext.CurrencyEditText
-                android:id="@+id/et_amount"
-                android:layout_width="match_parent"
-                android:layout_height="46dp"
-                android:layout_marginTop="16dp"
-                android:background="@drawable/search_view_bg"
-                android:fontFamily="@font/nunito_regular_400"
-                android:hint="200 000"
-                android:textColor="@color/main_page_background_dark"
-                android:textSize="16sp"
-                app:currencySymbol="₸"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_set_amount"
-                app:localeTag="kk-KZ"
-                app:useCurrencySymbolAsHint="true" />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btn_next"
-                style="@style/mButtonStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="90dp"
-                android:drawableEnd="@drawable/ic_arrow_right"
-                android:drawableTint="@color/black"
-                android:fontFamily="@font/nunito_semibold_600"
-                android:text="@string/on_boarding_next"
-                android:textAllCaps="false"
-                android:textColor="@color/black"
-                android:textSize="14sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        <include
+            android:id="@+id/third_step_card"
+            layout="@layout/item_step_progress"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
 
     </LinearLayout>
 
-</FrameLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp">
+
+        <TextView
+            android:id="@+id/tv_set_amount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nunito_semibold_600"
+            android:text="@string/set_amount"
+            android:textColor="@color/text_white"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.cottacush.android.currencyedittext.CurrencyEditText
+            android:id="@+id/et_amount"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/search_view_bg"
+            android:fontFamily="@font/nunito_regular_400"
+            android:textColor="@color/main_page_background_dark"
+            android:textSize="16sp"
+            app:currencySymbol="₸"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_set_amount"
+            app:localeTag="kk-KZ"
+            app:useCurrencySymbolAsHint="true" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_next"
+            style="@style/mButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="90dp"
+            android:drawableEnd="@drawable/ic_arrow_right"
+            android:drawableTint="@color/black"
+            android:fontFamily="@font/nunito_semibold_600"
+            android:text="@string/on_boarding_next"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

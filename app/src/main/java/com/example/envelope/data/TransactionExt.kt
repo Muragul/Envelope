@@ -5,6 +5,3 @@ data class TransactionHeader(
 ) : TransactionMarker
 
 interface TransactionMarker
-
-fun List<Transaction>.toSortedList() {
-}

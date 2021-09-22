@@ -12,5 +12,4 @@
         android:id="@+id/profile_page"
         android:icon="@drawable/ic_bottom_nav_profile"
         android:title="@string/bottom_nav_profile" />
-
 </menu>

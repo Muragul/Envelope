@@ -38,6 +38,7 @@
                 android:id="@+id/iv_profile_image"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:contentDescription="@string/bottom_nav_profile"
                 android:scaleType="fitXY" />
 
         </com.google.android.material.card.MaterialCardView>
@@ -103,6 +104,7 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_gravity="center"
+            android:contentDescription="@string/add"
             android:padding="8dp"
             android:src="@drawable/ic_plus" />
 

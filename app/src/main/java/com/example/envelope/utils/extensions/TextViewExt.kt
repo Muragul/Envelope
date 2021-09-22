@@ -9,10 +9,6 @@ fun CheckedTextView.check() {
     isChecked = true
 }
 
-fun CheckedTextView.uncheck() {
-    isChecked = false
-}
-
 fun TextView.setStepActive() {
     setTextColor(
         ContextCompat.getColor(this.context, R.color.button_light_blue)

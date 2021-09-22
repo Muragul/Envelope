@@ -1,238 +1,238 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/main_page_background_dark">
+    android:background="@color/main_page_background_dark"
+    android:orientation="vertical">
 
     <LinearLayout
+        android:id="@+id/lt_step"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="30dp"
+        android:paddingBottom="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <LinearLayout
-            android:id="@+id/lt_step"
-            android:layout_width="match_parent"
+        <include
+            android:id="@+id/first_step_distribution"
+            layout="@layout/item_step_progress"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingTop="30dp"
-            android:paddingBottom="30dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:layout_weight="1" />
 
-            <include
-                android:id="@+id/first_step_distribution"
-                layout="@layout/item_step_progress"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_gravity="center_vertical"
+            android:layout_weight=".7"
+            android:background="@color/text_light_purple" />
 
-            <View
-                android:layout_width="0dp"
-                android:layout_height="1dp"
-                android:layout_gravity="center_vertical"
-                android:layout_weight=".7"
-                android:background="@color/text_light_purple" />
+        <include
+            android:id="@+id/second_step_distribution"
+            layout="@layout/item_step_progress"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2" />
 
-            <include
-                android:id="@+id/second_step_distribution"
-                layout="@layout/item_step_progress"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="2" />
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_gravity="center_vertical"
+            android:layout_weight=".7"
+            android:background="@color/text_light_purple" />
 
-            <View
-                android:layout_width="0dp"
-                android:layout_height="1dp"
-                android:layout_gravity="center_vertical"
-                android:layout_weight=".7"
-                android:background="@color/text_light_purple" />
-
-            <include
-                android:id="@+id/third_step_distribution"
-                layout="@layout/item_step_progress"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
-
-        </LinearLayout>
-
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="16dp">
-
-            <TextView
-                android:id="@+id/tv_title"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="12dp"
-                android:fontFamily="@font/nunito_semibold_600"
-                android:text="@string/set_card_info"
-                android:textColor="@color/text_white"
-                android:textSize="16sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <EditText
-                android:id="@+id/et_card_number"
-                android:layout_width="match_parent"
-                android:layout_height="46dp"
-                android:layout_marginTop="12dp"
-                android:background="@drawable/search_view_bg"
-                android:digits="0123456789 "
-                android:fontFamily="@font/nunito_regular_400"
-                android:hint="@string/card_number"
-                android:imeOptions="actionNext"
-                android:inputType="number"
-                android:maxLength="19"
-                android:textColor="@color/main_page_background_dark"
-                android:textSize="16sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_title" />
-
-            <TextView
-                android:id="@+id/incorrect_card_number"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/nunito_regular_400"
-                android:text="@string/incorrect_card_number"
-                android:textColor="@color/red"
-                android:textSize="11sp"
-                android:visibility="gone"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/et_card_number" />
-
-            <EditText
-                android:id="@+id/et_card_owner_name"
-                android:layout_width="match_parent"
-                android:layout_height="46dp"
-                android:layout_marginTop="8dp"
-                android:background="@drawable/search_view_bg"
-                android:fontFamily="@font/nunito_regular_400"
-                android:hint="@string/owner_name"
-                android:imeOptions="actionNext"
-                android:inputType="textPersonName"
-                android:maxLength="50"
-                android:textColor="@color/main_page_background_dark"
-                android:textSize="16sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/incorrect_card_number" />
-
-            <TextView
-                android:id="@+id/incorrect_full_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/nunito_regular_400"
-                android:text="@string/required_field"
-                android:textColor="@color/red"
-                android:textSize="11sp"
-                android:visibility="gone"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/et_card_owner_name" />
-
-            <LinearLayout
-                android:id="@+id/lt_data"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:orientation="horizontal"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/incorrect_full_name">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="4dp"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <EditText
-                        android:id="@+id/et_card_expire_date"
-                        android:layout_width="match_parent"
-                        android:layout_height="46dp"
-                        android:background="@drawable/search_view_bg"
-                        android:digits="0123456789/"
-                        android:fontFamily="@font/nunito_regular_400"
-                        android:hint="@string/expire_date_hint"
-                        android:imeOptions="actionNext"
-                        android:inputType="number"
-                        android:maxLength="6"
-                        android:textColor="@color/main_page_background_dark"
-                        android:textSize="16sp" />
-
-                    <TextView
-                        android:id="@+id/incorrect_date"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/nunito_regular_400"
-                        android:text="@string/incorrect_date"
-                        android:textColor="@color/red"
-                        android:textSize="11sp"
-                        android:visibility="gone" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="4dp"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <EditText
-                        android:id="@+id/et_card_cvv"
-                        android:layout_width="match_parent"
-                        android:layout_height="46dp"
-                        android:background="@drawable/search_view_bg"
-                        android:fontFamily="@font/nunito_regular_400"
-                        android:hint="@string/cvv"
-                        android:imeOptions="actionDone"
-                        android:inputType="numberPassword"
-                        android:maxLength="3"
-                        android:textColor="@color/main_page_background_dark"
-                        android:textSize="16sp" />
-
-                    <TextView
-                        android:id="@+id/incorrectCvvCode"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/nunito_regular_400"
-                        android:text="@string/incorrect_cvv_code"
-                        android:textColor="@color/red"
-                        android:textSize="11sp"
-                        android:visibility="gone" />
-
-                </LinearLayout>
-
-            </LinearLayout>
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btn_next"
-                style="@style/mButtonStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom"
-                android:layout_marginBottom="90dp"
-                android:drawableEnd="@drawable/ic_arrow_right"
-                android:drawableTint="@color/black"
-                android:fontFamily="@font/nunito_semibold_600"
-                android:text="@string/on_boarding_next"
-                android:textAllCaps="false"
-                android:textColor="@color/black"
-                android:textSize="14sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        <include
+            android:id="@+id/third_step_distribution"
+            layout="@layout/item_step_progress"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
 
     </LinearLayout>
 
-</FrameLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:fontFamily="@font/nunito_semibold_600"
+            android:text="@string/set_card_info"
+            android:textColor="@color/text_white"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/et_card_number"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/search_view_bg"
+            android:digits="0123456789 "
+            android:fontFamily="@font/nunito_regular_400"
+            android:hint="@string/card_number"
+            android:imeOptions="actionNext"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:maxLength="19"
+            android:textColor="@color/main_page_background_dark"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_title" />
+
+        <TextView
+            android:id="@+id/incorrect_card_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nunito_regular_400"
+            android:text="@string/incorrect_card_number"
+            android:textColor="@color/red"
+            android:textSize="11sp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_card_number" />
+
+        <EditText
+            android:id="@+id/et_card_owner_name"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/search_view_bg"
+            android:fontFamily="@font/nunito_regular_400"
+            android:hint="@string/owner_name"
+            android:imeOptions="actionNext"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName"
+            android:maxLength="50"
+            android:textColor="@color/main_page_background_dark"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/incorrect_card_number" />
+
+        <TextView
+            android:id="@+id/incorrect_full_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nunito_regular_400"
+            android:text="@string/required_field"
+            android:textColor="@color/red"
+            android:textSize="11sp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_card_owner_name" />
+
+        <LinearLayout
+            android:id="@+id/lt_data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:baselineAligned="false"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/incorrect_full_name">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/et_card_expire_dates"
+                    android:layout_width="match_parent"
+                    android:layout_height="46dp"
+                    android:background="@drawable/search_view_bg"
+                    android:digits="0123456789/"
+                    android:fontFamily="@font/nunito_regular_400"
+                    android:hint="@string/expire_date_hint"
+                    android:imeOptions="actionNext"
+                    android:importantForAutofill="no"
+                    android:inputType="number"
+                    android:maxLength="6"
+                    android:textColor="@color/main_page_background_dark"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/incorrect_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/nunito_regular_400"
+                    android:text="@string/incorrect_date"
+                    android:textColor="@color/red"
+                    android:textSize="11sp"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/et_card_cvv"
+                    android:layout_width="match_parent"
+                    android:layout_height="46dp"
+                    android:background="@drawable/search_view_bg"
+                    android:fontFamily="@font/nunito_regular_400"
+                    android:hint="@string/cvv"
+                    android:imeOptions="actionDone"
+                    android:importantForAutofill="no"
+                    android:inputType="numberPassword"
+                    android:maxLength="3"
+                    android:textColor="@color/main_page_background_dark"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/incorrectCvvCode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/nunito_regular_400"
+                    android:text="@string/incorrect_cvv_code"
+                    android:textColor="@color/red"
+                    android:textSize="11sp"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_next"
+            style="@style/mButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="90dp"
+            android:drawableEnd="@drawable/ic_arrow_right"
+            android:drawableTint="@color/black"
+            android:fontFamily="@font/nunito_semibold_600"
+            android:text="@string/on_boarding_next"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>
