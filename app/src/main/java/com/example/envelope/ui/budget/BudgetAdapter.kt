@@ -30,7 +30,10 @@ class BudgetAdapter : BindingAdapter<Budget, ItemBudgetBinding>(ItemBudgetBindin
             item.weekNumber.toString()
         )
         binding.tvWeekRange.text = item.weekRange
-        binding.tvWeeklyCashAmount.text = item.weekBudget
+        binding.tvWeeklyCashAmount.text = String.format(
+            binding.tvSentDate.context.getString(R.string.total_price),
+            item.weekBudget
+        )
     }
 
     private fun getDayAddition(num: Int): String {

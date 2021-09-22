@@ -41,7 +41,7 @@
         android:textSize="11sp"
         android:visibility="gone" />
 
-    <EditText
+    <com.cottacush.android.currencyedittext.CurrencyEditText
         android:id="@+id/et_sum"
         android:layout_width="match_parent"
         android:layout_height="46dp"
@@ -53,7 +53,10 @@
         android:inputType="number"
         android:maxLength="19"
         android:textColor="@color/main_page_background_dark"
-        android:textSize="16sp" />
+        android:textSize="16sp"
+        app:currencySymbol="₸"
+        app:localeTag="kk-KZ"
+        app:useCurrencySymbolAsHint="true" />
 
     <TextView
         android:id="@+id/incorrect_sum"
