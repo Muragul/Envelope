@@ -120,6 +120,8 @@ class DistributionFragment :
                         "Вы не можете сберечь больше $MONEY_AMOUNT суммы",
                         Toast.LENGTH_SHORT
                     ).show()
+                    sbSavingsPercent.setProgress(0.toFloat())
+                    etSavingsAmount.text.clear()
                 } else {
                     val percent =
                         (text.toString().toInt().toFloat() * 100F) / MONEY_AMOUNT.toFloat()
@@ -156,6 +158,8 @@ class DistributionFragment :
                         "Вы не можете сберечь больше $MONEY_AMOUNT суммы",
                         Toast.LENGTH_SHORT
                     ).show()
+                    sbUnexpectedPercent.setProgress(0.toFloat())
+                    etUnexpectedAmount.text.clear()
                 } else {
                     val percent =
                         (text.toString().toInt().toFloat() * 100F) / MONEY_AMOUNT.toFloat()
@@ -190,12 +194,12 @@ class DistributionFragment :
         ltMain.setWhiteBackground()
         tvCheckedTextView.setDarkText()
         ltContent.show()
+        ltContent.startDistributionAnimation()
         if (vDivider != null) {
             vDivider.hide()
         } else {
             return
         }
-        ltContent.startDistributionAnimation()
     }
 
     private fun initViews() {

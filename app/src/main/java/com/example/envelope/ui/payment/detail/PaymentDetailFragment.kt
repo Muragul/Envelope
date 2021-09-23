@@ -11,6 +11,8 @@ import com.example.envelope.utils.cardsList
 import com.example.envelope.utils.extensions.loadUrl
 import com.example.envelope.utils.extensions.show
 import com.example.envelope.utils.extensions.showError
+import com.redmadrobot.inputmask.MaskedTextChangedListener
+import com.redmadrobot.inputmask.helper.AffinityCalculationStrategy
 
 class PaymentDetailFragment :
     BindingFragment<FragmentPaymentDetailBinding>(FragmentPaymentDetailBinding::inflate) {
@@ -47,6 +49,12 @@ class PaymentDetailFragment :
                         imageUrl
                     )
                 }
+            MaskedTextChangedListener.installOn(
+                etPhoneNumber,
+                "[0] [000] [000] [00] [00]",
+                arrayListOf("[0] [000] [000] [00] [00]"),
+                AffinityCalculationStrategy.WHOLE_STRING
+            )
             atvCards.setAdapter(newAdapter)
             toolbar.tvToolbarTitle.text = title.toString()
             btnPay.text =

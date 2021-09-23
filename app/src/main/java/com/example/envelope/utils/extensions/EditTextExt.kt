@@ -18,7 +18,7 @@ fun EditText.hideError() {
     setTextColor(
         ContextCompat.getColor(
             context,
-            R.color.white
+            R.color.black
         )
     )
 }
