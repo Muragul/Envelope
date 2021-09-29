@@ -43,7 +43,7 @@ fun ComposePage(
         modifier = Modifier
             .background(backgroundDark)
             .fillMaxWidth()
-            .padding(start = 16.dp, bottom = 64.dp)
+            .padding(start = 16.dp)
     ) {
         Row(
             modifier = Modifier
